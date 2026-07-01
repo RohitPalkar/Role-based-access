@@ -1,0 +1,208 @@
+{
+  "schemaVersion": 1,
+  "projectName": "puravankara-engine",
+  "projectType": "nestjs-backend",
+  "repositoryRole": "backend-api-only",
+  "runtime": {
+    "nodeMinVersion": "22.14.0",
+    "language": "typescript",
+    "framework": "nestjs-10"
+  },
+  "agentEntryPoints": {
+    "sdlcRules": ".opencode/agents/_sdlc-rules.md",
+    "governance": ".opencode/agents/governance-agent.md",
+    "projectContext": "docs/ai/project-context.md",
+    "contextMap": "docs/ai/context-map.json",
+    "codebaseAnalyzer": ".opencode/agents/codebase-analyzer.md"
+  },
+  "api": {
+    "style": "rest",
+    "globalPrefix": "api",
+    "nonProdPrefixPattern": "api/{NODE_ENV}",
+    "responseEnvelope": "success-response-errors"
+  },
+  "data": {
+    "database": "mysql",
+    "orm": "typeorm",
+    "migrationsPath": "src/migrations/",
+    "migrationsCount": 158,
+    "entitiesIndex": "src/entities/index.ts",
+    "synchronize": false
+  },
+  "infrastructure": {
+    "cache": "redis",
+    "queues": "bullmq",
+    "websocketsPath": "src/websocket/",
+    "wsEntry": "src/websocket/ws.main.ts",
+    "httpEntry": "src/main.ts",
+    "appModule": "src/app.module.ts",
+    "templatesPath": "src/templates/"
+  },
+  "auth": {
+    "ssoModule": "src/modules/sso/",
+    "guardsPath": "src/modules/sso/gaurds/",
+    "decoratorsPath": "src/modules/sso/decorators/"
+  },
+  "crossCutting": {
+    "config": "src/config/",
+    "constants": "src/config/constants.ts",
+    "validationPipe": "src/validations/custom-pipe.validation.ts",
+    "responseInterceptor": "src/interceptors/transform.interceptor.ts",
+    "exceptionFilter": "src/filters/global-exception.filter.ts",
+    "sanitizeMiddleware": "src/middleware/sanitize.middleware.ts",
+    "decryptGuard": "src/middleware/decryptRequest.middleware.ts",
+    "logger": "src/logger/logger.ts",
+    "roleFilterUtils": "src/utils/role-based-filter.utils.ts"
+  },
+  "commands": {
+    "build": "npm run build",
+    "dev": "npm run start:dev",
+    "prod": "npm run start:prod",
+    "test": "npm run test",
+    "testE2e": "npm run test:e2e",
+    "testCov": "npm run test:cov",
+    "lint": "npm run lint",
+    "format": "npm run format",
+    "migrationCreate": "npm run migration:create -- src/migrations/<Name>",
+    "migrationRun": "npm run migration:run",
+    "migrationRevert": "npm run migration:revert"
+  },
+  "moduleDomains": [
+    {
+      "id": "bookings",
+      "path": "src/modules/bookings/",
+      "related": [
+        "booking_documents",
+        "referrals",
+        "project_terms",
+        "form_amendment_requests",
+        "leegality",
+        "pdf",
+        "decentro",
+        "sfdc",
+        "payments"
+      ]
+    },
+    {
+      "id": "agreements",
+      "path": "src/modules/agreement_signature_form/",
+      "related": ["leegality", "pdf"]
+    },
+    {
+      "id": "esign",
+      "path": "src/modules/leegality/",
+      "related": [],
+      "consumers": ["bookings", "agreement_signature_form"]
+    },
+    {
+      "id": "document-generation",
+      "path": "src/modules/pdf/",
+      "related": [],
+      "consumers": ["bookings", "agreement_signature_form", "eoi_manager/voucher_forms", "sales"]
+    },
+    {
+      "id": "kyc",
+      "path": "src/modules/decentro/",
+      "related": ["bookings"]
+    },
+    {
+      "id": "incentives",
+      "path": "src/modules/incentives/",
+      "related": [
+        "incentive_policy",
+        "incentive_booking",
+        "incentive_payouts",
+        "incentive_reports",
+        "incentive_dashboard",
+        "incentive_booking_overrides",
+        "booster_master",
+        "leaderboard",
+        "sap",
+        "admin_reports"
+      ]
+    },
+    {
+      "id": "eoi_manager",
+      "path": "src/modules/eoi_manager/",
+      "related": [
+        "voucher_forms",
+        "eoi_management",
+        "eoi_campaign",
+        "batch_manager",
+        "channel_partner",
+        "payments",
+        "inventory-unit"
+      ]
+    },
+    {
+      "id": "inventory",
+      "path": "src/modules/inventory-unit/",
+      "related": ["voucher_forms"]
+    },
+    {
+      "id": "payments",
+      "path": "src/modules/payments/",
+      "related": ["bookings", "voucher_forms"]
+    },
+    {
+      "id": "crm",
+      "path": "src/modules/sfdc/",
+      "related": ["sfdc_logs"]
+    },
+    {
+      "id": "masters",
+      "path": "src/modules/masters/",
+      "related": ["brands", "projects", "project_phases", "citymaster", "country_master", "region", "company_master"]
+    },
+    {
+      "id": "users_access",
+      "path": "src/modules/users/",
+      "related": ["roles", "sso", "sales", "user_finance", "salary_upload"]
+    },
+    {
+      "id": "site_visits",
+      "path": "src/modules/site_visit_crud/",
+      "related": ["site_visit_logIn"]
+    },
+    {
+      "id": "platform",
+      "path": "src/modules/aws/",
+      "related": [
+        "notifications",
+        "email_templates",
+        "whatsapp",
+        "google",
+        "crons",
+        "queue_audit",
+        "ws_publisher",
+        "sentry"
+      ]
+    }
+  ],
+  "hotspots": [
+    "src/modules/bookings/",
+    "src/modules/incentives/",
+    "src/modules/eoi_manager/",
+    "src/modules/payments/",
+    "src/modules/inventory-unit/",
+    "src/modules/sfdc/",
+    "src/modules/agreement_signature_form/",
+    "src/modules/decentro/"
+  ],
+  "testing": {
+    "unitPattern": "src/**/*.spec.ts",
+    "e2ePath": "test/",
+    "e2eConfig": "test/jest-e2e.json",
+    "jestConfig": "jest.config.js"
+  },
+  "deployment": {
+    "ciWorkflow": ".github/workflows/main.yml",
+    "productionBranch": "production",
+    "developBranch": "develop",
+    "deployTarget": "aws-codedeploy"
+  },
+  "deeperDocs": [
+    { "title": "README setup and conventions", "path": "README.md" },
+    { "title": "Bulk EOI transaction flow", "path": "docs/PE-483-bulk-transaction-api-flow.md" }
+  ]
+}

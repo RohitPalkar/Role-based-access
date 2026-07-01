@@ -1,0 +1,182 @@
+<%
+    let heading = '<h3 class="title-personal-hd marginBottom">KYC Documents</h3><div class="edit-title-row"><div class="btn-applicant-top">'+label+'</div></div>';
+    let pageBreakClass = (pageBreak) ? "page-break": "";
+%>
+<% if(kycDetails?.image && kycDetails?.isPhysicalImage) { %>
+    <div class="kyc-document-row kyc-details-card <%= pageBreakClass %>">
+        <%- heading; %>
+        <% heading= ""; pageBreakClass ="page-break"; %>
+        <% if(kycDetails?.image && kycDetails?.image) { %>
+            <div class="document-images">
+                <div class="img-bg">
+                    <div class="front"> </div>
+                    <div class="img">
+                        <img src="<%=IMAGE_BASE_URL%><%=kycDetails?.image[0]%>" alt="" />
+                    </div>
+                </div>
+            </div>
+        <% } %>
+    </div>
+<% } %>
+
+<% if(kycDetails?.panNumber && kycDetails?.isPhysicalPan) { %>
+    <div class="kyc-document-row kyc-details-card page-break">
+        <%- heading %>
+        <% heading= ""; pageBreakClass ="page-break"; %>
+        <div class="kyc-document-row ">
+            <div class="document-row">
+                <p>PAN Number:</p>
+                <span> <%= kycDetails?.panNumber%> </span>
+            </div>
+            <% if(kycDetails?.panImage && kycDetails?.panImage?.length) { %>
+                <div class="document-images">
+                    <div class="img-bg">
+                        <div class="front">Front</div>
+                        <div class="img">
+                            <img src="<%=IMAGE_BASE_URL%><%=kycDetails?.panImage[0]%>" alt="" />
+                        </div>
+                    </div>
+                </div>
+            <% } %>
+        </div>
+    </div>
+<% } %>
+
+<% if(kycDetails?.aadhaarNumber && kycDetails?.isPhysicalAadhaar) { %>
+    <div class="kyc-document-row kyc-details-card page-break">
+        <%- heading; %>
+        <% heading= ""; pageBreakClass ="page-break"; %>
+    <div class="document-row">
+        <p>Aadhaar Number:</p>
+        <span> <%= kycDetails?.aadhaarNumber %> </span>
+    </div>
+
+    <% if(kycDetails?.aadhaarImage && kycDetails?.aadhaarImage?.length) { %>
+        <div class="document-images">
+            <div class="img-bg">
+            <div class="front">Front</div>
+            <div class="img">
+                <img src="<%=IMAGE_BASE_URL%><%=kycDetails?.aadhaarImage[0]%>" alt="" />
+            </div>
+            </div>
+            <% if(kycDetails?.aadhaarImage[1]) { %>
+                <div class="document-images kyc-back-img page-break">
+                    <div class="img-bg">
+                        <div class="front">Back</div>
+                        <div class="img">
+                            <img src="<%=IMAGE_BASE_URL%><%=kycDetails?.aadhaarImage[1]%>" alt="" />
+                        </div>
+                    </div>
+                </div>
+            <% } %>
+        </div>
+    <% } %>
+    </div>
+<% } %>
+
+<% if(kycDetails?.passportNumber && (kycDetails?.isPhysicalPassport || kycDetails?.isPhysicalPassort)) { %>
+    <div class="kyc-document-row kyc-details-card <%= pageBreakClass %>">
+        <%- heading; %>
+        <% heading= ""; pageBreakClass ="page-break"; %>
+        <div class="document-row">
+            <p>Passport Number:</p>
+            <span> <%= kycDetails?.passportNumber %> </span>
+        </div>
+        <% if(kycDetails?.passportImage && kycDetails?.passportImage?.length) { %>
+            <div class="document-images">
+                <div class="img-bg">
+                <div class="front">Front</div>
+                <div class="img">
+                    <img src="<%=IMAGE_BASE_URL%><%=kycDetails?.passportImage[0]%>" alt="" />
+                </div>
+                </div>
+                <% if(kycDetails?.passportImage[1]) { %>
+                    <div class="document-images kyc-back-img page-break">
+                        <div class="img-bg">
+                            <div class="front">Back</div>
+                            <div class="img">
+                                <img src="<%=IMAGE_BASE_URL%><%=kycDetails?.passportImage[1]%>" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                <% } %>
+            </div>
+        <% } %>
+    </div>
+<% } %>
+
+<% if(kycDetails?.ociNumber && kycDetails?.isPhysicalOCI) { %>
+    <div class="kyc-document-row kyc-details-card page-break">
+        <%- heading; %>
+        <% heading= ""; pageBreakClass ="page-break"; %>
+        <div class="document-row">
+            <p>OCI Number:</p>
+            <span> <%= kycDetails?.ociNumber %> </span>
+        </div>
+
+        <% if(kycDetails?.ociImage && kycDetails?.ociImage?.length) { %>
+            <div class="document-images">
+                <div class="img-bg">
+                    <div class="front">Front</div>
+                    <div class="img">
+                        <img src="<%=IMAGE_BASE_URL%><%=kycDetails?.ociImage[0]%>" alt="" />
+                    </div>
+                </div>
+                <% if(kycDetails?.ociImage[1]) { %>
+                    <div class="document-images kyc-back-img page-break">
+                        <div class="img-bg">
+                            <div class="front">Back</div>
+                            <div class="img">
+                                <img src="<%=IMAGE_BASE_URL%><%=kycDetails?.ociImage[1]%>" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                <% } %>
+            </div>
+        <% } %>
+    </div>
+<% } %>
+
+<% if(kycDetails?.OCIAlternateDocType && kycDetails?.isPhysicalOtherDoc) { %>
+    <div class="kyc-document-row kyc-details-card page-break">
+        <%- heading; %>
+        <% heading= ""; pageBreakClass ="page-break"; %>
+        <div class="document-row">
+            <p>Other Document:</p>
+            <span> <%= kycDetails?.OCIAlternateDocType%> </span>
+        </div>
+
+        <% if(kycDetails?.OCIAlternateDocImage && kycDetails?.OCIAlternateDocImage?.length) { %>
+            <div class="document-images">
+                <div class="img-bg">
+                    <div class="front">Front</div>
+                    <div class="img">
+                        <img src="<%=IMAGE_BASE_URL%><%=kycDetails?.OCIAlternateDocImage[0]%>" alt="" />
+                    </div>
+                </div>
+            </div>
+        <% } %>
+    </div>
+<% } %>
+
+<% /* Professional Details (GST) - passed from caller per applicant */ %>
+<% if(professionalDetails?.isPhysicalGST && !(professionalDetails?.gstCertificate?.[0])?.toLowerCase()?.endsWith('.pdf')) { %>
+    <div class="kyc-document-row kyc-details-card page-break">
+        <%- heading %>
+        <% heading = ""; pageBreakClass = "page-break"; %>
+        <div class="document-row">
+            <p>GST Number:</p>
+            <span><%= professionalDetails?.gstNumber %></span>
+        </div>
+        <% if(professionalDetails?.gstCertificate && professionalDetails?.gstCertificate.length) { %>
+            <div class="document-images">
+                <div class="img-bg">
+                    <div class="front"></div>
+                    <div class="img">
+                        <img src="<%= IMAGE_BASE_URL %><%=professionalDetails?.gstCertificate[0]%>" alt="GST Certificate" />
+                    </div>
+                </div>
+            </div>
+        <% } %>
+    </div>
+<% } %>

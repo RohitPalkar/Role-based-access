@@ -1,0 +1,54 @@
+<%
+let heading = title 
+? `<h3 class="title-personal-hd marginBottom">${title}</h3>`
+: '';
+    let pageBreakClass = (pageBreak) ? "page-break": "";
+    let transactionCount = 0;
+    let offlineCount = 0;
+    transactions?.map((record) => {
+        transactionCount++;
+        if (record.paymentDetails?.isPhysicalPaymentProof) offlineCount++;
+    });
+%>
+
+<div class="kyc-documents <%=pageBreakClass%>">
+    <div class="kyc-applicant-1">
+        <% if (transactionCount == offlineCount && rmPdf === false) { %>
+            <div class="kyc-document-row kyc-details-card">
+                <%- heading; %>
+                <% heading= ""; %>
+                <div class="document-row">
+                    <span> All Documents submitted offline. </span>
+                </div>
+            </div>
+        <% } else { %>
+            <% transactions?.forEach((transaction,index)=> { %>
+                <% if((rmPdf === false || transaction?.paymentDetails?.isPhysicalPaymentProof === true) && transaction?.paymentMode === "Offline") { %>
+                    <div class="kyc-document-row kyc-details-card <%= index > 0 ? 'page-break':''; %>">
+                        <%- heading; %>
+                        <% heading= ""; %>
+                        <div class="document-row">
+                            <p>Transaction ID:</p>
+                            <span><%= transaction?.id%></span>
+                        </div>
+                        <% if(transaction?.paymentDetails?.isPhysicalPaymentProof && rmPdf == false) { %>
+                            <div class="document-row">
+                                <span> Physical Copy to be submitted offline </span>
+                            </div>
+                        <% } %>
+                        <% if(transaction?.paymentDetails?.paymentProof?.length) { %>
+                            <div class="document-images">
+                                <div class="img-bg">
+                                    <div class="front"></div>
+                                    <div class="img">
+                                        <img src="<%=IMAGE_BASE_URL%><%=transaction?.paymentDetails?.paymentProof[0]%>" alt="" />
+                                    </div>
+                                </div>
+                            </div>
+                        <% } %>
+                    </div>
+                <% } %>
+            <% }); %>
+        <% } %>
+    </div>
+</div>

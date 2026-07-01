@@ -1,0 +1,164 @@
+<%
+const paymentsToUse = groupDetails ? groupPayments : payments;
+const hasGroup = groupDetails?.opportunities?.length > 0;
+
+const totalBookingAmount = paymentsToUse.reduce((sum, pay) => {
+  return sum + Number(pay?.paidAmount || 0);
+}, 0);
+
+const totalVoucherAmount = (voucherPayments || []).reduce((sum, pay) => {
+  return sum + Number(pay?.paidAmount || 0);
+}, 0);
+
+const finalBookingAmount = totalBookingAmount + totalVoucherAmount;
+%>
+<div class="unit-details <%= pageBreak ? 'page-break' : '';%>">
+    <div class="applicant-details-card">
+        <div class="personal-information">
+            <div class="photo">
+                <img src="<%=PROJECT_IMAGES_URL%><%=termsCondition?.brandLogo%>" alt="" />
+            </div>
+            <div class="information-details">
+                <h3 class="title-personal-hd marginBottom">Unit Details</h3>
+                <div class="personal-info">
+                    <div class="personal-info-row">
+                        <label class="label-title">Project Name:</label>
+                        <span class="span-title">
+                            <%=unitDetails?.projectName ? unitDetails?.projectName : 'N/A' %>
+                        </span>
+                    </div>
+                    <div class="personal-info-row">
+                        <label class="label-title">Unit Number:</label>
+                        <span class="span-title">
+                            <%=unitDetails?.unitNumber ? unitDetails?.unitNumber : 'N/A' %>
+                        </span>
+                    </div>
+                    <div class="personal-info-row">
+                        <label class="label-title">Block/Tower:</label>
+                        <span class="span-title">
+                            <%= unitDetails?.blockTower ? unitDetails?.blockTower : 'N/A' %>
+                        </span>
+                    </div>
+                    <div class="personal-info-row">
+                        <label class="label-title">Floor:</label>
+                        <span class="span-title">
+                            <%=unitDetails?.floor ? unitDetails?.floor : 'N/A' %>
+                        </span>
+                    </div>
+                    <div class="personal-info-row">
+                        <label class="label-title">Type:</label>
+                        <span class="span-title">
+                            <%=unitDetails?.type ? unitDetails?.type : 'N/A' %>
+                        </span>
+                    </div>
+                    <div class="personal-info-row">
+                        <label class="label-title">Super Built-up Area (Sq. Ft.):</label>
+                        <span class="span-title">
+                            <%=unitDetails?.superBuiltArea ? formatIndianAmount(unitDetails?.superBuiltArea) : 'N/A' %>
+                        </span>
+                    </div>
+                    <div class="personal-info-row">
+                        <label class="label-title">Carpet Area (Sq. Ft.):</label>
+                        <span class="span-title">
+                            <%=unitDetails?.carpetArea ? formatIndianAmount(unitDetails?.carpetArea) : 'N/A' %>
+                        </span>
+                    </div>
+                    <div class="personal-info-row">
+                        <label class="label-title">Car Park Type:</label>
+                        <span class="span-title">
+                            <%=unitDetails?.carParkType ? unitDetails?.carParkType : 'None' %>
+                        </span>
+                    </div>
+
+                    <div class="personal-info-row">
+                        <label class="label-title">Number of Car Parks:</label>
+                        <span class="span-title">
+                            <%=unitDetails?.numOfCarPark ? unitDetails?.numOfCarPark : 'N/A' %>
+                        </span>
+                    </div>
+                    <div class="personal-info-row">
+                        <label class="label-title">Total Agreement Value (AV):</label>
+                        <span class="span-title">₹ <%= formatIndianAmount(unitDetails?.totalAgreementValue ?? 0) %></span>
+                    </div>
+                    <% if(unitDetails?.primarySource && !primarySourceDisabled) { %>
+                        <div class="personal-info-row">
+                            <label class="label-title">Booking Amount:</label>
+                            <span class="span-title">₹ <%= formatIndianAmount(finalBookingAmount ?? 0) %></span>
+                        </div>
+                    <% } %>
+                    <div class="personal-info-row">
+                            <label class="label-title"><%= unitDetails?.agreementPercentage %>%  of AV (incl. GST):</label>
+                            <span class="span-title">
+                                ₹ <%= formatIndianAmount(unitDetails?.ninePercentOfAV ?? 0) %>
+                            </span>
+                    </div>
+                    <% if(unitDetails?.primarySource && !primarySourceDisabled) { %>
+                        <div class="personal-info-row">
+                            <label class="label-title">Booking Source:</label>
+                            <span class="span-title"><%=unitDetails?.primarySource %></span>
+                        </div>
+                    <% } %>
+                    <% if(unitDetails?.primarySource == "Channel Partner" && !primarySourceDisabled) { %>
+                        <div class="personal-info-row">
+                            <label class="label-title">Channel Partner Name:</label>
+                            <span class="span-title">
+                                <%=unitDetails?.channel ? unitDetails?.channel : 'N/A' %>
+                            </span>
+                        </div>
+                    <% } %>
+                    <!-- <div class="full-row">
+                        <p class="cost-sheet-disclaimer" style="font-size: 14px;">Please refer to the cost sheet for details. The above charges exclude applicable taxes and other tentative charges, which are shown on the cost sheet.</p>
+                    <% if(parseInt(unitDetails?.totalAgreementValue) >= 5000000) { %>
+                          <label class="check-terms">
+                            &nbsp;1%TDS u/s 194-IA- to be paid by customer themselves.
+                            <input type="checkbox" checked />
+                            <span class="checkmark"></span>
+                          </label>
+                        </div>
+                    <% } %> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <% if (hasGroup) { %>
+        <div class="applicant-details-card">
+            <h3 class="title-personal-hd" style="margin-top: 10px;">
+                Group Booking Details
+            </h3>
+    
+            <% 
+              const list = groupDetails?.opportunities || [];
+              const count = String(list.length).padStart(2, '0');
+              const fmtINR = (n) => Number(n || 0).toLocaleString('en-IN');
+            %>
+    
+            <p class="payment-p" style="font-weight: bold; margin-top: 20px;">
+                Number of Units - <%= count %>
+            </p>
+    
+            <div class="table-responsive-pdf">
+                <table>
+                    <tr>
+                        <th>Project Name</th>
+                        <th>Unit #</th>
+                        <th>Sale Value</th>
+                        <th>Booking Amount</th>
+                    </tr>
+    
+                    <% list.forEach((opp) => { %>
+                    <tr>
+                        <td><%= opp.Project || 'N/A' %></td>
+                        <td><%= opp.unitno || 'N/A' %></td>
+                        <td>₹ <%= fmtINR(opp.SalesValue) %></td>
+                        <td>₹ <%= fmtINR(opp.Amount) %></td>
+                    </tr>
+                    <% }) %>
+    
+                </table>
+            </div>
+        </div>
+    <% } %>
+    
+  
+</div>

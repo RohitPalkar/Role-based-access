@@ -1,0 +1,47 @@
+<div class="purva-privilege <%= pageBreak ? 'page-break' : '';%>" >
+    <div class="applicant-details-card">
+      <h3 class="title-personal-hd marginBottom16"><%=  primarySource %></h3>
+      <div class="line-dotted"></div>
+      <% if(sourceDetails) { %>
+        <h3 class="title-personal-hd marginBottom16">Referrer Details</h3>
+        <div class="personal-info referrer-privilege">
+          <% if(secondarySource && secondarySource == SecondarySourceEnum.REFERRAL_OTHERS) { %>
+            <div class="personal-info-row">
+              <label class="label-title">Activity Name:</label>
+              <span class="span-title"><%= sourceDetails?.activityName ?? '' %></span>
+            </div>
+          <% } else { %>
+            <div class="personal-info-row">
+              <label class="label-title">Customer Name:</label>
+              <span class="span-title"><%= sourceDetails?.name ?? '' %></span>
+            </div>
+            <div class="personal-info-row">
+              <label class="label-title">Project Name​:</label>
+              <span class="span-title"><%= sourceDetails?.projectName ?? '' %></span>
+            </div>
+            <div class="personal-info-row">
+              <label class="label-title">Contact Number:</label>
+              <span class="span-title">
+                <%= sourceDetails?.countryCode ?? '' %>
+                <%= sourceDetails?.contactNumber ?? '' %>
+              </span>
+            </div>
+            <div class="personal-info-row">
+              <label class="label-title">Unit No/Floor/Tower:</label>
+              <span class="span-title"><%= sourceDetails?.unit ?? '' %></span>
+            </div>
+            <div class="personal-info-row">
+              <label class="label-title">Email ID:</label>
+              <span class="span-title"><%= sourceDetails?.email ?? '' %></span>
+            </div>
+            <div class="personal-info-row">
+              <label class="label-title">Referred By:</label>
+              <span class="span-title">
+                <%=sourceDetails?.referredBy ?? ''%>
+              </span>
+            </div>
+          <% } %>
+        </div>
+      <% } %>
+    </div>
+  </div>

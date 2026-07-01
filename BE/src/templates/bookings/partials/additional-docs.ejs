@@ -1,0 +1,27 @@
+<%
+    let heading = '<h3 class="title-personal-hd marginBottom">Additional Documents</h3>';
+    let pageBreakClass = (pageBreak) ? "page-break": "";
+%>
+
+<div class="kyc-documents <%=pageBreakClass%>">
+    <div class="kyc-applicant-1">
+        <% additionalDocs?.forEach((document,index)=> { %>
+            <div class="kyc-document-row kyc-details-card <%= index > 0 ? 'page-break':''; %>">
+                <%- heading; %>
+                <% heading= ""; %>
+                <div class="document-row">
+                    <p>Document Name:</p>
+                    <span><%= document?.name%></span>
+                </div>
+                <div class="document-images">
+                    <div class="img-bg">
+                        <div class="front"></div>
+                        <div class="img">
+                            <img src="<%=IMAGE_BASE_URL%><%=document?.path%>" alt="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>

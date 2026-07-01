@@ -1,0 +1,67 @@
+<div class="applicant-details-card <%= pageBreak ? 'page-break' : '';%>">
+	<!-- 1 -->
+	<div class="edit-title-row">
+		<div class="btn-applicant-top"><%-label%></div>
+	</div>
+	<!-- 2 -->
+	<div class="personal-information">
+		<div class="information-details">
+			<h2 class="name">
+				<%=applicant?.personalDetails?.salutation ?? ''%>
+				<%=applicant?.personalDetails?.firstName ?? ''%> <%=applicant?.personalDetails?.lastName ?? ''%>
+			</h2>
+			<h3 class="title-personal-hd">Personal Details</h3>
+			<div class="personal-info">
+				<div class="personal-info-row">
+					<label class="label-title">First Name:</label>
+					<span class="span-title">
+						<%=applicant?.personalDetails?.firstName ?? ''%>
+					</span>
+				</div>
+				<div class="personal-info-row">
+					<label class="label-title">Last Name:</label>
+					<span class="span-title">
+						<%=applicant?.personalDetails?.lastName ?? ''%>
+					</span>
+				</div>
+				<div class="personal-info-row">
+					<label class="label-title">Contact No.:</label>
+					<span class="span-title">
+						<%=applicant?.contactDetails?.countryCode ?? ''%>
+						<%=applicant?.contactDetails?.contactNumber ?? ''%>
+					</span>
+				</div>
+
+				<div class="personal-info-row">
+					<label class="label-title">Email ID:</label>
+					<span class="span-title">
+						<%=applicant?.contactDetails?.emailAddress ?? ''%>
+					</span>
+				</div>
+				<div class="personal-info-row">
+					<label class="label-title">Date of Birth:</label>
+					<span class="span-title">
+						<%=formatDate(applicant?.personalDetails?.dob ?? '',DISPLAY_DATE_FORMAT)%>
+					</span>
+				</div>
+
+				<% if(applicant?.contactDetails?.panNumber) { %>
+				<div class="personal-info-row">
+					<label class="label-title">PAN Number:</label>
+					<span class="span-title">
+						<%=applicant?.contactDetails?.panNumber ?? ''%>
+					</span>
+				</div>
+				<% } %>
+				<% if(applicant?.contactDetails?.aadhaarNumber) { %>
+				<div class="personal-info-row">
+					<label class="label-title">Aadhaar Number:</label>
+					<span class="span-title">
+						<%=applicant?.contactDetails?.aadhaarNumber ?? ''%>
+					</span>
+				</div>
+				<% } %>
+			</div>
+		</div>
+	</div>
+</div>

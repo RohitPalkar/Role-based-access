@@ -1,0 +1,18 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /opt/purvankara/puravankara-engine/
+    overwrite: true
+file_exists_behavior: OVERWRITE
+hooks:
+# Install:
+  AfterInstall:
+    - location: scripts/after_install.sh
+      timeout: 300
+      runas: ubuntu
+  ApplicationStart:
+    - location: scripts/application_start.sh
+      timeout: 300
+      runas: ubuntu
+# ValidateService:

@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "agentEntryPoints": {
+    "sdlcRules": ".opencode/agents/_sdlc-rules.md",
+    "governance": ".opencode/agents/governance-agent.md",
+    "projectContext": "docs/ai/project-context.md",
+    "contextMap": "docs/ai/context-map.json"
+  },
+  "project": {
+    "name": "puravankara-portal",
+    "type": "spa",
+    "primaryLanguage": "typescript",
+    "buildTool": "vite",
+    "packageManager": "yarn"
+  },
+  "qualityCommands": [
+    "yarn type-check",
+    "yarn lint",
+    "yarn fm:check",
+    "yarn test:run"
+  ],
+  "viteModes": ["development", "local", "staging", "production"],
+  "srcRoots": [
+    "assets",
+    "auth",
+    "components",
+    "config",
+    "docs",
+    "hooks",
+    "layouts",
+    "locales",
+    "pages",
+    "redux",
+    "routes",
+    "sections",
+    "services",
+    "test",
+    "theme",
+    "types",
+    "utils"
+  ],
+  "routeEntry": ["src/routes/sections/index.tsx", "src/routes/paths.ts"],
+  "routeModules": [
+    "src/routes/sections/auth.tsx",
+    "src/routes/sections/main.tsx",
+    "src/routes/sections/shared-routes.tsx",
+    "src/routes/sections/admin-routes.tsx",
+    "src/routes/sections/super-admin-routes.tsx",
+    "src/routes/sections/rm-panel-routes.tsx",
+    "src/routes/sections/finance-admin-routes.tsx",
+    "src/routes/sections/crm-routes.tsx",
+    "src/routes/sections/gre-routes.tsx",
+    "src/routes/sections/mis-routes.tsx",
+    "src/routes/sections/sales-tl-routes.tsx",
+    "src/routes/sections/sales-rsh-routes.tsx",
+    "src/routes/sections/sales-bh-routes.tsx",
+    "src/routes/sections/project-head-routes.tsx",
+    "src/routes/sections/bis-routes.tsx"
+  ],
+  "stateEntry": ["src/redux/store.ts", "src/redux/store-provider.tsx"],
+  "httpEntry": [
+    "src/services/axiosInterceptors.ts",
+    "src/services/axiosInstance.ts",
+    "src/services/apiRoutes.ts"
+  ],
+  "testSetup": ["src/test/setup.ts", "vite.config.ts"],
+  "cspBuild": ["csp/buildCSP.js", "vite-plugin-csp"],
+  "internalDocs": ["src/docs"],
+  "sonar": {
+    "configPath": "sonar-project.properties",
+    "sources": "src"
+  },
+  "stackFamilies": [
+    "React 18",
+    "TypeScript",
+    "Vite 5",
+    "MUI v5",
+    "Emotion",
+    "Redux Toolkit",
+    "React Router v6",
+    "Axios",
+    "Vitest",
+    "RTL",
+    "Formik",
+    "Yup",
+    "react-hook-form",
+    "Zod",
+    "Sentry"
+  ],
+  "notes": [
+    "Package.json name may still reference Minimals; treat src/ as source of truth.",
+    "Role routing: src/routes/sections/index.tsx + ROLES in src/utils/constant.",
+    "Do not paste sonar.login or other secrets from sonar-project.properties into AI outputs."
+  ]
+}

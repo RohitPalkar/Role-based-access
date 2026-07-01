@@ -1,0 +1,15 @@
+.custom-input .MuiInputBase-input {
+  font-size: 14px !important;
+}
+
+.custom-input .MuiInputLabel-root {
+  font-size: 14px !important;
+}
+
+.custom-input .MuiInputBase-input::placeholder {
+  font-size: 14px !important;
+}
+
+.custom-input .MuiFormHelperText-root {
+  font-size: 12px !important;
+}

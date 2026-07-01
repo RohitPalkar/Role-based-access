@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EntityDescriptor
+    xmlns="urn:oasis:names:tc:SAML:2.0:metadata"
+    xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
+    entityID="{SSO_ISSUER_URL}">
+
+    <SPSSODescriptor
+        AuthnRequestsSigned="true"
+        WantAssertionsSigned="true"
+        protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+
+        <!-- Signing Certificate -->
+        <KeyDescriptor use="signing">
+            <ds:KeyInfo>
+            <ds:X509Data>
+            <ds:X509Certificate>
+                {PUBLIC_KEY}
+            </ds:X509Certificate>
+            </ds:X509Data>
+            </ds:KeyInfo>
+        </KeyDescriptor>
+
+        <!-- Assertion Consumer Service -->
+        <AssertionConsumerService
+            Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"
+            Location="{SSO_CALLBACK_URL}"
+            index="1"
+            isDefault="true" />
+    </SPSSODescriptor>
+</EntityDescriptor>

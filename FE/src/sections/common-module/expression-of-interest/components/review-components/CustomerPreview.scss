@@ -1,0 +1,567 @@
+.CustomerPreviewWrapper {
+  margin: 36px 7%;
+  padding-bottom: 40px;
+}
+
+/* applicant card */
+.applicantDetailsCard {
+  margin: 0;
+  padding: 26px 39px;
+  border: 1px solid rgba(26, 64, 125, 0.3);
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+.editTitleRow {
+  margin: 0px 0px 16px 0px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .btnApplicantTop {
+    padding: 10px 48px;
+    border-radius: 8px;
+    background: #1a407d;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 22px;
+  }
+  .editButton {
+    display: flex;
+    justify-content: center;
+    margin: 0px 0px 0px 0px;
+    padding: 12px 18px;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+    color: #1a407d;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 18px;
+    cursor: pointer;
+    img {
+      margin-right: 8px;
+    }
+
+      border: 1px solid #1a407d;
+    
+  }
+  .editButtonDisabled {
+    display: flex;
+    justify-content: center;
+    margin: 0px 0px 0px 0px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    border: 1px solid #d0d5dd;
+    background: #fff;
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+    color: grey;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    img {
+      margin-right: 8px;
+    }
+    &:hover {
+      border: 1px solid #1a407d;
+    }
+  }
+}
+
+.personalInformation {
+  display: flex;
+  margin-bottom: 16px;
+  .photo {
+    width: 220px;
+    height: 250px;
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-right: 20px;
+    img {
+      object-fit: contain;
+      height: 100%;
+      width: 100%;
+    }
+  }
+  .informationDetails {
+    margin: 0;
+    padding: 22px 0px 0px 0px;
+    .name {
+      margin: 0px 0px 28px 0px;
+      padding: 0;
+      font-size: 24px;
+      color: #1a407d;
+      font-weight: 600;
+      line-height: 22px;
+    }
+  }
+}
+
+.titlePersonalHD {
+  margin: 0px 0px 4px 0px;
+  padding: 0;
+  font-size: 16px;
+  color: #1a407d;
+  font-weight: 600;
+  line-height: 22px;
+}
+
+.relationOfApplicant {
+  margin-top: -20px;
+  font-size: 16px;
+  padding: 0;
+  color: #1a407d;
+  line-height: 22px;
+}
+
+.personalInfo {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+.personalInfoRow {
+  margin: 0px 0px 16px 0px;
+  display: flex;
+  align-items: flex-start; 
+
+  label {
+    padding: 0;
+    font-size: 14px;
+    color: #1c252e;
+    font-weight: 400;
+    line-height: 22px;
+    flex-shrink: 0;
+  }
+  span {
+    display: block;
+    margin: 0px 0px 0px 0px;
+    padding: 0;
+    font-size: 14px;
+    color: #1c252e;
+    font-weight: 600;
+    line-height: 22px;
+    word-break: break-all;
+  }
+}
+.personalInfo.width40 .personalInfoRow {
+  width: 40%;
+}
+
+.personalInfo.width50 .personalInfoRow {
+  width: 50%;
+}
+.label150 {
+  width: 150px;
+}
+.label130 {
+  width: 130px;
+}
+.label180 {
+  width: 180px;
+}
+.label200 {
+  width: 200px;
+}
+.width130 {
+  width: 130px;
+}
+.width110 {
+  width: 110px;
+}
+.personalInfoRow span.marginLeft30 {
+  margin-left: -30px;
+}
+.lineDotted {
+  border-bottom: 2px dashed #d6d6d6;
+  margin-bottom: 16px;
+}
+.notes {
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 600;
+  line-height: 22px;
+  color: #1c252e;
+  margin-top: 18px;
+  margin-left: 14px;
+  padding-bottom: 30px;
+}
+.marginBottom10 {
+  margin-bottom: 10px;
+}
+.personalInfo.Communication {
+  flex-direction: column;
+  .personalInfoRow {
+    width: 100%;
+  }
+}
+.personalInfo.professionalDetails.width50 .personalInfoRow {
+  width: 33%;
+}
+.marginBottom0 {
+  margin-bottom: 0;
+}
+.marginBottom28 {
+  margin-bottom: 28px;
+}
+.marginBottom16 {
+  margin-bottom: 16px;
+}
+/* applicant card */
+.paymentP {
+  margin: 0px 0px 16px 0px;
+  padding: 0;
+  font-size: 14px;
+  color: #1c252e;
+  font-weight: 400;
+  line-height: 22px;
+  b {
+    margin-right: 6px;
+  }
+}
+.tableResponsive {
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    tr {
+      th {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px;
+        color: #101828;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        padding-left: 24px;
+        padding-right: 24px;
+        background-color: #fcfcfd;
+        text-align: left;
+        border-bottom: 1px solid #e4e7ec;
+      }
+      td {
+        background-color: #fff;
+        border-bottom: 1px solid #e4e7ec;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px;
+        color: #101828;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+    }
+  }
+}
+
+.tbResponsive {
+  margin-bottom: 16px;
+  table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 14px;
+    text-align: left;
+    tr {
+      th {
+        border: 1px solid #dadada;
+        font-weight: 600;
+        color: #1a407d;
+        padding: 16px;
+      }
+      td {
+        border: 1px solid #dadada;
+        padding: 16px;
+        font-size: 14px;
+        font-weight: 500;
+         white-space: nowrap;
+      }
+    }
+  }
+}
+/* kyc */
+.kycDocumentRow {
+  margin-bottom: 20px;
+  .addharRow {
+    display: flex;
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    color: #1c252e;
+    p {
+      margin: 0px 18px 0px 0px;
+      padding: 0;
+    }
+    span {
+      display: block;
+      font-weight: 600;
+    }
+  }
+  .addharImages {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .front {
+      color: #1c252e;
+      font-size: 14px;
+      font-weight: 500;
+      text-align: center;
+      padding-top: 16px;
+      padding-bottom: 10px;
+    }
+    .imgBg {
+      width: 49%;
+      border-radius: 8px;
+      border: 1px solid rgba(26, 64, 125, 0.5);
+      background: #fff;
+      overflow: hidden;
+      height: 372px;
+      .img {
+        border-radius: 16px;
+        height: 300px;
+        background-color: #fafafa;
+        border: 10px solid #fff;
+        overflow: hidden;
+        text-align: center;
+        img {
+          object-fit: contain;
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+.privilege {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  color: #1c252e;
+  ol {
+    margin: 0px 0px 16px 12px;
+    padding: 0;
+    li {
+      list-style: auto;
+    }
+  }
+}
+.personalInfo.ReferrerPrivilege .personalInfoRow:nth-child(odd) {
+  width: 35%;
+}
+.personalInfo.ReferrerPrivilege .personalInfoRow:nth-child(even) {
+  width: 65%;
+}
+.eSignature {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  color: #344054;
+  display: flex;
+  align-items: center;
+  margin-bottom: 38px;
+  img {
+    margin-left: 16px;
+    cursor: pointer;
+    position: relative;
+    top: 7px;
+  }
+}
+.signBtn {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 16px;
+  justify-content: flex-start;
+  button {
+    display: flex;
+    height: 48px;
+    padding: 12px 20px;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 8px;
+    border: 1px solid #1a407d;
+    background: #1a407d;
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    width: 24%;
+    cursor: pointer;
+    &:hover {
+      background: #092552;
+    }
+  }
+}
+.submit-button {
+  max-width: 293px;
+  margin: 0;
+  padding: 12px 20px;
+  border-radius: 8px;
+  background: #1a407d;
+  box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+  color: #fff;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  svg {
+    margin-right: 8px;
+  }
+  &:hover {
+    background-color: #092552;
+  }
+}
+
+.scroll-to-signature {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 0;
+  background-color: #1a407d;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img {
+    width: 24px;
+    transform: rotate(180deg);
+  }
+}
+
+.scroll-to-signature:hover {
+  background-color: #0056b3;
+}
+
+.digiLockerIcon {
+  width: 94px;
+  height: 48px;
+  object-fit: contain;
+  margin-left: 8px; 
+  vertical-align: middle; 
+}
+
+/* media query */
+@media screen and (max-width: 1180px) {
+  .applicantDetailsCard {
+    padding: 24px;
+  }
+  .personalInfo.width40 {
+    .personalInfoRow {
+      width: 50%;
+    }
+  }
+}
+@media screen and (max-width: 1024px) {
+  .notes {
+    margin-left: 0;
+  }
+  .personalInformation {
+    flex-direction: column;
+  }
+  .personalInfo.professionalDetails.width50 {
+    .personalInfoRow {
+      width: 50%;
+    }
+  }
+  .personalInfo.ReferrerPrivilege {
+    .personalInfoRow:nth-child(odd) {
+      width: 50%;
+    }
+    .personalInfoRow:nth-child(even) {
+      width: 50%;
+    }
+  }
+}
+
+@media screen and (max-width: 820px) {
+  .personalInfo.width40 {
+    .personalInfoRow {
+      width: 100%;
+    }
+  }
+  .personalInfo.professionalDetails.width50 {
+    .personalInfoRow {
+      width: 100%;
+    }
+  }
+  .personalInfo.ReferrerPrivilege {
+    .personalInfoRow:nth-child(odd) {
+      width: 100%;
+    }
+    .personalInfoRow:nth-child(even) {
+      width: 100%;
+    }
+  }
+  .personalInfo.width50 {
+    .personalInfoRow {
+      width: 100%;
+    }
+  }
+  .personalInfoRow {
+    label {
+      width: 35%;
+    }
+  }
+  .submit-button {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 850px) {
+   .tbResponsive {
+    overflow-x: auto;
+  }
+  .CustomerPreviewWrapper {
+    margin-left: 16px;
+    margin-right: 16px;
+    padding-bottom: 18px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .applicantDetailsCard {
+    padding: 16px;
+  }
+  .signBtn {
+    flex-direction: column;
+    button {
+      width: auto;
+    }
+  }
+  .editTitleRow {
+    gap: 8px;
+    .btnApplicantTop {
+      padding: 10px 20px;
+    }
+    .editButton {
+      font-size: 14px;
+      padding: 10px 20px;
+    }
+  }
+  .personalInformation {
+    .photo {
+      width: 100%;
+      margin-right: 0px;
+    }
+  }
+  .wordBreakMobile {
+    word-break: break-all;
+    overflow-wrap: break-word;
+    white-space: normal;
+    display: inline-block;
+  }
+}

@@ -1,0 +1,95 @@
+<%
+  const hasSignLabel = (typeof signLabel !== 'undefined' && signLabel != null);
+  const hasLabels    = (typeof labels    !== 'undefined' && labels != null);
+  const hasLabel     = (typeof label     !== 'undefined' && label  != null);
+
+  const resolveLegacyLabel = () => {
+    if (!hasLabel) return '';
+    if (Array.isArray(label)) return label[0] ?? '';
+    if (label && typeof label === 'object' && 'text' in label) return label.text ?? '';
+    if (typeof label === 'string') return label;
+    return '';
+  };
+
+  const primaryTitle =
+    (hasSignLabel && signLabel) ||
+    (hasLabels && Array.isArray(labels) && labels[0]) ||
+    resolveLegacyLabel();
+
+  const __IMG_BASE__ = (typeof IMAGE_BASE_URL === 'string') ? IMAGE_BASE_URL : '';
+  const imgArr = (applicant?.personalDetails?.image || []);
+  const hasImg = Array.isArray(imgArr) && (imgArr[0]?.length > 0);
+%>
+
+<div class="applicant-details-card <%= pageBreak ? 'page-break' : '';%>">
+	
+	<!-- 1 -->
+	<div class="edit-title-row">
+		<div class="btn-applicant-top"><%- primaryTitle %></div>
+	</div>
+
+	<!-- 2 -->
+	<div class="personal-information main-applicant">
+		<div class="photo">
+			<% if (hasImg) { %>
+				<img src="<%= __IMG_BASE__ %><%= imgArr[0] %>" alt="" />
+			<% } else { %>
+				<img src="<%= __IMG_BASE__ %>images/default-profile.jpeg" alt="" />
+			<% } %>
+		</div>
+
+		<div class="information-details">
+			<h2 class="name">
+				<%=  applicant?.personalDetails?.salutation ?? '' %>
+				<%= applicant?.personalDetails?.firstName ?? '' %> <%= applicant?.personalDetails?.lastName ?? '' %>
+			</h2>
+
+			<div class="personal-info">
+				<div class="personal-info-row">
+					<label class="label-title"><%= 'Contact Number';%>:</label>
+					<span class="span-title">
+						<%= applicant?.personalDetails?.countryCode ?? '' %>
+						<%= applicant?.personalDetails?.contactNumber ?? '' %>
+					</span>
+				</div>
+				<div class="personal-info-row">
+					<label class="label-title">Email Address:</label>
+					<span class="span-title">
+						<%= applicant?.personalDetails?.emailAddress ?? '' %>
+					</span>
+				</div>
+			</div>
+			<div class="personal-info">
+				<% if (applicant?.personalDetails?.aadhaarNumber) { %>
+					<div class="personal-info-row">
+						<label class="label-title">Aadhaar Number:</label>
+						<span class="span-title">
+							<%= applicant?.personalDetails?.aadhaarNumber ?? '' %>
+						</span>
+					</div>
+				<% } %>
+				<% if (applicant?.personalDetails?.panNumber) { %>
+					<div class="personal-info-row">
+						<label class="label-title">PAN Number:</label>
+						<span class="span-title">
+							<%= applicant?.personalDetails?.panNumber ?? '' %>
+						</span>
+					</div>
+				<% } %>
+			</div>
+			<% if (applicant?.personalDetails?.primaryDocument) { %>
+				<div class="personal-info-row">
+					<label class="label-title">Primary Document :</label>
+					<span class="span-title">
+						<%= applicant?.personalDetails?.primaryDocument ?? '' %>
+					</span>
+				</div>
+			<% } %>
+		</div>
+	</div>
+
+	<div class="line-dotted"></div>
+	<div class="notes">
+		Note: All uploaded documents are included in the KYC document section
+	</div>
+</div>

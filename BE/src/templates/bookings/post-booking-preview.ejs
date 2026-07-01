@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Booking Application Form</title>
+    <link rel="icon" href="data:,">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet" />
+
+    <style type="text/css">
+      body {
+        margin: 0;
+        font-family: "Poppins", serif;
+      }
+
+      .wrapper {
+        background: white;
+        max-width: 1089px;
+        font-family: "Poppins", serif;
+        font-weight: 400;
+        font-style: normal;
+        margin: 0px auto;
+        position: relative;
+      }
+
+      .header-logo-wrap {
+        background: #1a407d;
+        margin-bottom: 36px;
+      }
+
+      .header-logo-box {
+        max-width: 1299px;
+        margin: 0px auto;
+        padding-top: 24px;
+        padding-bottom: 24px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .header-left-logo {
+        position: absolute;
+        top: 50%;
+        left: 15px;
+        transform: translateY(-50%);
+        width: 180px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+      }
+      .header-left-logo img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+      .header-title {
+        font-size: 24px;
+        font-weight: 600;
+        color: #fff;
+      }
+
+      .header-logo {
+        position: absolute;
+        top: 50%;
+        right: 15px;
+        transform: translateY(-50%);
+        width: 276px;
+        height: 32px;
+        text-align: right;
+      }
+
+      .header-logo img {
+        max-width: 85%;
+        max-height: 100%;
+      }
+
+      .applicant-details-card {
+        margin: 10px 15px;
+        padding: 24px 24px;
+        border: 1px solid rgba(26, 64, 125, 0.3);
+        border-radius: 8px;
+        margin-bottom: 18px;
+      }
+
+      .kyc-details-card {
+        margin: 10px 15px;
+        padding: 24px 24px;
+        border: 1px solid rgba(26, 64, 125, 0.3);
+        border-radius: 8px;
+        margin-bottom: 18px;
+        min-height: 700px;
+      }
+
+      .position-relative {
+        position: relative;
+      }
+
+      .position-absolute {
+        position: absolute;
+      }
+
+      .padding24 {
+        padding: 24px;
+      }
+
+      .d-flex {
+        display: flex;
+      }
+
+      .d-block {
+        display: block;
+      }
+
+      .line-dotted {
+        border-bottom: 2px dashed #d6d6d6;
+        margin-bottom: 16px;
+      }
+
+      /* 1 */
+      .edit-title-row {
+        margin: 0px 0px 34px 0px;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .edit-title-row .btn-applicant-top {
+        padding: 10px 48px;
+        border-radius: 8px;
+        background: #1a407d;
+        color: #fff;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 22px;
+        min-width: 129px;
+        min-height: 26px;
+        text-align: center;
+      }
+
+      /* 2 */
+      .booking-source {
+        display: flex;
+        margin-bottom: 16px;
+        gap: 35px;
+      }
+
+
+      .booking-source .information-details {
+        margin: 0;
+        padding: 22px 0px 0px 0px;
+        width: 100%;
+      }
+
+      .personal-info {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .personal-info .personal-info-row {
+        margin: 0px 0px 14px 0px;
+        display: flex;
+        width: 50%;
+      }
+
+
+      .label-title {
+        margin: 0px 5px 0px 0px;
+        padding: 0;
+        font-size: 14px;
+        color: #1c252e;
+        font-weight: 400;
+        line-height: 22px;
+        flex-shrink: 0;
+        width: 235px;
+      }
+
+      .span-title {
+        display: block;
+        margin: 0px 0px 0px 0px;
+        padding: 0;
+        font-size: 14px;
+        color: #1c252e;
+        font-weight: 600;
+        line-height: 22px;
+      }
+
+      .personal-info.professional-details .personal-info-row:nth-child(odd) {
+        width: 45%;
+      }
+
+      .personal-info.professional-details .personal-info-row:nth-child(even) {
+        width: 55%;
+      }
+
+      .full-row {
+        width: 100% !important;
+      }
+
+      .title-booking-source {
+        text-align: center;
+      }
+
+      .kyc-document-row {
+        margin-bottom: 20px;
+      }
+
+      .kyc-document-row .document-row {
+        display: flex;
+        margin-bottom: 20px;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 22px;
+        color: #1c252e;
+      }
+
+      .kyc-document-row .document-row p {
+        margin: 0px 18px 0px 0px;
+        padding: 0;
+      }
+
+      .kyc-document-row .document-row span {
+        display: block;
+        font-weight: 600;
+      }
+
+      .kyc-document-row .document-images {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      .kyc-document-row .document-images .front {
+        color: #1c252e;
+        font-size: 14px;
+        font-weight: 500;
+        text-align: center;
+        padding-top: 16px;
+        padding-bottom: 10px;
+      }
+
+      .kyc-document-row .document-images .img-bg {
+        width: 49%;
+        border-radius: 8px;
+        border: 1px solid rgba(26, 64, 125, 0.5);
+        background: #fff;
+        overflow: hidden;
+        height: 372px;
+      }
+
+      .kyc-document-row .document-images .img-bg .img {
+        border-radius: 16px;
+        height: 300px;
+        border: 10px solid #fff;
+        overflow: hidden;
+        text-align: center;
+      }
+
+      .kyc-document-row .document-images .img-bg .img img {
+        object-fit: contain;
+        height: 100%;
+        width: 100%;
+      }
+
+      .kyc-document-row .document-images .img-bg .img.height100 {
+        height: 100%;
+      }
+
+      .dashedBorder {
+        border-top: 1px dashed #dadada;
+        margin-bottom: 16px;
+      }
+
+      /* new css  */
+      .point-switch-row {
+        margin: 0px;
+        padding: 0px;
+        margin-bottom: 16px;
+        display: flex;
+      }
+
+      .text-points {
+        margin: 0px;
+        padding: 0px;
+        color: #212B36;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 22px;
+      }
+
+      .switch-row .switch {
+        position: relative;
+        display: inline-block;
+        width: 33px;
+        height: 20px;
+        margin-left: 16px;
+      }
+
+      .switch-row .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+
+      .switch-row .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+      }
+
+      .switch-row .slider.switchOn {
+        background-color: #00368C;
+      }
+
+      .switch-row .slider:before {
+        position: absolute;
+        content: "";
+        height: 14px;
+        width: 14px;
+        left: 4px;
+        bottom: 3px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+      }
+
+      .switch-row .slider.switchOn:before {
+        right: 4px;
+      }
+
+      .switch-row input:checked+.slider {
+        background-color: #00368C;
+      }
+
+      .switch-row input:focus+.slider {
+        box-shadow: 0 0 1px #2196F3;
+      }
+
+      .switch-row input:checked+.slider:before {
+        -webkit-transform: translateX(10px);
+        -ms-transform: translateX(10px);
+        transform: translateX(10px);
+      }
+
+      /* Rounded sliders */
+      .switch-row .slider.round {
+        border-radius: 34px;
+      }
+
+      .switch-row .slider.round:before {
+        border-radius: 50%;
+      }
+
+      .sales-wrap {
+        margin: 0px;
+        padding: 0px;
+        border-bottom: 1px dashed #DADADA;
+      }
+
+      .sales-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .sales-box {
+        display: flex;
+        margin-bottom: 10px;
+        margin-top: 40px;
+        width: 40%;
+      }
+      .sales-box.rm-comment {
+        display: block;
+      }
+
+      .sales-box p {
+        margin: 0px 0px 6px 0px;
+        padding: 0px;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 22px;
+        color: #1C252E;
+      }
+
+      .sales-row .label-title {
+        width: 190px;
+      }
+      .sales-row .label-title.sales-name {
+        width: 155px;
+      }
+      .box-input {
+        margin: 0px 0px 0px 0px;
+        padding: 10px 10px 10px 10px;
+        font-size: 14px;
+        font-weight: 600;
+        color: #1C252E;
+        width: 100%;
+        border-radius: 8px;
+        border: 1px solid #D0D5DD;
+        box-shadow: 0px 1px 2px 0px #1018280D;
+
+      }
+
+      .sales-box-end {
+        display: flex;
+        align-self: end;
+        justify-content: center;
+        width: 20%;
+      }
+
+      .sales-box-end p {
+        margin-bottom: 0;
+      }
+
+      .sales-box-end.signature-img {
+        margin-top: 0px;
+      }
+
+      .width-100 {
+        width: 97%;
+        margin-top: 16px;
+      }
+
+      .height-91 {
+        height: 91px;
+        padding-top: 12px;
+      }
+      .opportunity-details{
+        box-sizing: border-box;
+        display: flex;
+        flex-flow: wrap;
+        margin-top: -24px;
+        width: calc(100% + 24px);
+        margin-left: -24px;
+      }
+      .opp-info-cards{
+        flex-basis: 23.45%;
+        -webkit-box-flex: 0;
+        display: flex;
+        padding-left: 15px;
+        padding-top: 15px;
+      }
+      .opp-info{
+        padding: 15px;
+        gap: 15px;
+        border-radius: 16px;
+        overflow: hidden;
+        position: relative;
+        color: rgb(26, 64, 125);
+        background-color: rgb(248, 248, 248);
+        border-left: 5px solid rgb(26, 64, 125);
+        font-family: Poppins, "Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        display: flex;
+        flex-direction: column;
+      }
+      .opp-info-cards .card-info {
+        margin: 0px;
+        line-height: 1.5;
+        color: rgb(0, 0, 0);
+        font-size: 16px;
+        font-weight: 600;
+     }
+      .opp-info-cards .card-title {
+        margin: 0px 0px 8px;
+        color: rgb(26, 64, 125);
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 36px;
+      }
+      .dashedBorder {
+        border-top: 1px dashed #dadada;
+        margin-top: 16px;
+        margin-bottom: 16px;
+      }
+      .other-details .label-title{
+        width: 200px;
+      }
+      .other-details .personal-info-row {
+        width: 100%;
+      }
+      .gst-certificate-img {
+        width :50%;
+        border: 1px solid rgba(26, 64, 125, 0.5);
+        border-radius: 8px;
+        padding: 10px;
+        margin-top: 15px;
+        text-align: left;
+        max-height: 700px;
+      }
+      .footer {
+        background-color: #1a407d;
+        width: 100%;
+        color: #ffff;
+        display: block;
+        padding: 0px;
+        padding-top: 20px;
+        font-family: "Poppins", serif;
+        font-weight: 400;
+        position: fixed;
+        height: 150px;
+        bottom: 0px;
+        left: 0px;
+        z-index: 99;
+      }
+      .foot-logo {
+        margin: 0px auto 16px auto;
+        padding: 0px;
+        width: 234px;
+        height: 18px;
+        text-align: center;
+      }
+      .foot-cnt {
+        margin: 0px;
+        padding: 0px;
+        display: block;
+        font-size: 16px;
+        font-weight: 400;
+        color: #fff;
+        text-align: center;
+        height: 60px;
+      }
+      .foot-cnt a {
+        color: #fff;
+        text-decoration: underline;
+      }
+      .kyc-back-img {
+        margin-top: 65px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrapper applicantDetailsCard">
+      <%
+      projectBrandName=booking?.unitDetails?.projectBrandName ?? '' ;
+      %>
+      <% if(isOfficeUse != true) { %>
+        <%
+          PURVA_PRIVILEGE=BookingSource.PURVA_PRIVILEGE;
+          PROVIDENT_PREMIER=BookingSource.PROVIDENT_PREMIER;
+          primarySource=booking?.unitDetails?.primarySource ?? '';
+          projectName=booking?.unitDetails?.projectName ?? '' ;
+
+
+          let offlineCount = 0;
+          if(booking?.payments){
+            booking?.payments?.map((record) => {
+              if (record?.paymentDetails?.isPhysicalPaymentProof) offlineCount++;
+            });
+          }
+        %>
+        <div class="kyc-documents">
+          <%
+            let kycDetails=booking?.applicant1?.personalDetails;
+            let professionalDetails=booking?.applicant1?.professionalDetails;
+            let isFirstApplicant=false;
+            let isSecondApplicant=false;
+            let isThirdApplicant=false;
+            let isFourthApplicant=false;
+            if(kycDetails?.isPhysicalPan || kycDetails?.isPhysicalAadhaar ||
+            kycDetails?.isPhysicalPassport || kycDetails?.isPhysicalOCI || kycDetails?.isPhysicalOtherDoc ||
+            kycDetails?.isPhysicalImage || professionalDetails?.isPhysicalGST) {
+              isFirstApplicant=true;
+          %>
+            <div class="kyc-applicant-1">
+              <%- include('partials/missing-kyc-docs', {
+                kycDetails,
+                professionalDetails,
+                label: "Primary Applicant" ,
+                pageBreak: false
+              }); %>
+            </div>
+            <% } %>
+            <% if(booking?.applicant2) {
+              let kyc2Details=booking?.applicant2?.personalDetails;
+              let professional2Details=booking?.applicant2?.professionalDetails;
+              if(kyc2Details?.isPhysicalPan || kyc2Details?.isPhysicalAadhaar || kyc2Details?.isPhysicalPassport || kyc2Details?.isPhysicalOCI || kyc2Details?.isPhysicalOtherDoc || kyc2Details?.isPhysicalImage  || professional2Details?.isPhysicalGST) {
+                isSecondApplicant=true;
+              %>
+              <div class="kyc-applicant-2">
+                <%- include('partials/missing-kyc-docs', {
+                  kycDetails: kyc2Details,
+                  professionalDetails: professional2Details,
+                  label: "2<sup>nd</sup> Applicant" , pageBreak: isFirstApplicant
+                }); %>
+              </div>
+              <% }
+            } %>
+            <% if(booking?.applicant3) {
+              let kyc3Details=booking?.applicant3?.personalDetails;
+              let professional3Details=booking?.applicant3?.professionalDetails;
+              if(kyc3Details?.isPhysicalPan || kyc3Details?.isPhysicalAadhaar || kyc3Details?.isPhysicalPassport || kyc3Details?.isPhysicalOCI || kyc3Details?.isPhysicalOtherDoc || kyc3Details?.isPhysicalImage || professional3Details?.isPhysicalGST) {
+                isThirdApplicant=true;
+              %>
+              <div class="kyc-applicant-3">
+                <%- include('partials/missing-kyc-docs', { kycDetails: kyc3Details, professionalDetails: professional3Details,
+                  label: "3<sup>rd</sup> Applicant" , pageBreak: isSecondApplicant }); %>
+              </div>
+              <% }
+            } %>
+            <% if(booking?.applicant4) {
+              let kyc4Details=booking?.applicant4?.personalDetails;
+              let professional4Details=booking?.applicant4?.professionalDetails;
+              if(kyc4Details?.isPhysicalPan || kyc4Details?.isPhysicalAadhaar || kyc4Details?.isPhysicalPassport || kyc4Details?.isPhysicalOCI || kyc4Details?.isPhysicalOtherDoc || kyc4Details?.isPhysicalImage || professional4Details?.isPhysicalGST) {
+                isFourthApplicant=true;
+              %>
+               <div class="kyc-applicant-4">
+                 <%- include('partials/missing-kyc-docs', { kycDetails: kyc4Details, professionalDetails: professional4Details,
+                   label: "4<sup>th</sup> Applicant" , pageBreak: isThirdApplicant }); %>
+               </div>
+              <% }
+            } %>
+        </div>
+        <% if(booking?.payments && offlineCount > 0) { %>
+          <%- include('partials/payment-proofs', {
+            transactions: booking?.payments,
+            pageBreak: (isFirstApplicant || isSecondApplicant),
+            rmPdf: true
+          }); %>
+        <% } %>
+        <% if (booking?.professionalDetails?.isPhysicalGST) { %>
+          <div class="professional-details page-break">
+              <div class="applicant-details-card">
+                  <div class="professional-information">
+                      <div class="information-details">
+                      </div>
+                      <h3 class="title-personal-hd marginBottom">GST Details</h3>
+                      <div class="personal-info">
+                          <% if(booking?.professionalDetails?.gstBusinessName) { %>
+                              <div class="personal-info-row full-row">
+                                  <label class="label-title">Business Name:</label>
+                                  <span class="span-title">
+                                      <%= booking.professionalDetails.gstBusinessName %>
+                                  </span>
+                              </div>
+                          <% } %>
+                          <% if(booking?.professionalDetails?.gstLegalName) { %>
+                              <div class="personal-info-row full-row">
+                                  <label class="label-title">Legal Name:</label>
+                                  <span class="span-title">
+                                      <%= booking.professionalDetails.gstLegalName %>
+                                  </span>
+                              </div>
+                          <% } %>
+                          <% if(booking?.professionalDetails?.gstNumber) { %>
+                              <div class="personal-info-row full-row">
+                                  <label class="label-title">GST Number:</label>
+                                  <span class="span-title">
+                                      <%= booking.professionalDetails.gstNumber %>
+                                  </span>
+                              </div>
+                          <% } %>
+                          <% if(booking?.professionalDetails?.gstCertificate && booking?.professionalDetails?.gstCertificate.length && !booking?.professionalDetails?.gstCertificate?.[0].toLowerCase().endsWith('.pdf')) { %>
+                              <label class="label-title">GST Certificate:</label>
+                              <img src="<%= IMAGE_BASE_URL %><%= booking.professionalDetails.gstCertificate[0] %>"
+                                   alt="GST Certificate" class="gst-certificate-img" />
+                          <% } %>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        <% } %>
+        <% if(additionalDocs && additionalDocs.length > 0) { %>
+          <%- include('partials/additional-docs', {
+            additionalDocs,
+            pageBreak: (isFirstApplicant || isSecondApplicant),
+            rmPdf: true
+          }); %>
+        <% } %>
+      <% } %>
+      <% if(isOfficeUse == true) { %>
+        <div class="header-logo-wrap">
+          <div class="header-logo-box">
+              <div class="header-left-logo">
+                <img src="<%= IMAGE_BASE_URL%><%= booking?.project?.jvPartnerLogo %>" alt="" />
+              </div>
+            <div class="header-title">
+                Office Use
+            </div>
+            <div class="header-logo">
+              <img src="<%= IMAGE_BASE_URL%><%= booking?.project?.brand?.logo %>" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="applicant-details-card">
+          <div class="opportunity-details">
+            <div class="opp-info-cards">
+              <div class="opp-info">
+                <p class="card-title">Opportunity ID</p>
+                <p class="card-info"><%= booking?.opportunityId ?? '' %></p>
+              </div>
+            </div>
+            <div class="opp-info-cards">
+              <div class="opp-info">
+                <p class="card-title">Opportunity Name</p>
+                <p class="card-info"><%= booking?.applicant1?.personalDetails?.firstName %> <%= booking?.applicant1?.personalDetails?.lastName %></p>
+              </div>
+            </div>
+            <div class="opp-info-cards">
+              <div class="opp-info">
+                <p class="card-title">Project</p>
+                <p class="card-info"><%= booking?.unitDetails?.projectName ?? '' %></p>
+              </div>
+            </div>
+            <div class="opp-info-cards">
+              <div class="opp-info">
+                <p class="card-title">Unit</p>
+                <p class="card-info"><%= booking?.unitDetails?.projectName %><%= booking?.unitDetails?.blockTower ? "/"+booking?.unitDetails?.blockTower : '' %><%= booking?.unitDetails?.unitNumber ? "/"+booking?.unitDetails?.unitNumber : '' %></p>
+              </div>
+            </div>
+          </div>
+          <div class="dashedBorder"></div>
+          <div class="booking-source">
+            <div class="information-details">
+              <div class="personal-info">
+                <div class="personal-info-row">
+                  <label class="label-title">Enquiry Reference Number:</label>
+                  <span class="span-title">
+                    <%= officeUse?.enqRefNo ?? '' %>
+                  </span>
+                </div>
+                <div class="personal-info-row">
+                  <label class="label-title">Booking Scheme:</label>
+                  <span class="span-title">
+                    <%= officeUse?.bookingSchemeName ? officeUse?.bookingSchemeName : 'N/A' %>
+                  </span>
+                </div>
+                <div class="personal-info-row">
+                  <label class="label-title">Is the unit sold under any scheme?:</label>
+                  <span class="span-title">
+                    <%= officeUse?.isSoldUnderScheme ? officeUse?.isSoldUnderScheme : 'N/A' %>
+                  </span>
+                </div>
+                <div class="personal-info-row">
+                  <label class="label-title">Is the Unit sold below MTP?</label>
+                  <span class="span-title">
+                    <%= officeUse?.isUnitSoldMTP ? officeUse?.isUnitSoldMTP : 'N/A' %>
+                  </span>
+                </div>
+                <div class="personal-info-row">
+                  <label class="label-title">Is the unit sold with customised payment plan?</label>
+                  <span class="span-title">
+                    <%= officeUse?.isPaymentPlan ? officeUse?.isPaymentPlan : 'N/A' %>
+                  </span>
+                </div>
+                <div class="personal-info-row">
+                  <label class="label-title">Is PDC of 9.5% or 15% of the sale value collected?</label>
+                  <span class="span-title">
+                    <%= officeUse?.isPDCCollected ? officeUse?.isPDCCollected : 'N/A' %>
+                  </span>
+                </div>
+              </div>
+              <div class="dashedBorder"></div>
+              <h4 class="title-booking-source">Booking Source</h4>
+              <div class="personal-info">
+                <div class="personal-info-row">
+                  <label class="label-title">Primary Source:</label>
+                  <span class="span-title">
+                    <%= officeUse?.primarySource ?? 'N/A' %>
+                  </span>
+                </div>
+                <% if(officeUse?.primarySource == BookingSource.CHANNEL_PARTNER) { %>
+                  <div class="personal-info-row">
+                    <label class="label-title">Channel Partner Name:</label>
+                    <span class="span-title">
+                      <%= officeUse?.cpName ?? '' %>
+                    </span>
+                  </div>
+                  <div class="personal-info-row">
+                    <label class="label-title">Channel Partner RERA Number:</label>
+                    <span class="span-title">
+                      <%= officeUse?.cpReraNumber ?? '' %>
+                    </span>
+                  </div>
+                <% } %>
+                <% if([BookingSource.PURVA_PRIVILEGE,BookingSource.PROVIDENT_PREMIER,BookingSource.DIGITAL_MARKETING,BookingSource.DIRECT,BookingSource.EVENT,BookingSource.HOARDING,BookingSource.PRINT_MEDIA,BookingSource.RADIO].includes(officeUse?.primarySource)){ %>
+                  <div class="personal-info-row">
+                    <label class="label-title">Secondary Source:</label>
+                    <span class="span-title">
+                      <%= officeUse?.officeInfo?.secondarySource ?? 'N/A' %>
+                    </span>
+                  </div>
+                  <div class="personal-info-row">
+                    <label class="label-title">Tertiary Source:</label>
+                    <span class="span-title">
+                      <%= officeUse?.officeInfo?.tertiarySource ?? 'N/A' %>
+                    </span>
+                  </div>
+                <% } %>
+
+                <% if(officeUse?.officeInfo?.isCorporateSale == true) { %>
+                  <div class="personal-info-row full-row">
+                    <label class="label-title">Corporate Sale:</label>
+                    <span class="span-title">
+                      Yes
+                    </span>
+                  </div>
+
+                  <div class="personal-info-row">
+                    <label class="label-title">Company Name:</label>
+                    <span class="span-title">
+                      <%= officeUse?.officeInfo?.companyName ?? '' %>
+                    </span>
+                  </div>
+                  <div class="personal-info-row">
+                    <label class="label-title">Designation:</label>
+                    <span class="span-title">
+                      <%= officeUse?.officeInfo?.designation ?? '' %>
+                    </span>
+                  </div>
+                <% } %>
+                <% if(officeUse?.primarySource == BookingSource.PURVA_CHAMPION) { %>
+                  <div class="personal-info-row">
+                    <label class="label-title">Employee Name:</label>
+                    <span class="span-title">
+                      <%= officeUse?.officeInfo?.employeeName ?? '' %>
+                    </span>
+                  </div>
+                  <div class="personal-info-row">
+                    <label class="label-title">Employee ID:</label>
+                    <span class="span-title">
+                      <%= officeUse?.officeInfo?.employeeId ?? '' %>
+                    </span>
+                  </div>
+                <% } %>
+
+              </div>
+              <% if(booking?.referrerDetails && [BookingSource.PURVA_PRIVILEGE,BookingSource.PROVIDENT_PREMIER].includes(officeUse?.officeInfo?.primarySource)) { %>
+              <div class="dashedBorder"></div>
+              <h4 class="title-booking-source">Referrer</h4>
+              <div class="personal-info">
+                <div class="personal-info-row">
+                  <label class="label-title">Name:</label>
+                  <span class="span-title"><%= booking?.referrerDetails?.name ?? '' %></span>
+                </div>
+                <div class="personal-info-row">
+                  <label class="label-title">Project Name​:</label>
+                  <span class="span-title"><%= booking?.referrerDetails?.propertyName ?? '' %></span>
+                </div>
+                <div class="personal-info-row">
+                  <label class="label-title">Unit Number:</label>
+                  <span class="span-title"><%= booking?.referrerDetails?.unitNumber ?? '' %></span>
+                </div>
+                <div class="personal-info-row full-row">
+                  <label class="label-title">Points Adjustment through portal:</label>
+                  <span class="span-title">
+                    <%= booking?.referrerDetails?.pointsAdjustment == true ? 'Yes': 'No' %>
+                  </span>
+                </div>
+              </div>
+              <% } %>
+            </div>
+          </div>
+        </div>
+        <div class="applicant-details-card page-break">
+          <h4 class="title-booking-source">Sales Source</h4>
+          <div class="sales-wrap">
+            <%
+            let rmLabels = ['Sourcing RM','Closing RM', 'RM 3']
+            let tlLabels = ['Sourcing TL','Closing TL', 'TL 3']
+            let rshLabels = ['Sourcing RSH', 'Closing RSH', 'RSH 3']
+            %>
+            <% officeUse?.officeInfo?.salesTeam?.forEach((team,index)=> { %>
+              <% if(team?.rmName?.userName) {
+                const rmSignature = team?.rmName?.signatureImage;
+                %>
+                <div class="sales-row">
+                  <div class="sales-box">
+                    <span class="label-title sales-name"><%= rmLabels[index] %> Name:</span>
+                    <span class="span-title"><%= team?.rmName?.userName ?? '' %></span>
+                  </div>
+                  <div class="sales-box">
+                    <span class="label-title"><%= rmLabels[index] %> Employee ID:</span>
+                    <span class="span-title"><%= team?.rmEmployeeId ?? '' %></span>
+                  </div>
+                  <% if(rmSignature && rmLabels[index] == 'Closing RM') { %>
+                      <div class="sales-box sales-box-end signature-img" style="display: grid;">
+                        <img src="<%= IMAGE_BASE_URL %><%= rmSignature %>" alt="Signature" class="signature-img" height="40px" width="80px"/>
+                        <p class="lastSignature"><%= rmLabels[index] %> Signature</p>
+                      </div>
+                    <% }else{  %>
+                        <div class="sales-box sales-box-end">
+                          <p class="lastSignature"><%= rmLabels[index] %> Signature</p>
+                        </div>
+                    <% }  %>
+
+                </div>
+              <% } %>
+              <% if(team?.tlName?.userName) { %>
+                <div class="sales-row">
+                  <div class="sales-box">
+                    <span class="label-title sales-name"><%= tlLabels[index] %> Name:</span>
+                    <span class="span-title"><%= team?.tlName?.userName ?? '' %></span>
+                  </div>
+                  <div class="sales-box">
+                    <span class="label-title"><%= tlLabels[index] %> Employee ID:</span>
+                    <span class="span-title"><%= team?.tlEmployeeId ?? '' %></span>
+                  </div>
+                  <div class="sales-box sales-box-end">
+                    <p class="lastSignature"><%= tlLabels[index] %> Signature</p>
+                  </div>
+                </div>
+              <% } %>
+              <% if(team?.rshName?.userName) { %>
+                <div class="sales-row">
+                  <div class="sales-box">
+                    <span class="label-title sales-name"><%= rshLabels[index] %>  Name:</span>
+                    <span class="span-title"><%= team?.rshName?.userName ?? '' %></span>
+                  </div>
+                  <div class="sales-box">
+                    <span class="label-title"><%= rshLabels[index] %> Employee ID:</span>
+                    <span class="span-title"><%= team?.rshEmployeeId ?? '' %></span>
+                  </div>
+                  <div class="sales-box sales-box-end">
+                    <p class="lastSignature"><%= rshLabels[index] %> Signature</p>
+                  </div>
+                </div>
+                <div class="dashedBorder"></div>
+              <% } %>
+            <%})%>
+            <% if(officeUse?.officeInfo?.preSales1Name?.userName) { %>
+              <div class="sales-row">
+                <div class="sales-box">
+                  <span class="label-title sales-name">Pre Sales1 Name:</span>
+                  <span class="span-title"><%= officeUse?.officeInfo?.preSales1Name?.userName ?? '' %></span>
+                </div>
+                <div class="sales-box">
+                  <span class="label-title">Pre Sales1 Employee ID:</span>
+                  <span class="span-title"><%= officeUse?.officeInfo?.preSales1EmpId ?? '' %></span>
+                </div>
+                <div class="sales-box sales-box-end">
+                  <p class="lastSignature">Pre Sales1 Signature</p>
+                </div>
+              </div>
+            <% } %>
+            <% if(officeUse?.preSales2Name?.userName) { %>
+              <div class="sales-row">
+                <div class="sales-box">
+                  <span class="label-title sales-name">Pre Sales2 Name:</span>
+                  <span class="span-title"><%= officeUse?.preSales2Name?.userName ?? '' %></span>
+                </div>
+                <div class="sales-box">
+                  <span class="label-title">Pre Sales2 Employee ID:</span>
+                  <span class="span-title"><%= officeUse?.preSales2EmpId ?? '' %></span>
+                </div>
+                <div class="sales-box sales-box-end">
+                  <p class="lastSignature">Pre Sales2 Signature</p>
+                </div>
+              </div>
+            <% } %>
+            <% if(officeUse?.loyaltyTeamName?.userName) { %>
+              <div class="sales-row">
+                <div class="sales-box">
+                  <span class="label-title sales-name">Loyalty Team Name:</span>
+                  <span class="span-title"><%= officeUse?.loyaltyTeamName?.userName ?? '' %></span>
+                </div>
+                <div class="sales-box">
+                  <span class="label-title">Loyalty Team Employee ID:</span>
+                  <span class="span-title"><%= officeUse?.loyaltyTeamEmployeeId ?? '' %></span>
+                </div>
+                <div class="sales-box sales-box-end">
+                  <p class="lastSignature">Loyalty Team Signature</p>
+                </div>
+              </div>
+              <div class="dashedBorder"></div>
+            <% } %>
+            <% if(officeUse?.preSalesHeadName?.userName) { %>
+              <div class="sales-row">
+                <div class="sales-box">
+                  <span class="label-title sales-name">Pre Sales Head Name:</span>
+                  <span class="span-title"><%= officeUse?.preSalesHeadName?.userName ?? '' %></span>
+                </div>
+                <div class="sales-box">
+                </div>
+                <div class="sales-box sales-box-end">
+                  <p class="lastSignature">Pre Sales Head Signature</p>
+                </div>
+              </div>
+            <% } %>
+            <% if(officeUse?.projectHeadName?.userName) { %>
+              <div class="sales-row">
+                <div class="sales-box">
+                  <span class="label-title sales-name">Project Head Name:</span>
+                  <span class="span-title"><%= officeUse?.projectHeadName?.userName ?? '' %></span>
+                </div>
+                <div class="sales-box">
+                  <span class="label-title">Project Head Employee ID:</span>
+                  <span class="span-title"><%= officeUse?.projectHeadEmployeeId ?? '' %></span>
+                </div>
+                <div class="sales-box sales-box-end">
+                  <p class="lastSignature">Project Head Signature</p>
+                </div>
+              </div>
+            <% } %>
+            <% if(officeUse?.businessHeadName?.userName) { %>
+              <div class="sales-row">
+                <div class="sales-box">
+                  <span class="label-title sales-name">Business Head Name:</span>
+                  <span class="span-title"><%= officeUse?.businessHeadName?.userName ?? '' %></span>
+                </div>
+                <div class="sales-box">
+                </div>
+                <div class="sales-box sales-box-end">
+                  <p class="lastSignature">Business Head Signature</p>
+                </div>
+              </div>
+            <% } %>
+            <% if(officeUse?.businessHead2Name?.userName) { %>
+              <div class="sales-row">
+                <div class="sales-box">
+                  <span class="label-title sales-name">Business Head 2 Name:</span>
+                  <span class="span-title"><%= officeUse?.businessHead2Name?.userName ?? '' %></span>
+                </div>
+                <div class="sales-box">
+                </div>
+                <div class="sales-box sales-box-end">
+                  <p class="lastSignature">Business Head 2 Signature</p>
+                </div>
+              </div>
+            <% } %>
+          </div>
+          <div class="sales-row">
+            <div class="sales-box width-100 rm-comment">
+              <p>RM Remarks</p>
+              <div class="box-input height-91"><%= officeUse?.remarks ?? '' %></div>
+            </div>
+          </div>
+        </div>
+        <% if(additionalDocs && additionalDocs.length > 0) { %>
+          <%- include('partials/additional-docs', {
+            additionalDocs,
+            pageBreak: true,
+            rmPdf: true
+          }); %>
+        <% } %>
+        <% if (officeUse?.documents && Object.keys(officeUse.documents).length > 0) { %>
+          <%- include('partials/officeuse-docs', {
+            documents: officeUse.documents,
+            IMAGE_BASE_URL,
+            pageBreak: true,
+            rmPdf: true,
+          }) %>
+        <% } %>
+        <!-- Footer -->
+        <div class="footer">
+          <% if(['Provident', 'Provident Land'].includes(projectBrandName)){ %>
+            <div class="foot-logo">PROVIDENT HOUSING LIMITED</div>
+            <p class="foot-cnt">130/1 & 130/2, Ulsoor Road, Bengaluru - 560 042, Karnataka <br />Tel: +91 80 4455 5538 • Email: premier@providenthousing.com • Website:<a href="https://www.providenthousing.com" target="_blank"> www.providenthousing.com</a></p>
+          <% } else { %>
+            <div class="foot-logo">PURAVANKARA LIMITED</div>
+            <p class="foot-cnt">130/1 & 130/2, Ulsoor Road, Bengaluru - 560 042, Karnataka <br />Tel: +91 80 4455 5576 • Email: privilege@puravankara.com • Website:<a href="https://www.puravankara.com" target="_blank"> www.puravankara.com</a></p>
+          <% } %>
+        </div>
+      <% } %>
+    </div>
+  </body>
+</html>

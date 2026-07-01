@@ -1,0 +1,63 @@
+<div class="applicant-details-card <%= pageBreak ? 'page-break' : '' %>">
+  <% 
+    const rawAs = (bookingAs || '').toLowerCase().trim();
+    const typeMap = {
+      'Corporate': 'Company',
+      'Partnership Firm': 'Firm',
+      'partnership': 'Firm',
+    };
+    let labelPrefix = 'Company';
+    for (const [k, v] of Object.entries(typeMap)) {
+      if (rawAs.includes(k)) { labelPrefix = v; break; }
+    }
+  %>
+
+  <!-- 1 -->
+  <div class="edit-title-row">
+    <div class="btn-applicant-top"><%- labelPrefix %> Details</div>
+  </div>
+
+  <!-- 2 -->
+  <div class="personal-information main-applicant">
+    <div class="information-details">
+      <h2 class="name">
+        <%= companyDetails?.companyName ?? '' %>
+      </h2>
+    </div>
+  </div>
+
+  <div class="personal-info">
+    <% if (companyDetails?.gstNumber) { %>
+      <div class="personal-info-row">
+        <label class="label-title"><%= `${labelPrefix} GST Number:` %></label>
+        <span class="span-title"><%= companyDetails?.gstNumber ?? '' %></span>
+      </div>
+    <% } %>
+
+    <% if (companyDetails?.companyPan) { %>
+      <div class="personal-info-row">
+        <label class="label-title"><%= `${labelPrefix} PAN Number:` %></label>
+        <span class="span-title"><%= companyDetails?.companyPan ?? '' %></span>
+      </div>
+    <% } %>
+  </div>
+
+  <div class="line-dotted"></div>
+
+  <!-- <div class="personal-information main-applicant">
+    <div class="address-title">
+      <label class="name">
+        <%= `${labelPrefix} Address:` %>
+      </label>
+    </div>
+  </div> -->
+
+  <div class="personal-info-row">
+    <div class="personal-info-row d-flex">
+      <label class="label-title"><%= `${labelPrefix} Address:` %></label>
+      <span class="span-title">
+        <%= companyDetails?.companyAddress ?? "N/A" %>
+      </span>
+    </div>
+  </div>
+</div>

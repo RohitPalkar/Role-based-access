@@ -1,0 +1,439 @@
+<div class="applicant-details-card <%= pageBreak ? 'page-break' : '';%>">
+	<!-- 1 -->
+	<div class="edit-title-row">
+		<div class="btn-applicant-top"><%-label%></div>
+	</div>
+	<!-- 2 -->
+	<div class="personal-information main-applicant">
+		<div class="photo">
+			<% if(applicant?.personalDetails?.image?.length && applicant.personalDetails?.image[0].length > 0) { %>
+				<img src="<%=IMAGE_BASE_URL%><%=applicant?.personalDetails?.image[0]%>" alt="" />
+			<% } else { %>
+				<img src="<%=IMAGE_BASE_URL%>images/default-profile.jpeg" alt="" />
+			<% } %>
+		</div>
+		<div class="information-details">
+			<h2 class="name">
+				<%=applicant?.personalDetails?.salutation ?? ''%>
+				<%=applicant?.personalDetails?.firstName ?? ''%> <%=applicant?.personalDetails?.lastName ?? ''%>
+				<% if(applicant?.personalDetails?.relation) {%>
+					<span class="sub-heading">
+						<%=applicant?.personalDetails?.relation ?? ''%>: <%=applicant?.personalDetails?.relativeName ?? ''%>
+					</span>
+				<% } %>
+			</h2>
+			<h3 class="title-personal-hd">Personal Details</h3>
+			<div class="personal-info">
+				<% if(!hideEmailMobile) { %>
+					<div class="personal-info-row">
+						<label class="label-title"><%= (isPrimaryApplicant) ? 'Primary Registration Phone number' : 'Contact Number';%>:</label>
+						<span class="span-title">
+							<%=applicant?.personalDetails?.countryCode ?? ''%>
+							<%=applicant?.personalDetails?.contactNumber ?? ''%>
+						</span>
+					</div>
+				<% } %>
+				<% if(applicant?.personalDetails?.alternateContactNumber){ %>
+					<% if(!hideEmailMobile) { %>
+						<div class="personal-info-row">
+							<label class="label-title">Alt. Contact No.:</label>
+							<span class="span-title">
+								<%=applicant?.personalDetails?.alternateCountryCode ?? ''%>
+								<%=applicant?.personalDetails?.alternateContactNumber ?? ''%>
+							</span>
+						</div>
+					<% } %>
+					<div class="personal-info-row">
+						<label class="label-title">Date of Birth:</label>
+						<span class="span-title">
+							<%=formatDate(applicant?.personalDetails?.dob ?? '',DISPLAY_DATE_FORMAT)%>
+						</span>
+					</div>
+					<% if(!hideEmailMobile) { %>
+						<div class="personal-info-row">
+							<label class="label-title">Email ID:</label>
+							<span class="span-title">
+								<%=applicant?.personalDetails?.emailAddress?.length ? applicant?.personalDetails?.emailAddress : 'N/A'%>
+							</span>
+						</div>
+					<% } %>
+				<% } else { %>
+					<% if(!hideEmailMobile) { %>
+						<div class="personal-info-row">
+							<label class="label-title">Email ID:</label>
+							<span class="span-title">
+								<%=applicant?.personalDetails?.emailAddress?.length ? applicant?.personalDetails?.emailAddress : 'N/A'%>
+							</span>
+						</div>
+					<% } %>
+					<div class="personal-info-row">
+						<label class="label-title">Date of Birth:</label>
+						<span class="span-title">
+							<%=formatDate(applicant?.personalDetails?.dob ?? '',DISPLAY_DATE_FORMAT)%>
+						</span>
+					</div>
+				<% } %>
+				<% if(applicant?.personalDetails?.residentStatus){ %>
+					<div class="personal-info-row">
+						<label class="label-title">Resident Status:</label>
+						<span class="span-title">
+							<%=applicant?.personalDetails?.residentStatus?.length ? applicant?.personalDetails?.residentStatus : 'N/A'%>
+						</span>
+					</div>
+				<% } %>
+				<div class="personal-info-row">
+					<label class="label-title">Marital Status:</label>
+					<span class="span-title">
+						<%= applicant?.personalDetails?.maritalStatus?.length ? applicant?.personalDetails?.maritalStatus : 'N/A'%>
+					</span>
+				</div>
+				<div class="personal-info-row">
+					<label class="label-title">Gender:</label>
+					<span class="span-title">
+						<%=applicant?.personalDetails?.gender?.length ? applicant?.personalDetails?.gender : 'N/A'%>
+					</span>
+				</div>
+				<% if(applicant?.personalDetails?.anniversaryDate) { %>
+					<div class="personal-info-row">
+						<label class="label-title">Anniversary Date:</label>
+						<span class="span-title">
+							<%=formatDate(applicant?.personalDetails?.anniversaryDate ?? '',DISPLAY_DATE_FORMAT)%>
+						</span>
+					</div>
+				<% } %>
+				<% if(applicant?.personalDetails?.nriCountry) { %>
+					<div class="personal-info-row">
+						<label class="label-title">Country of Residence:</label>
+						<span class="span-title">
+							<%= applicant?.personalDetails?.nriCountry?.length ? applicant?.personalDetails?.nriCountry : 'N/A'%>
+						</span>
+					</div>
+				<% } %>
+				<% if(applicant?.personalDetails?.motherTongue) { %>
+					<div class="personal-info-row">
+						<label class="label-title">Mother Tongue:</label>
+						<span class="span-title">
+							<%=applicant?.personalDetails?.motherTongue?.length ? applicant?.personalDetails?.motherTongue : 'N/A'%>
+						</span>
+					</div>
+				<% } %>
+				<% if(applicant?.personalDetails?.primaryDocument) { %>
+					<div class="personal-info-row">
+						<label class="label-title">Primary Document:</label>
+						<span class="span-title">
+							<%=applicant?.personalDetails?.primaryDocument?.length ? applicant?.personalDetails?.primaryDocument : 'N/A'%>
+						</span>
+					</div>
+				<% } %>
+			</div>
+		</div>
+	</div>
+	<div class="line-dotted"></div>
+	<div class="personal-info">
+		<% if(applicant?.contactDetails?.passportNumber) { %>
+			<div class="personal-info-row">
+				<label class="label-title">Passport Number:</label>
+				<span class="span-title">
+					<%=applicant?.contactDetails?.passportNumber ?? ''%>
+				</span>
+			</div>
+		<% } %>
+		<% if(applicant?.contactDetails?.panNumber) { %>
+			<div class="personal-info-row">
+				<label class="label-title">PAN Number:</label>
+				<span class="span-title">
+					<%=applicant?.contactDetails?.panNumber ?? ''%>
+				</span>
+			</div>
+		<% } %>
+		<% if(applicant?.contactDetails?.aadhaarNumber) { %>
+			<div class="personal-info-row">
+				<label class="label-title">Aadhaar Number:</label>
+				<span class="span-title">
+					<%=applicant?.contactDetails?.aadhaarNumber ?? ''%>
+				</span>
+			</div>
+		<% } %>
+		<% if(applicant?.contactDetails?.ociNumber) { %>
+		<div class="personal-info-row">
+			<label class="label-title">OCI Number:</label>
+			<span class="span-title">
+				<%=applicant?.contactDetails?.ociNumber?.length ? applicant?.contactDetails?.ociNumber : 'N/A'%>
+			</span>
+		</div>
+		<% } %>
+		<% if(applicant?.contactDetails?.OCIAlternateDocType) { %>
+		<div class="personal-info-row">
+			<label class="label-title">OCI Document Type:</label>
+			<span class="span-title">
+				<%=applicant?.contactDetails?.OCIAlternateDocType?.length ? applicant?.contactDetails?.OCIAlternateDocType : 'N/A'%>
+			</span>
+		</div>
+		<% } %>
+	</div>
+	<div class="notes">
+		Note: All uploaded documents are included in the KYC document section
+	</div>
+	<div class="line-dotted"></div>
+	<h3 class="title-personal-hd">Communication Details</h3>
+	<div class="personal-info Communication">
+		<div class="personal-info-row d-flex">
+			<label class="label-title">Permanent Address:</label>
+			<span class="span-title">
+				<%const permAddr = applicant?.contactDetails?.permanentAddress;	%>
+				<%= permAddr?.fullAddress ? permAddr.fullAddress : "N/A" %>
+			</span>
+		</div>
+		<div class="personal-info-row d-flex">
+			<label class="label-title">Communication Address:</label>
+			<span class="span-title">
+				<% const commAddr = applicant?.contactDetails?.communicationAddress; %>
+				<%= commAddr?.fullAddress ? commAddr.fullAddress : "N/A" %>
+			</span>
+		</div>
+	</div>
+	<% if(applicant?.professionalDetails) { %>
+		<div class="line-dotted"></div>
+		<h3 class="title-personal-hd">Professional Details</h3>
+		<div class="personal-info professional-details">
+			<% const pDetails = applicant?.professionalDetails || {}; %>
+			<% const occ = pDetails?.occupation; %>
+
+			<% if (occ) { %>
+				<div class="personal-info-row">
+				<label class="label-title">Occupation:</label>
+				<span class="span-title"><%= occ %></span>
+				</div>
+			<% } %>
+
+			<% if (occ === occupationEnum.PRIVATE_SALARIED) { %>
+				<% if (pDetails?.industryIfOthers || pDetails?.industry) { %>
+				<div class="personal-info-row">
+					<label class="label-title">Industry:</label>
+					<span class="span-title">
+					<% const industryTxt = pDetails?.industryIfOthers ? pDetails?.industryIfOthers : (pDetails?.industry || ''); %>
+					<%= industryTxt %>
+					</span>
+				</div>
+				<% } %>
+
+				<% if (pDetails?.companyName) { %>
+				<div class="personal-info-row">
+					<label class="label-title">Organisation Name:</label>
+					<span class="span-title"><%= pDetails?.companyName %></span>
+				</div>
+				<% } %>
+
+				<% if (pDetails?.designationIfOthers || pDetails?.designation) { %>
+				<div class="personal-info-row">
+					<label class="label-title">Designation:</label>
+					<span class="span-title">
+					<% const designationTxt = pDetails?.designationIfOthers ? pDetails?.designationIfOthers : (pDetails?.designation || ''); %>
+					<%= designationTxt %>
+					</span>
+				</div>
+				<% } %>
+
+				<% if (pDetails?.annualIncome) { %>
+				<div class="personal-info-row">
+					<label class="label-title">Annual Income:</label>
+					<span class="span-title"><%= pDetails?.annualIncome %></span>
+				</div>
+				<% } %>
+
+				<% if (pDetails?.companyAddress || pDetails?.companyPinCode) { %>
+				<div class="personal-info-row full-row">
+					<label class="label-title">Organisation Address:</label>
+					<span class="span-title">
+					<%
+					const address = pDetails?.companyAddress || '';
+					const pin = pDetails?.companyPinCode || '';
+					const hasPinInAddress = address.includes(pin);
+					%>
+
+					<%= address %><%= (pin && !hasPinInAddress && address) ? ', ' + pin : (!hasPinInAddress ? pin : '') %>
+					</span>
+				</div>
+				<% } %>
+
+			<% } else if (occ === occupationEnum.GOVT_SALARIED) { %>
+				<% if (pDetails?.departmentDivision) { %>
+				<div class="personal-info-row">
+					<label class="label-title">Department/Division:</label>
+					<span class="span-title"><%= pDetails?.departmentDivision %></span>
+				</div>
+				<% } %>
+
+				<% if (pDetails?.annualIncome) { %>
+				<div class="personal-info-row">
+					<label class="label-title">Annual Income:</label>
+					<span class="span-title"><%= pDetails?.annualIncome %></span>
+				</div>
+				<% } %>
+
+				<% if (pDetails?.officeAddress || pDetails?.officePinCode) { %>
+				<div class="personal-info-row full-row">
+					<label class="label-title">Organisation Address:</label>
+					<span class="span-title">
+					<%
+					const address = pDetails?.officeAddress || '';
+					const pin = pDetails?.officePinCode || '';
+					const hasPinInAddress = address.includes(pin);
+					%>
+
+					<%= address %><%= (pin && !hasPinInAddress && address) ? ', ' + pin : (!hasPinInAddress ? pin : '') %>
+					</span>
+				</div>
+				<% } %>
+
+			<% } else if (occ === occupationEnum.ARMED_FORCES) { %>
+				<% if (pDetails?.rank) { %>
+				<div class="personal-info-row">
+					<label class="label-title">Rank:</label>
+					<span class="span-title"><%= pDetails?.rank %></span>
+				</div>
+				<% } %>
+
+				<% if (pDetails?.branch) { %>
+				<div class="personal-info-row">
+					<label class="label-title">Branch:</label>
+					<span class="span-title"><%= pDetails?.branch %></span>
+				</div>
+				<% } %>
+
+				<% if (pDetails?.annualIncome) { %>
+				<div class="personal-info-row">
+					<label class="label-title">Annual Income:</label>
+					<span class="span-title"><%= pDetails?.annualIncome %></span>
+				</div>
+				<% } %>
+
+				<% if (pDetails?.officeAddress || pDetails?.officePinCode) { %>
+				<div class="personal-info-row full-row">
+					<label class="label-title">Office Address:</label>
+					<span class="span-title">
+					<%
+						const address = pDetails?.officeAddress || '';
+						const pin = pDetails?.officePinCode || '';
+						const hasPinInAddress = address.includes(pin);
+					%>
+					<%= address %><%= (pin && !hasPinInAddress && address) ? ', ' + pin : (!hasPinInAddress ? pin : '') %>
+					</span>
+				</div>
+				<% } %>
+
+			<% } else if (occ === occupationEnum.BUSINESS) { %>
+				<% if (pDetails?.industryIfOthers || pDetails?.industry) { %>
+				<div class="personal-info-row">
+					<label class="label-title">Industry:</label>
+					<span class="span-title">
+					<% const industryTxt = pDetails?.industryIfOthers ? pDetails?.industryIfOthers : (pDetails?.industry || ''); %>
+					<%= printMasterData(pickListData?.Industry, industryTxt) %>
+					</span>
+				</div>
+				<% } %>
+
+				<% if (pDetails?.companyName) { %>
+				<div class="personal-info-row">
+					<label class="label-title">Organisation Name:</label>
+					<span class="span-title"><%= pDetails?.companyName %></span>
+				</div>
+				<% } %>
+
+				<% if (pDetails?.companyAddress || pDetails?.companyPinCode) { %>
+				<div class="personal-info-row full-row">
+					<label class="label-title">Company Address:</label>
+					<span class="span-title">
+					<%
+					const address = pDetails?.companyAddress || '';
+					const pin = pDetails?.companyPinCode || '';
+					const hasPinInAddress = address.includes(pin);
+					%>
+
+					<%= address %><%= (pin && !hasPinInAddress && address) ? ', ' + pin : (!hasPinInAddress ? pin : '') %>
+					</span>
+				</div>
+				<% } %>
+
+				<% if (pDetails?.annualIncome) { %>
+				<div class="personal-info-row">
+					<label class="label-title">Annual Income:</label>
+					<span class="span-title"><%= pDetails?.annualIncome %></span>
+				</div>
+				<% } %>
+
+			<% } else  { %>
+				<% if (pDetails?.annualIncome) { %>
+				<div class="personal-info-row">
+					<label class="label-title">Annual Income:</label>
+					<span class="span-title"><%= pDetails?.annualIncome %></span>
+				</div>
+				<% } %>
+			<% }  %>
+			<% if(applicant?.professionalDetails?.officialEmail) { %>
+				<div class="personal-info-row">
+					<label class="label-title">Official Email:</label>
+					<span class="span-title">
+					<%=applicant?.professionalDetails?.officialEmail ?? 'N/A'%>
+					</span>
+				</div>
+			<% } %>
+			<% if(applicant?.professionalDetails?.workExperience) { %>
+				<div class="personal-info-row">
+					<label class="label-title">Work Experience:</label>
+					<span class="span-title">
+					<%=applicant?.professionalDetails?.workExperience ?? 'N/A'%> Years
+					</span>
+				</div>
+			<% } %>
+			<% if(applicant?.professionalDetails?.organizationType) { %>
+				<div class="personal-info-row">
+				<label class="label-title">Organisation Type:</label>
+				<span class="span-title">
+				<%=printMasterData(pickListData?.Organisation_Type,applicant?.professionalDetails?.organizationType ?? 'N/A')%>
+				</span>
+				</div>
+			<% } %>
+			<% if(applicant?.professionalDetails?.educationalQualification) { %>
+				<div class="personal-info-row">
+				<label class="label-title">Educational Qualification:</label>
+				<span class="span-title">
+				<%=printMasterData(pickListData?.Qualification,applicant?.professionalDetails?.educationalQualification ?? 'N/A')%>
+				</span>
+				</div>
+			<% } %>
+			<% if(applicant?.professionalDetails?.isGstClaimed) { %>
+			<div class="personal-info-row">
+				<label class="label-title">GST Claimed:</label>
+				<span class="span-title">
+				<%=applicant?.professionalDetails?.isGstClaimed ? 'Yes' : 'No'%>
+				</span>
+			</div>
+			<% } %>
+			<% if(applicant?.professionalDetails?.gstNumber) { %>
+				<div class="personal-info-row">
+					<label class="label-title">GST Number:</label>
+					<span class="span-title">
+					<%=applicant?.professionalDetails?.gstNumber ?? 'N/A'%>
+					</span>
+				</div>
+			<% } %>
+			<% if(applicant?.professionalDetails?.gstLegalName) { %>
+				<div class="personal-info-row full-row">
+					<label class="label-title">GST Legal Name:</label>
+					<span class="span-title">
+					<%=applicant?.professionalDetails?.gstLegalName ?? 'N/A'%>
+					</span>
+				</div>
+			<% } %>
+			<% if(applicant?.professionalDetails?.gstBusinessName) { %>
+				<div class="personal-info-row full-row">
+					<label class="label-title">GST Business Name:</label>
+					<span class="span-title">
+					<%=applicant?.professionalDetails?.gstBusinessName ?? 'N/A'%>
+					</span>
+				</div>
+			<% } %>
+ 		</div>
+	<% } %>
+</div>

@@ -1,0 +1,63 @@
+<div class="other-details <%= pageBreak ? 'page-break' : '';%>">
+    <div class="applicant-details-card">
+        <div class="other-information">
+            <div class="information-details">
+                <h3 class="title-personal-hd marginBottom">Other Details</h3>
+                <div class="personal-info">
+                    <div class="personal-info-row full-row">
+                        <label class="label-title">Purpose of Purchase:</label>
+                        <span class="span-title">
+                            <%= printMasterData(pickListData?.Purpose_of_Purchase,otherDetails?.purposeOfPurchase ?? 'N/A')%>
+                        </span>
+                    </div>
+                    <div class="personal-info-row full-row">
+                        <label class="label-title">Source of Funding:</label>
+                        <span class="span-title">
+                            <%=printMasterData(pickListData?.Source_of_Funding,otherDetails?.sourceOfFunding ?? 'N/A')%>
+                        </span>
+                    </div>
+                    <% if(otherDetails?.annualHouseHoldIncome) { %>
+                        <div class="personal-info-row full-row">
+                            <label class="label-title">Annual Household Income:</label>
+                            <span class="span-title">
+                                <%=printMasterData(pickListData?.Annual_Household_Income,otherDetails?.annualHouseHoldIncome ?? 'N/A')%>
+                            </span>
+                        </div>
+                    <% } %>
+                    <% if(otherDetails?.gstApplicant) { %>
+                        <div class="personal-info-row full-row">
+                            <label class="label-title">Applicant:</label>
+                            <span class="span-title">
+                                <%=otherDetails?.gstApplicant ?? 'N/A'%>
+                            </span>
+                        </div>
+                    <% } %>
+                    <% if(otherDetails?.gstBusinessName) { %>
+                        <div class="personal-info-row full-row">
+                            <label class="label-title">Business Name:</label>
+                            <span class="span-title">
+                                <%=otherDetails?.gstBusinessName ?? 'N/A'%>
+                            </span>
+                        </div>
+                    <% } %>
+                    <% if(otherDetails?.gstNumber) { %>
+                        <div class="personal-info-row full-row">
+                            <label class="label-title">GST Number:</label>
+                            <span class="span-title">
+                                <%=otherDetails?.gstNumber ?? 'N/A'%>
+                            </span>
+                        </div>
+                    <% } %>
+                    <% if(otherDetails?.isPhysicalGST === true) { %>
+                        <label class="label-title">GST Certificate:</label>
+                        <span class="span-title"> Physical Copy to be submitted offline. </span>
+                    <% } %>
+                    <% if(otherDetails?.gstCertificate && otherDetails?.gstCertificate?.length && !otherDetails.gstCertificate?.[0].toLowerCase().endsWith('.pdf')) { %>
+                        <label class="label-title">GST Certificate:</label>
+                        <img src="<%=IMAGE_BASE_URL%><%=otherDetails?.gstCertificate[0]%>" alt="" class="gst-certificate-img" />
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

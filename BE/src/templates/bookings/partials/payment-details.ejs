@@ -1,0 +1,149 @@
+<%
+const paymentsToUse = groupDetails ? groupPayments : payments;
+const hasPayments = paymentsToUse?.length > 0;
+
+const voucherList = voucherPayments || [];
+let totalVoucherAmount = 0;
+voucherList.forEach(pay => {
+    totalVoucherAmount += Number(pay?.paidAmount || 0);
+});
+
+const totalBookingAmount = (paymentsToUse || []).reduce((sum, pay) => {
+    return sum + Number(pay?.paidAmount || 0);
+}, 0);
+const totalAmount = totalBookingAmount + totalVoucherAmount;
+
+const hasVoucher = voucherList.length > 0;
+%>
+
+<% if (hasPayments) { %>
+<div class="payment-details <%= pageBreak ? 'page-break' : '' %>"> 
+  
+    <% if (hasPayments) { %>
+        <div class="applicant-details-card">
+        <p class="payment-p">
+            I/We, the Applicant(s), request you to allot the unit mentioned above based on this application and the payment of
+            booking amount
+            <b>
+                ₹ <%= formatIndianAmount(totalAmount) ?? 0 %>/-
+                (<%= convertNumberToWords(totalAmount || 0) %>)
+            </b>
+            <% if (groupDetails) { %>
+                (Part of <b>lumpsum</b> transaction as listed below)
+            <% } else { %>
+                (Paid in <%=
+                    (payments.length === 1) ? 'single transaction'
+                    : 'multiple transactions' %> )
+            <% } %>
+        </p>
+        <h3 class="title-personal-hd">
+            <%= 
+                (hasVoucher ? 'Transaction Details - Booking' : 'Transaction Details') +
+                (groupDetails ? ' (Lumpsum)' : '')
+            %>
+            - Total Amount: ₹ <%= formatIndianAmount(totalBookingAmount) %>
+        </h3>
+        <div class="table-responsive-pdf">
+            <table>
+                <tr>
+                <th>Sr No.</th>
+                <th>Payment Mode</th>
+                <th>Transaction Reference</th>
+                <th>Payment Method</th>
+                <th>Dated</th>
+                <th>Amount</th>
+                </tr>
+                <% if (paymentsToUse && paymentsToUse.length) { %>
+                    <% paymentsToUse.forEach((pay, index) => { 
+                        const id = pay?.paymentDetails?.gatewayPaymentId ||
+                                        pay?.paymentDetails?.transactionNumber ||
+                                        pay?.paymentDetails?.chequeNumber ||
+                                        '';
+                        const paymentModeLabel = pay?.paymentMode 
+                                ? [pay.paymentMode === paymentModeEnum.GATEWAY ? paymentModeEnum.GATEWAY : 'Direct'] 
+                                : [];
+
+                        const rawMethod = pay?.paymentDetails?.method?.trim() || '';
+                        const method = /upi/i.test(rawMethod)
+                                            ? 'UPI'
+                                            : (rawMethod || 'N/A');
+
+                        const dated = pay?.paymentDate;
+                        const amount = pay?.paidAmount ?? 0;
+                    %>
+                        <tr>
+                        <td><%= index + 1 %></td>
+                        <td><%= paymentModeLabel %></td>
+                        <td><%= id %></td>
+                        <td><%= method %></td>
+                        <td><%= dated ? formatDate(dated, DISPLAY_DATE_FORMAT) : '-' %></td>
+                        <td><span>₹ <%= formatIndianAmount(amount) %></span></td>
+                        </tr>
+                    <% }); %>
+                <% } else { %>
+                <tr>
+                    <td colspan="6" style="text-align:center">No payment details available</td>
+                </tr>
+                <% } %>
+            </table>
+        </div>
+    </div>
+    <% } %>
+
+   
+    <% if (voucherList.length) { %>
+        <div class="applicant-details-card">        
+            <h3 class="title-personal-hd">
+                Transaction Details - Purva Voucher - Total Amount: ₹ <%= formatIndianAmount(totalVoucherAmount) %>
+            </h3>
+            <div class="table-responsive-pdf">
+                <table>
+                    <tr>
+                        <th>Sr No.</th>
+                        <th>Payment Mode</th>
+                        <th>Transaction Reference</th>
+                        <th>Payment Method</th>
+                        <th>Dated</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                    </tr>
+                    <% voucherList.forEach((pay, index) => { 
+                        const id = pay?.paymentDetails?.gatewayPaymentId ||
+                                   pay?.paymentDetails?.transactionNumber ||
+                                   pay?.paymentDetails?.chequeNumber ||
+                                   '';
+    
+                        const paymentModeLabel = pay?.paymentMode === paymentModeEnum.GATEWAY
+                            ? 'Payment Gateway'
+                            : 'Direct';
+    
+                        const rawMethod = pay?.paymentDetails?.method?.trim() || '';
+                        const method = /upi/i.test(rawMethod)
+                            ? 'UPI'
+                            : (rawMethod || 'N/A');
+    
+                        const dated = pay?.date;
+                        const amount = pay?.paidAmount ?? 0;
+                        const status =pay?.status;  
+                    %>
+                    <tr>
+                        <td><%= index + 1 %></td>
+                        <td><%= paymentModeLabel %></td>
+                        <td><%= id %></td>
+                        <td><%= method %></td>
+                        <td><%= dated ? formatDate(dated, DISPLAY_DATE_FORMAT) : '-' %></td>
+                        <td>₹ <%= formatIndianAmount(amount) %></td>
+                        <td><%= status %></td>
+                    </tr>
+    
+                    <% }); %>
+    
+                </table>
+            </div>
+    </div>
+    <% } %>
+</div>
+<% } %>
+
+
+

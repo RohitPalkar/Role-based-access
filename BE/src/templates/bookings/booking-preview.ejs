@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Booking Application Form</title>
+    <link rel="icon" href="data:,">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style type="text/css">
+       body {
+        margin: 0;
+        font-family: "Poppins", serif;
+      }
+      .wrapper {
+        background: white;
+        max-width: 1299px;
+        font-family: "Poppins", serif;
+        font-weight: 400;
+        font-style: normal;
+        margin: 0px auto;
+        position: relative;
+      }
+      .header-logo-wrap {
+        background: #1a407d;
+        margin-bottom: 36px;
+      }
+      .header-logo-box {
+        max-width: 1299px;
+        margin: 0px auto;
+        padding-top: 24px;
+        padding-bottom: 24px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .header-left-logo {
+        position: absolute;
+        top: 50%;
+        left: 15px;
+        transform: translateY(-50%);
+        width: 180px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+      }
+      .header-left-logo img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+      .header-title{
+        font-size: 24px;
+        font-weight: 600;
+        color: #fff;
+      }
+      .header-logo{
+        position: absolute;
+        top: 50%;
+        right: 15px;
+        transform: translateY(-50%);
+        width: 276px;
+        height: 32px;
+        text-align: right;
+      }
+      .header-logo img {
+        max-width: 85%;
+        max-height: 100%;
+      }
+
+      .applicant-details-card {
+        margin: 10px 15px;
+        padding: 24px 24px;
+        border: 1px solid rgba(26, 64, 125, 0.3);
+        border-radius: 8px;
+        margin-bottom: 18px;
+      }
+
+      .kyc-details-card {
+        margin: 10px 15px;
+        padding: 24px 24px;
+        border: 1px solid rgba(26, 64, 125, 0.3);
+        border-radius: 8px;
+        margin-bottom: 18px;
+        min-height: 700px;
+      }
+
+      .position-relative {
+        position: relative;
+      }
+      .position-absolute {
+        position: absolute;
+      }
+      .padding24 {
+        padding: 24px;
+      }
+      .d-flex {
+        display: flex;
+      }
+      .d-block {
+        display: block;
+      }
+
+      .line-dotted {
+        border-bottom: 2px dashed #d6d6d6;
+        margin-bottom: 16px;
+      }
+      /* 1 */
+      .edit-title-row {
+        margin: 0px 0px 34px 0px;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .edit-title-row .btn-applicant-top {
+        padding: 10px 48px;
+        border-radius: 8px;
+        background: #1a407d;
+        color: #fff;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 22px;
+        min-width: 129px;
+        min-height: 26px;
+        text-align: center;
+      }
+      /* 2 */
+      .personal-information {
+        display: flex;
+        margin-bottom: 16px;
+        gap: 35px;
+      }
+      .personal-information .photo {
+        width: 238px;
+        height: 250px;
+        flex-shrink: 0;
+        overflow: hidden;
+        border-radius: 8px;
+        width: 20%;
+        margin-top: 25px;
+      }
+      .personal-information .photo img {
+        object-fit: contain;
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+      }
+      .information-details {
+        margin: 0;
+        padding: 22px 0px 0px 0px;
+        width: 79%;
+      }
+      .information-details .name {
+        margin: 0px 0px 14px 0px;
+        padding: 0;
+        font-size: 24px;
+        color: #1a407d;
+        font-weight: 600;
+        line-height: 22px;
+      }
+      .title-personal-hd {
+        margin: 0px 0px 4px 0px;
+        padding: 0;
+        font-size: 16px;
+        color: #1a407d;
+        font-weight: 600;
+        line-height: 22px;
+      }
+      .personal-info {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .personal-info .personal-info-row {
+        margin: 0px 0px 14px 0px;
+        display: flex;
+        width: 50%;
+        align-items: center;
+        gap: 20px;
+      }
+      .main-applicant .personal-info-row:nth-child(odd) {
+        margin: 0px 0px 14px 0px;
+        display: flex;
+        width: 44%;
+      }
+      .main-applicant .personal-info-row:nth-child(even) {
+        margin: 0px 0px 14px 0px;
+        display: flex;
+        width: 56%;
+      }
+      .label-title {
+        margin: 0px 5px 0px 0px;
+        padding: 0;
+        font-size: 14px;
+        color: #1c252e;
+        font-weight: 400;
+        line-height: 22px;
+        flex-shrink: 0;
+        width: 140px;
+      }
+      .personal-information .personal-info-row:nth-child(even) .label-title {
+        width: 165px;
+      }
+      .personal-information .personal-info-row:nth-child(odd) .label-title{
+        width: 160px;
+      }
+      .other-details .label-title{
+        width: 200px;
+      }
+      .span-title {
+        display: block;
+        margin: 0px 0px 0px 0px;
+        padding: 0;
+        font-size: 14px;
+        color: #1c252e;
+        font-weight: 600;
+        line-height: 22px;
+      }
+      .notes {
+        font-size: 14px;
+        font-style: italic;
+        font-weight: 600;
+        line-height: 22px;
+        color: #1c252e;
+        margin-top: 18px;
+        margin-left: 14px;
+        padding-bottom: 30px;
+      }
+
+      .Communication {
+        flex-direction: column;
+      }
+      .Communication .personal-info-row {
+        width: 100%;
+      }
+
+      .personal-info.professional-details .personal-info-row:nth-child(odd) {
+        width: 45%;
+      }
+      .personal-info.professional-details .personal-info-row:nth-child(even) {
+        width: 55%;
+      }
+      .full-row {
+        width: 100% !important;
+      }
+      .Communication .personal-info-row .label-title,
+      .professional-details .personal-info-row .label-title {
+        width: 180px;
+      }
+      .marginBottom {
+        margin-bottom: 28px;
+      }
+      .marginBottom16 {
+        margin-bottom: 16px;
+      }
+      .unit-details .personal-info-row .label-title {
+        width: 200px;
+      }
+      .other-details .personal-info-row {
+        width: 100%;
+      }
+      /* 2 */
+      /* 3 */
+      .payment-p {
+        margin: 0px 0px 12px 0px;
+        padding: 0;
+        font-size: 14px;
+        color: #1c252e;
+        font-weight: 400;
+        line-height: 22px;
+      }
+      .payment-p b {
+        margin-left: 0px;
+        margin-right: 6px;
+      }
+
+      .table-responsive-pdf table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      .table-responsive-pdf table tr th {
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 20px;
+        color: #101828;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        padding-left: 10px;
+        padding-right: 10px;
+        background-color: #fcfcfd;
+        text-align: left;
+        border-bottom: 1px solid #e4e7ec;
+      }
+      .table-responsive-pdf table tr td {
+        background-color: #fff;
+        border-bottom: 1px solid #e4e7ec;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px;
+        color: #101828;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+      .table-responsive-pdf.tbl-border tr th,
+      .table-responsive-pdf.tbl-border tr td {
+        border: 1px solid #dadada;
+      }
+      .table-responsive-pdf.tbl-border {
+        margin-bottom: 16px;
+      }
+      .privilege {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 22px;
+        color: #1c252e;
+      }
+      .privilege ol {
+        margin: 0px 0px 16px 12px;
+        padding: 0;
+      }
+      .privilege ol li {
+        list-style: auto;
+      }
+      .personal-info.referrer-privilege .personal-info-row:nth-child(odd) {
+        width: 45%;
+      }
+      .personal-info.referrer-privilege .personal-info-row:nth-child(even) {
+        width: 55%;
+      }
+      .referrer-privilege .personal-info-row .label-title {
+        width: 200px;
+      }
+
+      .list-number {
+        margin: 0;
+        padding: 0;
+      }
+      .list-number li {
+        list-style-type: none;
+        margin: 0px 0px 14px 0px;
+        padding: 0px 0px 0px 0px;
+        font-size: 14px;
+        font-weight: 400;
+      }
+      .list-number li.liB {
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+      .list-number li ul {
+        margin: 0;
+        padding: 0;
+        margin-left: 26px;
+      }
+      .list-number li ul li {
+        margin: 0;
+        padding: 0;
+        list-style-type: disc;
+      }
+
+      .declaration-wrap p {
+        margin: 0px 0px 22px 0px;
+        padding: 0;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 22px;
+      }
+      .declaration-wrap p:last-child {
+        margin-bottom: 0px;
+      }
+
+      .kyc-document-row {
+        margin-bottom: 20px;
+      }
+      .kyc-document-row .document-row {
+        display: flex;
+        margin-bottom: 20px;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 22px;
+        color: #1c252e;
+      }
+      .cost-sheet-disclaimer {
+        font-size: 13px;
+      }
+      .kyc-document-row .document-row p {
+        margin: 0px 18px 0px 0px;
+        padding: 0;
+      }
+      .kyc-document-row .document-row span {
+        display: block;
+        font-weight: 600;
+      }
+      .kyc-document-row .document-images {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      .kyc-document-row .document-images .front {
+        color: #1c252e;
+        font-size: 14px;
+        font-weight: 500;
+        text-align: center;
+        padding-top: 16px;
+        padding-bottom: 10px;
+      }
+      .kyc-document-row .document-images .img-bg {
+        width: 49%;
+        border-radius: 8px;
+        border: 1px solid rgba(26, 64, 125, 0.5);
+        background: #fff;
+        overflow: hidden;
+        height: 372px;
+      }
+      .kyc-document-row .document-images .img-bg .img {
+        border-radius: 16px;
+        height: 300px;
+        border: 10px solid #fff;
+        overflow: hidden;
+        text-align: center;
+      }
+      .kyc-document-row .document-images .img-bg .img img {
+        object-fit: contain;
+        height: 100%;
+        width: 100%;
+      }
+      .kyc-document-row .document-images .img-bg .img.height100 {
+        height: 100%;
+      }
+      .sub-heading {
+        display: block;
+        margin-top: 5px;
+        font-size: 13px;
+        padding: 0;
+        color: #1a407d;
+        line-height: 22px;
+        font-weight: 400;
+      }
+      .title-have-stated {
+        display: block;
+        font-size: 18px;
+        padding: 5px 0px;
+        color: #1a407d;
+        font-weight: 600;
+        text-align: center;
+        text-transform: uppercase;
+        border-top: 1px solid #1a407d;
+        border-bottom: 1px solid #1a407d;
+      }
+      .ul-list-pan {
+        list-style: none;
+        margin-left: 0;
+        padding-left: 16px;
+      }
+      .blue-line {
+        display: block;
+        height: 2px;
+        width: 100%;
+        background-color: #1a407d;
+        margin-bottom: 10px;
+      }
+      .link-anch {
+        color: #000;
+        text-decoration: none;
+      }
+      .ul-notes {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-size: 14px;
+      }
+      .signature-row {
+        margin: 0px;
+        padding: 0px;
+        display: flex;
+        justify-content: flex-end;
+        gap: 16px;
+      }
+      .signature-row .signature {
+        margin-bottom: 24px;
+        width: 25%;
+      }
+      .signature-row .signature p {
+        margin: 0px;
+        padding: 0px;
+        display: block;
+        height: 50px;
+        background-color: yellowgreen;
+      }
+      .signature-row .signature span {
+        margin: 0px;
+        padding: 5px 0px 0px 0px;
+        display: block;
+        border-top: 2px dashed #000000;
+      }
+
+      .reserved-row {
+        margin: 0px;
+        padding: 0px;
+        margin-bottom: 24px;
+        display: flex;
+        justify-content: space-between;
+        font-size: 12px;
+      }
+      .signature-wrapper {
+        display: none;
+      }
+      .dashedBorder {
+        border-top: 1px dashed #dadada;
+        margin-bottom: 16px;
+      }
+      .check-terms {
+        display: block;
+        padding-left: 16px;
+        position: relative;
+        color: #344054;
+        cursor: pointer;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 20px;
+        margin-bottom: 0;
+        user-select: none;
+      }
+      .check-terms input {
+        cursor: pointer;
+        height: 0;
+        opacity: 0;
+        position: absolute;
+        width: 0;
+      }
+      .check-terms input:checked~.checkmark {
+        background-color: #1a407d;
+        border: 1px solid #1a407d;
+      }
+      .check-terms .checkmark {
+        border-radius: 4px;
+        height: 11px;
+        left: 0;
+        position: absolute;
+        top: 3px;
+        width: 11px;
+      }
+      .check-terms input:checked~.checkmark:after {
+        display: block;
+      }
+      .check-terms .checkmark:after {
+        border: solid #fff;
+        border-width: 0 2px 2px 0;
+        height: 7px;
+        left: 3px;
+        top: 0;
+        transform: rotate(45deg);
+        width: 3px;
+      }
+      .check-terms .checkmark:after {
+        content: "";
+        display: none;
+        position: absolute;
+      }
+      .booking-comment{
+        margin-top: 10px;
+      }
+      .booking-comment .marginBottom{
+        margin-bottom: 10px;
+      }
+      .booking-comment .information-details, .booking-comment .information-details .personal-info-row{
+        width: 100%;
+      }
+      .booking-comment .information-details .span-title{
+        font-weight: 400;
+        white-space: pre-line;
+      }
+      .gst-certificate-img {
+        width :50%;
+        border: 1px solid rgba(26, 64, 125, 0.5);
+        border-radius: 8px;
+        padding: 10px;
+        margin-top: 15px;
+        text-align: left;
+        max-height: 700px;
+      }
+      .kyc-back-img {
+        margin-top: 65px;
+      }
+      .address-title{
+        font-weight: bold;
+        font-size: 16px;
+        color: #1a407d;
+      }
+
+    </style>
+  </head>
+  <body>
+  <%
+    // Map bookingAs → entity & signatory label
+    const BOOKING_LABELS = {
+    'Corporate':         { entity: 'Company',     sign: 'Authorized Signatory' },
+    'Partnership Firm':  { entity: 'Firm',        sign: 'Authorized Signatory' },
+    'Individual':        { entity: 'Applicant',   sign: 'Applicant' },
+    };
+
+          const chosen = BOOKING_LABELS[booking?.bookingAs] || BOOKING_LABELS['Individual'];
+
+          // Array you can pass around:
+          // labels[0] = "<Entity> Details", labels[1] = "<Entity> Address"
+          const entityLabels = [`${chosen.entity} Details`, `${chosen.entity} Address`];
+
+          // Helper to print 1st/2nd/3rd/4th...
+            const ordinal = (n, isMinor = false) => {
+              const suffixes = { 1: 'st', 2: 'nd', 3: 'rd' };
+              const v = n % 100;
+              const suffix = suffixes[v] && v % 10 === v ? suffixes[v] : 'th';
+              const label = `${n}<sup>${suffix}</sup> Applicant`;
+              return isMinor ? `${label} - Minor` : label;
+            };
+  %>
+    <div class="header-logo-wrap">
+      <div class="header-logo-box">
+          <div class="header-left-logo">
+            <img src="<%= IMAGE_BASE_URL%><%= booking?.project?.jvPartnerLogo %>" alt="" />
+          </div>
+        <div class="header-title">
+            Booking Application
+        </div>
+        <div class="header-logo">
+          <img src="<%= IMAGE_BASE_URL%><%= booking?.project?.brand?.logo %>" alt="" />
+        </div>
+      </div>
+
+    </div>
+
+    <div class="wrapper applicantDetailsCard">
+      <%
+        PURVA_PRIVILEGE = "Purva Privilege";
+        PROVIDENT_PREMIER = "Provident Premier";
+        primarySource = booking?.unitDetails?.primarySource ?? '';
+        projectName = booking?.unitDetails?.projectName ?? '';
+        primarySourceDisabled = booking?.primarySourceDisabled ?? false;
+      %>
+      <% if(booking?.bookingAs !== bookingAs.INDIVIDUAL){ %>
+        <%- include('partials/company-details', {
+          companyDetails: booking?.companyDetails,
+          bookingAs: booking?.bookingAs,
+          label: "Company Details",
+          pageBreak: false
+        }); %>
+      <% } %>
+      <% if(booking?.bookingAs === bookingAs.INDIVIDUAL){ %>
+      <!-- Render General Details -->
+        <%- include('partials/applicant', {
+          applicant: booking?.applicant1,
+          label: "Primary Applicant",
+          isPrimaryApplicant: true,
+          pageBreak: false
+        }); %>
+
+        <% if(booking?.applicant2) { %>
+          <%- include('partials/applicant', {
+            applicant: booking?.applicant2,
+            label: ordinal(2, booking?.applicant2?.hasContinuedAsMinor),
+            isPrimaryApplicant: false,
+            pageBreak: true
+          }); %>
+        <% } %>
+        <% if(booking?.applicant3) { %>
+          <%- include('partials/applicant', {
+            applicant: booking?.applicant3,
+            label: ordinal(3, booking?.applicant3?.hasContinuedAsMinor),
+            isPrimaryApplicant: false,
+            pageBreak: true
+          }); %>
+        <% } %>
+        <% if(booking?.applicant4) { %>
+          <%- include('partials/applicant', {
+            applicant: booking?.applicant4,
+            label: ordinal(4, booking?.applicant4?.hasContinuedAsMinor),
+            isPrimaryApplicant: false,
+            pageBreak: true
+          }); %>
+        <% } %>
+      <% } else {%>
+          <%- include('partials/signatory', {
+              applicant: booking?.applicant1,
+              labels: entityLabels,
+              signLabel: 'Authorized Signatory',
+              isPrimaryApplicant: false,
+              pageBreak: false
+            }) %>
+
+            <% if (booking?.applicant2) { %>
+              <%- include('partials/signatory', {
+                applicant: booking?.applicant2,
+                labels: entityLabels,
+                signLabel: `${ordinal(2)} ${chosen.sign}`,
+                isPrimaryApplicant: true,
+                pageBreak: true
+              }) %>
+            <% } %>
+
+            <% if (booking?.applicant3) { %>
+              <%- include('partials/signatory', {
+                applicant: booking?.applicant3,
+                labels: entityLabels,
+                signLabel: `${ordinal(3)} ${chosen.sign}`,
+                pageBreak: true
+              }) %>
+            <% } %>
+
+            <% if (booking?.applicant4) { %>
+              <%- include('partials/signatory', {
+                applicant: booking?.applicant4,
+                labels: entityLabels,
+                signLabel: `${ordinal(4)} ${chosen.sign}`,
+                pageBreak: false
+              }) %>
+            <% } %>
+      <% } %>
+      <!-- 3 -->
+      <% if (booking?.unitDetails && !applicantOnly) { %>
+        <%- include('partials/unit-details', {
+          unitDetails: booking?.unitDetails,
+          termsCondition: termsCondition,
+          payments: booking?.payments,
+          groupPayments: booking?.groupPayments,
+          groupDetails: groupDetails?.data,
+          voucherPayments: booking?.voucherPayments,
+          pageBreak: true
+        }); %>
+      <% } %>
+      <!-- 4 -->
+
+      <% if (!applicantOnly) { %>
+      <%- include('partials/payment-details', {
+        paymentDetails: booking?.paymentDetails,
+        payments: booking?.payments,
+        groupPayments: booking?.groupPayments,
+        groupDetails: groupDetails?.data,
+        voucherPayments: booking?.voucherPayments,
+        pageBreak: true
+      }); %>
+      <% } %>
+      <!-- 4 -->
+      <!-- 5 -->
+      <!--  payment proofs -->
+      <%
+     const paymentsToUse = booking?.groupPayments?.length
+      ? booking.groupPayments
+      : (booking?.payments || []);
+
+    const hasValidPaymentProof = paymentsToUse.some(p =>
+    p?.paymentDetails?.paymentProof?.length > 0 ||
+    p?.paymentDetails?.isPhysicalPaymentProof === true
+  );
+%>
+
+<% if (hasValidPaymentProof && !applicantOnly) { %>
+  <%- include('partials/payment-proofs', {
+    transactions: paymentsToUse,
+    pageBreak: true,
+    rmPdf: false,
+    title: 'Payment Proofs'
+  }); %>
+<% } %>
+      <!-- voucher payment proofs -->
+      <%
+      const hasValidVoucherProof = booking?.voucherPayments?.some(v =>
+        (v?.paymentDetails?.paymentProof?.length > 0) ||
+        v?.paymentDetails?.isPhysicalPaymentProof === true
+      );
+     %>
+     <% if (hasValidVoucherProof && !applicantOnly) { %>
+        <%- include('partials/payment-proofs', {
+              transactions: booking?.voucherPayments,
+              pageBreak: true,
+              rmPdf: false,
+              title: 'Voucher Transaction Payment Proofs'
+        }); %>
+      <% } %>
+      <!-- 5 -->
+      <div class="kyc-documents page-break">
+        <div class="kyc-applicant-1">
+          <%- include('partials/kyc-details', {
+            kycDetails: booking?.applicant1?.personalDetails,
+            label: booking?.bookingAs === bookingAs.INDIVIDUAL
+              ? ordinal(1, booking?.applicant1?.hasContinuedAsMinor)
+              : 'Authorized Signatory',
+            pageBreak: false
+          }) %>
+        </div>
+
+        <% if (booking?.applicant2) { %>
+          <div class="kyc-applicant-2 page-break">
+            <%- include('partials/kyc-details', {
+              kycDetails: booking?.applicant2?.personalDetails,
+              label: booking?.bookingAs === bookingAs.INDIVIDUAL
+                ? ordinal(2, booking?.applicant2?.hasContinuedAsMinor)
+                : `${ordinal(2, booking?.applicant2?.hasContinuedAsMinor).replace(' Applicant', '')} Authorized Signatory`,
+              pageBreak: false
+            }) %>
+          </div>
+        <% } %>
+
+        <% if (booking?.applicant3) { %>
+          <div class="kyc-applicant-3 page-break">
+            <%- include('partials/kyc-details', {
+              kycDetails: booking?.applicant3?.personalDetails,
+              label: booking?.bookingAs === bookingAs.INDIVIDUAL
+                ? ordinal(3, booking?.applicant3?.hasContinuedAsMinor)
+                : `${ordinal(3, booking?.applicant3?.hasContinuedAsMinor).replace(' Applicant', '')} Authorized Signatory`,
+              pageBreak: false
+            }) %>
+          </div>
+        <% } %>
+
+        <% if (booking?.applicant4) { %>
+          <div class="kyc-applicant-4 page-break">
+            <%- include('partials/kyc-details', {
+              kycDetails: booking?.applicant4?.personalDetails,
+              label: booking?.bookingAs === bookingAs.INDIVIDUAL
+                ? ordinal(4, booking?.applicant4?.hasContinuedAsMinor)
+                : `${ordinal(4, booking?.applicant4?.hasContinuedAsMinor).replace(' Applicant', '')} Authorized Signatory`,
+              pageBreak: false
+            }) %>
+          </div>
+        <% } %>
+      </div>
+      <!-- 5 -->
+      <!-- 6 -->
+      <% if(!applicantOnly) { %>
+       <% if(['Purva Privilege','Provident Premier'].includes(primarySource)) { %>
+        <% include('partials/referrer-details', {
+          referrerDetails: booking?.referrerDetails,
+          projectBrandName: booking?.unitDetails?.projectBrandName,
+          pageBreak: true
+        }); %>
+      <% } %>
+      <!-- 6 -->
+      <!-- 7 -->
+      <%- include('partials/terms-condition', {
+        termsCondition: termsCondition,
+        pageBreak: true
+      }); %>
+      <!-- 7 -->
+      <% if(booking?.documentsNote) { %>
+        <div class="booking-comment">
+          <div class="applicant-details-card">
+            <div class="personal-information">
+              <div class="information-details">
+                <h3 class="title-personal-hd marginBottom">Comments</h3>
+                <div class="personal-info" >
+                    <div class="personal-info-row">
+                      <span class="span-title">
+                        <%= booking?.documentsNote %>
+                      </span>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% } %>
+      <% } %>
+    </div>
+  </body>
+</html>

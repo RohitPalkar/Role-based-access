@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PDF - Referral Form</title>
+    <link rel="icon" href="data:,">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style type="text/css">
+      body {
+        margin: 0;
+      }
+      .wrapper {
+        background: white;
+        max-width: 1299px;
+        font-family: "Poppins", serif;
+        font-weight: 400;
+        font-style: normal;
+        margin: 0px auto;
+        position: relative;
+      }
+      .header-logo-wrap {
+        background: #1a407d;
+        margin-bottom: 36px;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        z-index: 99;
+      }
+      .header-logo-box {
+        max-width: 1299px;
+        margin: 0px auto;
+        padding-top: 24px;
+        padding-bottom: 24px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .header-left-logo {
+        position: absolute;
+        top: 50%;
+        left: 15px;
+        transform: translateY(-50%);
+        width: 180px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+      }
+      .header-left-logo img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+      .header-title{
+        font-size: 24px;
+        font-weight: 600;
+        color: #fff;
+        font-family: "Poppins", serif;
+      }
+      .header-logo{
+        position: absolute;
+        top: 50%;
+        right: 15px;
+        transform: translateY(-50%);
+        width: 276px;
+        height: 32px;
+        text-align: right;
+      }
+      .header-logo img {
+        max-width: 85%;
+        max-height: 100%;
+      }
+      .applicant-details-card {
+        margin: 10px 15px;
+        padding: 24px 24px;
+        border: 1px solid rgba(26, 64, 125, 0.3);
+        border-radius: 8px;
+        margin-bottom: 10px;
+        margin-top: 90px;
+      }
+
+      /* referral form css 4 march  */
+      .title-referral-form {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 36px;
+        color: #1a407d;
+        margin-bottom: 8px;
+        text-align: center;
+      }
+      .title-referral-small {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 22px;
+        color: #1c252e;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      .referral-padding {
+        padding: 26px 39px;
+      }
+      .width48 {
+        width: 49%;
+      }
+      .width-auto {
+        width: auto;
+      }
+      .asterisk {
+        color: #d3151a;
+        position: relative;
+        top: 2px;
+        left: 2px;
+      }
+      .border-b-remove {
+        border-bottom: 0px;
+      }
+      .referral-box-row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: 2%;
+      }
+      .referral-box {
+        width: 49%;
+        display: flex;
+        align-items: center;
+        margin-bottom: 16px;
+      }
+      .label-referral {
+        margin: 0px 16px 0px 0px;
+        padding: 0;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 22px;
+        margin-bottom: 6px;
+        color: #1c252e;
+        width: 30%;
+        display: block;
+      }
+      .label-referral.even-element {
+        width: 52% !important;
+      }
+      .p-referral {
+        margin: 0;
+        padding: 0;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 22px;
+        color: #1c252e;
+        width: 64%;
+      }
+      .title-terms-conditions {
+        margin: 0;
+        padding: 0;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 22px;
+        color: #1a407d;
+        margin-bottom: 16px;
+      }
+      .referral-program-terms ol {
+        margin: 0;
+        padding: 0;
+        margin-left: 5px;
+      }
+      .referral-program-terms li {
+        margin: 0;
+        padding: 0;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 24px;
+        color: #1c252e;
+      }
+      .dashed-line {
+        border-top: 2px dashed #d6d6d6;
+        margin-top: 16px;
+        margin-bottom: 16px;
+      }
+      .declaration-p {
+        margin: 0;
+        padding: 0;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 24px;
+        color: #1c252e;
+        margin-left: 5px;
+      }
+
+      .declaration-p:hover input {
+        background-color: transparent;
+      }
+
+      .declaration-p input:checked{
+        background-color: #1a407d !important;
+      }
+
+      .btn-sign {
+        margin: 32px 0px 0px 0px;
+        padding: 0px;
+        width: 158px;
+        height: 48px;
+        display: block;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 24px;
+        color: #fff;
+        border: 0;
+        background: #1a407d;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+      .title-referral-Details {
+        margin: 0px;
+        padding: 0px;
+        display: block;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 24px;
+        color: #1c252e;
+        margin-bottom: 32px;
+        margin-top: 4px;
+        text-align: center;
+      }
+      /* referral form css  */
+      .footer {
+        background-color: #1a407d;
+        width: 100%;
+        color: #ffff;
+        display: block;
+        padding: 0px;
+        padding-top: 20px;
+        font-family: "Poppins", serif;
+        font-weight: 400;
+        position: fixed;
+        height: 150px;
+        bottom: 0px;
+        left: 0px;
+        z-index: 99;
+      }
+      .foot-logo {
+        margin: 0px auto 16px auto;
+        padding: 0px;
+        width: 234px;
+        height: 18px;
+        text-align: center;
+      }
+      .foot-cnt {
+        margin: 0px;
+        padding: 0px;
+        display: block;
+        font-size: 16px;
+        font-weight: 400;
+        color: #fff;
+        text-align: center;
+        height: 60px;
+      }
+      .foot-cnt a {
+        color: #fff;
+        text-decoration: underline;
+      }
+      b.liB{
+        display: none;
+      }
+      .referral-program-terms ol{
+        list-style-type: none;
+      }
+      body {
+        padding-bottom: 100px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="header-logo-wrap">
+      <div class="header-logo-box">
+          <div class="header-left-logo">
+            <img src="<%= IMAGE_BASE_URL%><%= booking?.project?.jvPartnerLogo %>" alt="" />
+          </div>
+        <div class="header-title"> Referral Form</div>
+        <div class="header-logo">
+          <img src="<%= IMAGE_BASE_URL%><%= booking?.project?.brand?.logo %>" alt="" />
+        </div>
+      </div>
+    </div>
+    <%
+      PURVA_PRIVILEGE = "Purva Privilege";
+      PROVIDENT_PREMIER = "Provident Premier";
+      primarySource = booking?.unitDetails?.primarySource ?? '';
+      projectName = booking?.unitDetails?.projectName ?? '';
+      projectBrandName = booking?.unitDetails?.projectBrandName ?? '';
+      referrer = booking?.referrerDetails ?? '';
+    %>
+    <div class="wrapper applicantDetailsCard">
+      <div class="applicant-details-card referral-padding">
+        <span class="title-referral-Details">Referrer Details</span>
+        <div class="referral-box-row">
+          <div class="referral-box">
+            <label class="label-referral"
+              >Name: </label
+            >
+            <p class="p-referral"><%= referrer?.name ?? ''%></p>
+          </div>
+          <div class="referral-box">
+            <label class="label-referral even-element"
+              >Relationship with Referrer: </label
+            >
+            <p class="p-referral"><%= referrer?.relation ?? ''%></p>
+          </div>
+          <div class="referral-box">
+            <label class="label-referral"
+              >Project Name: </label
+            >
+            <p class="p-referral"><%= referrer?.propertyName ?? ''%></p>
+          </div>
+          <div class="referral-box">
+            <label class="label-referral even-element"
+              >Unit Number: </label
+            >
+            <p class="p-referral"><%= referrer?.unitNumber ?? ''%></p>
+          </div>
+          <div class="referral-box">
+            <label class="label-referral"
+              >Email: </label
+            >
+            <p class="p-referral"><%= referrer?.email ?? ''%></p>
+          </div>
+          <div class="referral-box">
+            <label class="label-referral even-element"
+              >Contact Number: </label
+            >
+            <p class="p-referral"><%= referrer?.countryCode ?? ''%><%= referrer?.mobileNumber ?? ''%></p>
+          </div>
+          <div class="referral-box">
+            <label class="label-referral">Current Address: </label>
+            <p class="p-referral">
+              <%= referrer?.address ?? ''%>
+            </p>
+          </div>
+          <div class="referral-box">
+            <label class="label-referral even-element">House Number/Floor/Tower: </label>
+            <p class="p-referral"><%= referrer?.houseNumber ?? ''%></p>
+          </div>
+        </div>
+        <div class="dashed-line"></div>
+        <span class="title-referral-Details">Referee Details</span>
+        <div class="referral-box-row">
+          <div class="referral-box">
+            <label class="label-referral"
+              >Name: </label
+            >
+            <p class="p-referral"><%= booking?.applicant1?.personalDetails?.firstName ?? ''%> <%= booking?.applicant1?.personalDetails?.lastName ?? ''%></p>
+          </div>
+          <div class="referral-box">
+            <label class="label-referral even-element"
+              >Project Name: </label
+            >
+            <p class="p-referral"><%= booking?.unitDetails?.projectName ?? 'N/A'%></p>
+          </div>
+          <div class="referral-box">
+            <label class="label-referral">Unit Number: </label>
+            <p class="p-referral"><%= booking?.unitDetails?.unitNumber ?? 'N/A'%></p>
+          </div>
+        </div>
+      </div>
+      <!-- 2 -->
+      <div class="applicant-details-card referral-padding page-break">
+        <h3 class="title-terms-conditions">Terms and Conditions</h3>
+
+        <%
+          if(primarySource == PROVIDENT_PREMIER) {
+        %>
+          <%- include('partials/provident-referral-terms') %>
+        <%
+          }
+          else if(primarySource == PURVA_PRIVILEGE) {
+        %>
+          <%- include('partials/puravankara-referral-terms',{ referrerPage: true }) %>
+        <% } %>
+        <div class="dashed-line"></div>
+        <h3 class="title-terms-conditions">Declaration</h3>
+        <p class="declaration-p">
+          <input type="checkbox" checked="checked" />
+          I hereby declare that all the information provided by me above is true
+          to the best of my knowledge and belief and I am submitting this
+          registration form to avail the Purva Privileges benefits and I agree
+          and shall abide by the terms and conditions specified on the reverse
+          of the page
+        </p>
+      </div>
+    </div>
+    <!-- Footer -->
+    <div class="footer">
+      <% if(['Provident', 'Provident Land'].includes(projectBrandName)){ %>
+        <div class="foot-logo">PROVIDENT HOUSING LIMITED</div>
+        <p class="foot-cnt">130/1 & 130/2, Ulsoor Road, Bengaluru - 560 042, Karnataka <br />Tel: +91 80 4455 5538 • Email: premier@providenthousing.com • Website:<a href="https://www.providenthousing.com" target="_blank">www.providenthousing.com</a></p>
+      <% } else { %>
+        <div class="foot-logo">PURAVANKARA LIMITED</div>
+        <p class="foot-cnt">130/1 & 130/2, Ulsoor Road, Bengaluru - 560 042, Karnataka <br />Tel: +91 80 4455 5576 • Email: privilege@puravankara.com • Website:<a href="https://www.puravankara.com" target="_blank">www.puravankara.com</a></p>
+      <% } %>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Referral Points Edit Reason - {{iomNo}}</title>
+    <style>
+      /* Referral points edit reason attachment — reuses IOM PDF tokens */
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: 'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,
+          sans-serif;
+        font-size: 14px;
+        line-height: 1.5;
+        color: #1c252e;
+        background-color: #ffffff;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .iom-page {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 16px;
+        background-color: #f4f6f8;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .iom-card {
+        display: block;
+        box-sizing: border-box;
+        background-color: #ffffff;
+        border: 1px solid #e5e7eb;
+        border-radius: 8px;
+        padding: 24px;
+        margin: 0;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .iom-reason-card__title {
+        margin: 0 0 12px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #1c252e;
+      }
+
+      .iom-reason-card__meta {
+        margin: 0 0 8px;
+        font-size: 13px;
+        color: #637381;
+      }
+
+      .iom-reason-card__body {
+        margin-top: 16px;
+        padding: 16px;
+        background-color: #fff4e5;
+        border-left: 4px solid #ff9800;
+        border-radius: 4px;
+      }
+
+      .iom-reason-card__text {
+        margin: 0;
+        white-space: pre-wrap;
+        word-break: break-word;
+      }
+
+      @page {
+        size: A4;
+        margin: 12mm;
+      }
+
+      @media print {
+        body {
+          background-color: #ffffff;
+        }
+
+        .iom-page {
+          max-width: none;
+          padding: 0;
+          background-color: #ffffff;
+        }
+
+        .iom-card {
+          display: block;
+          box-sizing: border-box;
+          background-color: #ffffff;
+          border: 1px solid #e5e7eb;
+          border-radius: 8px;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+          break-inside: avoid;
+          page-break-inside: avoid;
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="iom-page">
+      <section class="iom-card iom-reason-card">
+        <h1 class="iom-reason-card__title">Referral Points Edit Reason</h1>
+        <p class="iom-reason-card__meta">IOM: {{iomNo}}</p>
+        <p class="iom-reason-card__meta">Edited At: {{editedAt}}</p>
+        <p class="iom-reason-card__meta">Edited By: {{editedByName}}</p>
+        <div class="iom-reason-card__body">
+          <p class="iom-reason-card__text">{{editReason}}</p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

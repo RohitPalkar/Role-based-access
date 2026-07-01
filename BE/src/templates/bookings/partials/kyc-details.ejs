@@ -1,0 +1,249 @@
+<%
+  let heading = '';
+  if (label === "Primary Applicant" || label === "Authorized Signatory") {
+    heading = `
+      <h3 class="title-personal-hd marginBottom">KYC Documents</h3>
+      <div class="edit-title-row">
+        <div class="btn-applicant-top">${label}</div>
+      </div>
+    `;
+  } else {
+    heading = `
+      <div class="edit-title-row">
+        <div class="btn-applicant-top">${label}</div>
+      </div>
+    `;
+  }
+  let pageBreakClass = pageBreak ? "page-break" : "";
+  let panPageBreak = false;
+%>
+<%
+if(kycDetails?.isPhysicalPan || kycDetails?.isPhysicalAadhaar || kycDetails?.isPhysicalPassport || kycDetails?.isPhysicalOCI || kycDetails?.isPhysicalAddressProof || kycDetails?.isPhysicalLegalGuardianDoc) {
+    panPageBreak = true;
+%>
+    <div class="kyc-document-row kyc-details-card">
+        <%- heading; %>
+        <% heading= ""; %>
+        <% if(kycDetails?.isPhysicalPan) { %>
+            <div class="document-row">
+                <p>PAN Number:</p>
+                <span> <%= kycDetails?.panNumber%> </span>
+            </div>
+            <div class="document-row">
+                <span> Physical Copy to be submitted offline. </span>
+            </div>
+        <% } %>
+        <% if(kycDetails?.isPhysicalAadhaar) { %>
+            <div class="document-row">
+                <p>Aadhaar Number:</p>
+                <span> <%= kycDetails?.aadhaarNumber %> </span>
+            </div>
+            <div class="document-row">
+                <span> Physical Copy to be submitted offline </span>
+            </div>
+        <% } %>
+        <% if(kycDetails?.isPhysicalPassport) { %>
+            <div class="document-row">
+                <p>Passport Number:</p>
+                <span> <%= kycDetails?.passportNumber %> </span>
+            </div>
+            <div class="document-row">
+                <span> Physical Copy to be submitted offline </span>
+            </div>
+        <% } %>
+        <% if(kycDetails?.isPhysicalOCI) { %>
+            <div class="document-row">
+                <p>OCI Number:</p>
+                <span> <%= kycDetails?.ociNumber %> </span>
+            </div>
+            <div class="document-row">
+                <span> Physical Copy to be submitted offline </span>
+            </div>
+        <% } %>
+        <% if(kycDetails?.isPhysicalAddressProof) { %>
+            <div class="document-row">
+                <p>Address Proof:</p>
+                <span> <%= kycDetails?.addressProofType%> </span>
+            </div>
+            <div class="document-row">
+                <span> Physical Copy to be submitted offline </span>
+            </div>
+        <% } %>
+        <% if(kycDetails?.isPhysicalLegalGuardianDoc ) { %>
+            <div class="document-row">
+                <p>Declaration of legal guardian from other parent:</p>
+            </div>
+            <div class="document-row">
+                <span> Physical Copy to be submitted offline </span>
+            </div>
+        <% } %>
+    </div>
+<% } %>
+<!-- Img 1 -->
+ <% if (kycDetails?.aadhaarNumber && !kycDetails?.isPhysicalAadhaar) { %>
+  <div class="kyc-document-row kyc-details-card <%= panPageBreak ? 'page-break' : ''%>">
+    <%- heading %>
+    <% heading = ""; %>
+
+    <div class="document-row">
+      <p>Aadhaar Number:</p>
+      <span><%= kycDetails?.aadhaarNumber %></span>
+    </div>
+
+    <%
+      let aadhaarImages = kycDetails?.aadhaarImage;
+    %>
+
+    <% if (aadhaarImages?.length && !aadhaarImages?.[0].toLowerCase().endsWith('.pdf')) { %>
+      <div class="document-images">
+        <div class="img-bg">
+          <div class="front">Front</div>
+          <div class="img">
+            <img src="<%= IMAGE_BASE_URL %><%= aadhaarImages[0] %>" alt="" />
+          </div>
+        </div>
+
+        <% if (aadhaarImages[1]) { %>
+          <div class="document-images kyc-back-img page-break">
+            <div class="img-bg">
+              <div class="front">Back</div>
+              <div class="img">
+                <img src="<%= IMAGE_BASE_URL %><%= aadhaarImages[1] %>" alt="" />
+              </div>
+            </div>
+          </div>
+        <% } %>
+      </div> <!-- /.document-images -->
+    <% } %>
+  </div>
+<% } %>
+
+<!-- Img 2 -->
+<% if(kycDetails?.panNumber && !kycDetails?.isPhysicalPan && kycDetails?.panImage && kycDetails?.panImage?.length && !kycDetails?.panImage?.[0].toLowerCase().endsWith('.pdf')) { %>
+    <div class="kyc-document-row kyc-details-card page-break">
+        <%- heading; %>
+        <% heading= ""; %>
+        <div class="document-row">
+            <p>PAN Number:</p>
+            <span> <%= kycDetails?.panNumber%> </span>
+        </div>
+            <div class="document-images">
+                <div class="img-bg">
+                    <div class="img">
+                        <img src="<%=IMAGE_BASE_URL%><%=kycDetails?.panImage[0]%>" alt="" />
+                    </div>
+                </div>
+           </div>
+    </div>
+<% } %>
+
+<!-- Img 3 -->
+<% if (kycDetails?.passportNumber && !kycDetails?.isPhysicalPassport) { %>
+  <div class="kyc-document-row kyc-details-card page-break">
+    <%- heading %>
+    <% heading = ""; %>
+
+    <div class="document-row">
+      <p>Passport Number:</p>
+      <span><%= kycDetails?.passportNumber %></span>
+    </div>
+
+    <% if (kycDetails?.passportImage && kycDetails?.passportImage?.length) { %>
+      <div class="document-images">
+        <div class="img-bg">
+          <div class="front">Front</div>
+          <div class="img">
+            <img src="<%= IMAGE_BASE_URL %><%= kycDetails?.passportImage[0] %>" alt="" />
+          </div>
+        </div>
+
+        <% if (kycDetails?.passportImage[1]) { %>
+          <div class="document-images kyc-back-img page-break">
+            <div class="img-bg">
+              <div class="front">Back</div>
+              <div class="img">
+                <img src="<%= IMAGE_BASE_URL %><%= kycDetails?.passportImage[1] %>" alt="" />
+              </div>
+            </div>
+          </div>
+        <% } %>
+      </div> <!-- /.document-images -->
+    <% } %>
+
+  </div> <!-- /.kyc-document-row -->
+<% } %>
+
+<!-- Img 4 (OCI) -->
+<% if (kycDetails?.ociNumber && !kycDetails?.isPhysicalOCI) { %>
+  <div class="kyc-document-row kyc-details-card page-break">
+    <%- heading %>
+    <% heading = ""; %>
+
+    <div class="document-row">
+      <p>OCI Number:</p>
+      <span><%= kycDetails?.ociNumber %></span>
+    </div>
+
+    <% if (kycDetails?.ociImage && kycDetails?.ociImage?.length) { %>
+      <div class="document-images">
+        <div class="img-bg">
+          <div class="front">Front</div>
+          <div class="img">
+            <img src="<%= IMAGE_BASE_URL %><%= kycDetails?.ociImage[0] %>" alt="" />
+          </div>
+        </div>
+
+        <% if (kycDetails?.ociImage[1]) { %>
+          <div class="document-images kyc-back-img page-break">
+            <div class="img-bg">
+              <div class="front">Back</div>
+              <div class="img">
+                <img src="<%= IMAGE_BASE_URL %><%= kycDetails?.ociImage[1] %>" alt="" />
+              </div>
+            </div>
+          </div>
+        <% } %>
+      </div>
+    <% } %>
+
+  </div>
+<% } %>
+
+<!-- Img 5 -->
+<% if (
+  Array.isArray(kycDetails?.legalGuardianDoc) &&
+  kycDetails.legalGuardianDoc.length > 0 &&
+  !kycDetails.legalGuardianDoc?.[0].endsWith('.pdf')
+) { %>
+    <div class="kyc-document-row kyc-details-card page-break">
+        <%- heading; %>
+        <% heading= ""; %>
+        <div class="document-row">
+            <p>Consent letter from other parent towards appointment of legal guardian:</p>
+        </div>
+          <div class="document-images">
+              <div class="img-bg">
+                  <div class="img">
+                      <img src="<%=IMAGE_BASE_URL%><%=kycDetails?.legalGuardianDoc[0]%>" alt="" />
+                  </div>
+              </div>
+          </div>
+    </div>
+<% } %>
+<!-- Image 6-->
+ <% if(!kycDetails?.isPhysicalAddressProof && kycDetails?.addressProofImage && kycDetails?.addressProofImage?.length  &&  typeof kycDetails?.addressProofImage?.[0] === 'string' && !kycDetails?.addressProofImage?.[0].toLowerCase().endsWith('.pdf')) { %>
+    <div class="kyc-document-row kyc-details-card page-break">
+        <%- heading; %>
+        <% heading= ""; %>
+        <div class="document-row">
+            <p>Address Proof:</p>
+        </div>
+        <div class="document-images">
+            <div class="img-bg">
+                <div class="img">
+                    <img src="<%=IMAGE_BASE_URL%><%=kycDetails?.addressProofImage[0]%>" alt="" />
+                </div>
+            </div>
+        </div>
+    </div>
+<% } %>

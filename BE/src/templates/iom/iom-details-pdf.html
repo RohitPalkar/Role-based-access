@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IOM Details - {{iomNo}}</title>
+    <style>
+      /* IOM Details PDF export template */
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: 'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+          Roboto, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        line-height: 1.5;
+        color: #1c252e;
+        background-color: #ffffff;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .iom-page {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 16px;
+        background-color: #f4f6f8;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .iom-stack {
+        display: grid;
+        grid-auto-flow: row;
+        gap: 16px;
+      }
+
+      .iom-card {
+        display: block;
+        box-sizing: border-box;
+        background-color: #ffffff;
+        border: 1px solid #e5e7eb;
+        border-radius: 8px;
+        padding: 16px;
+        margin: 0;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      /* Header card */
+
+      .iom-header {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        gap: 16px;
+        width: 100%;
+      }
+
+      .iom-header__title-group {
+        display: grid;
+        grid-template-columns: auto auto;
+        justify-content: start;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .iom-header__logo {
+        max-height: 48px;
+        max-width: 200px;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        justify-self: end;
+      }
+
+      .iom-header__logo:not([src]),
+      .iom-header__logo[src=""] {
+        display: none;
+      }
+
+      .iom-header__title {
+        margin: 0;
+        font-size: 24px;
+        font-weight: 600;
+        color: #1c252e;
+      }
+
+      .iom-status-badge {
+        display: inline-block;
+        padding: 4px 10px;
+        border-radius: 6px;
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 1.4;
+        color: #b78103;
+        background-color: rgba(255, 171, 0, 0.16);
+      }
+
+      .iom-divider {
+        border: 0;
+        border-top: 1px solid #dadada;
+        margin: 16px 0;
+      }
+
+      .iom-meta-row {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .iom-meta-item__label {
+        margin: 0 0 4px;
+        font-size: 14px;
+        color: #637381;
+      }
+
+      .iom-meta-item__value {
+        margin: 0;
+        font-size: 14px;
+        font-weight: 600;
+        color: #1c252e;
+      }
+
+      .iom-two-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 16px;
+        width: 100%;
+      }
+      /* Two-column party details */
+
+      /* .iom-two-col {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+      } */
+
+      .iom-section-title {
+        margin: 0 0 16px;
+        font-size: 16px;
+        font-weight: 600;
+        color: #1c252e;
+      }
+
+      .iom-detail-rows {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px 12px;
+      }
+
+      .iom-detail-row__label {
+        margin: 0;
+        font-size: 14px;
+        color: #637381;
+      }
+
+      .iom-detail-row__value {
+        margin: 0;
+        font-size: 14px;
+        font-weight: 600;
+        color: #1c252e;
+        text-align: right;
+      }
+
+      /* Payment details */
+
+      .iom-payment-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .iom-payment-grid--highlight {
+        margin-bottom: 16px;
+      }
+
+      .iom-payment-box {
+        display: block;
+        box-sizing: border-box;
+        border-radius: 8px;
+        border: 1px solid #e5e7eb;
+        padding: 16px;
+        text-align: center;
+        background-color: #ffffff;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .iom-payment-box--highlight {
+        text-align: left;
+      }
+
+      .iom-payment-box__value {
+        margin: 0 0 4px;
+        font-size: 16px;
+        font-weight: 700;
+      }
+
+      .iom-payment-box__value--large {
+        font-size: 24px;
+      }
+
+      .iom-payment-box__label {
+        margin: 0;
+        font-size: 12px;
+        color: #637381;
+      }
+
+      .iom-payment-box__label--highlight {
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      .iom-payment-box--blue {
+        background-color: #eaf2ff;
+        border: 1px solid rgba(5, 9, 122, 0.2);
+        color: #05097a;
+      }
+
+      .iom-payment-box--green {
+        background-color: #edf6ef;
+        border: 1px solid rgba(25, 63, 23, 0.2);
+        color: #193f17;
+      }
+
+      .iom-payment-box--purple {
+        background-color: #f5effd;
+        border: 1px solid rgba(66, 0, 186, 0.2);
+        color: #4200ba;
+      }
+
+      .iom-payment-box--orange {
+        background-color: #fdf4ea;
+        border: 1px solid rgba(119, 51, 22, 0.2);
+        color: #773316;
+      }
+
+      .iom-payment-box--yellow {
+        background-color: #ffffea;
+        border: 1px solid rgba(116, 122, 5, 0.2);
+        color: #747a05;
+      }
+
+      .iom-payment-box--red {
+        background-color: #f6eded;
+        border: 1px solid rgba(63, 23, 23, 0.2);
+        color: #3f1717;
+      }
+
+      .iom-payment-box--pink {
+        background-color: #fdeff6;
+        border: 1px solid rgba(186, 0, 115, 0.2);
+        color: #ba0073;
+      }
+
+      .iom-payment-box--cyan {
+        background-color: #eafdfb;
+        border: 1px solid rgba(22, 92, 119, 0.2);
+        color: #165c77;
+      }
+
+      .iom-payment-box--peach {
+        background-color: #fdf5ef;
+        border: 1px solid rgba(63, 31, 23, 0.5);
+        color: #1c252e;
+      }
+
+      /* Signatures */
+
+      .iom-signatures {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .iom-signatures--two {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .iom-signature-block {
+        padding: 0 16px;
+      }
+
+      .iom-signature-block:first-child {
+        padding-left: 0;
+      }
+
+      .iom-signature-block:last-child {
+        padding-right: 0;
+      }
+
+      .iom-signature-block--border-right {
+        border-right: 1px solid #dadada;
+      }
+
+      .iom-signature-block__title {
+        margin: 0 0 8px;
+        font-size: 14px;
+        color: #637381;
+      }
+
+      .iom-signature-block__image-wrap {
+        display: grid;
+        place-items: center;
+        min-height: 150px;
+        text-align: center;
+      }
+
+      .iom-signature-block__image {
+        max-width: 100%;
+        max-height: 150px;
+        object-fit: contain;
+      }
+
+      .iom-signature-block__image:not([src]),
+      .iom-signature-block__image[src=""] {
+        display: none;
+      }
+
+      .iom-signature-block__line {
+        border-bottom: 1px solid #dadada;
+        margin-bottom: 8px;
+      }
+
+      .iom-signature-block__name {
+        margin: 0;
+        font-size: 14px;
+        font-weight: 600;
+        text-align: center;
+        color: #1c252e;
+      }
+
+      .iom-signature-block__role {
+        margin: 0;
+        font-size: 12px;
+        text-align: center;
+        color: #637381;
+      }
+
+      /* Business exception */
+
+      .iom-business-exception__text {
+        margin: 0;
+        font-size: 14px;
+        color: #637381;
+        line-height: 1.6;
+        white-space: pre-wrap;
+      }
+
+      /* Source details footer */
+
+      .iom-source-row {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .iom-source-item {
+        padding-right: 16px;
+        border-right: 1px dashed #dadada;
+      }
+
+      .iom-source-item:last-child {
+        padding-right: 0;
+        border-right: 0;
+      }
+
+      .iom-source-item__label {
+        margin: 0 0 4px;
+        font-size: 14px;
+        color: #637381;
+      }
+
+      .iom-source-item__value {
+        margin: 0;
+        font-size: 14px;
+        font-weight: 600;
+        color: #1c252e;
+      }
+
+      /* Print */
+
+      @page {
+        size: A4;
+        margin: 12mm;
+      }
+
+      @media print {
+        body {
+          background-color: #ffffff;
+        }
+
+        .iom-page {
+          max-width: none;
+          padding: 0;
+          background-color: #ffffff;
+        }
+
+        .iom-card {
+          display: block;
+          box-sizing: border-box;
+          background-color: #ffffff;
+          border: 1px solid #e5e7eb;
+          border-radius: 8px;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+          break-inside: avoid;
+          page-break-inside: avoid;
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+
+        .iom-payment-box,
+        .iom-payment-box--blue,
+        .iom-payment-box--green,
+        .iom-payment-box--purple,
+        .iom-payment-box--orange,
+        .iom-payment-box--yellow,
+        .iom-payment-box--red,
+        .iom-payment-box--pink,
+        .iom-payment-box--cyan,
+        .iom-payment-box--peach {
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+
+        .iom-two-col,
+        .iom-payment-grid,
+        .iom-signatures,
+        .iom-source-row {
+          break-inside: avoid;
+          page-break-inside: avoid;
+        }
+      }
+
+      @media screen and (max-width: 900px) {
+        .iom-two-col,
+        .iom-payment-grid,
+        .iom-signatures,
+        .iom-signatures--two,
+        .iom-source-row,
+        .iom-meta-row {
+          grid-template-columns: 1fr;
+        }
+
+        .iom-signature-block {
+          padding: 0;
+          border-right: 0 !important;
+          margin-bottom: 16px;
+        }
+
+        .iom-source-item {
+          padding-right: 0;
+          border-right: 0;
+          margin-bottom: 12px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="iom-page">
+      <div class="iom-stack">
+        <!-- Header -->
+        <section class="iom-card">
+          <div class="iom-header">
+            <div class="iom-header__title-group">
+              <h1 class="iom-header__title">{{iomNo}}</h1>
+              <span class="iom-status-badge">{{statusLabel}}</span>
+            </div>
+            <img
+              class="iom-header__logo"
+              src="{{brand}}"
+              alt="Brand logo"
+            />
+          </div>
+
+          <hr class="iom-divider" />
+
+          <div class="iom-meta-row">
+            <div class="iom-meta-item">
+              <p class="iom-meta-item__label">Generated On:</p>
+              <p class="iom-meta-item__value">{{iomCreatedAt}}</p>
+            </div>
+            <div class="iom-meta-item">
+              <p class="iom-meta-item__label">IOM Date:</p>
+              <p class="iom-meta-item__value">{{createdAt}}</p>
+            </div>
+            <div class="iom-meta-item">
+              <p class="iom-meta-item__label">Created By:</p>
+              <p class="iom-meta-item__value">{{crmCreatedByName}}</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Referrer & Referee -->
+        <section class="iom-two-col">
+          <article class="iom-card">
+            <h2 class="iom-section-title">Referrer Details</h2>
+            <div class="iom-detail-rows">
+              <p class="iom-detail-row__label">Customer Name</p>
+              <p class="iom-detail-row__value">{{customerName}}</p>
+
+              <p class="iom-detail-row__label">BP Code</p>
+              <p class="iom-detail-row__value">{{referrerBpCode}}</p>
+
+              <p class="iom-detail-row__label">Project</p>
+              <p class="iom-detail-row__value">{{referrerProject}}</p>
+
+              <p class="iom-detail-row__label">Location</p>
+              <p class="iom-detail-row__value">{{referrerLocation}}</p>
+
+              <p class="iom-detail-row__label">Unit No.</p>
+              <p class="iom-detail-row__value">{{referrerUnitNo}}</p>
+
+              <p class="iom-detail-row__label">Booking Date</p>
+              <p class="iom-detail-row__value">{{referrerBookingDate}}</p>
+            </div>
+          </article>
+
+          <article class="iom-card">
+            <h2 class="iom-section-title">Referee Details</h2>
+            <div class="iom-detail-rows">
+              <p class="iom-detail-row__label">Customer Name</p>
+              <p class="iom-detail-row__value">{{refereeCustomerName}}</p>
+
+              <p class="iom-detail-row__label">BP Code</p>
+              <p class="iom-detail-row__value">{{bpCode}}</p>
+
+              <p class="iom-detail-row__label">Project</p>
+              <p class="iom-detail-row__value">{{refereeProject}}</p>
+
+              <p class="iom-detail-row__label">Location</p>
+              <p class="iom-detail-row__value">{{refereeLocation}}</p>
+
+              <p class="iom-detail-row__label">Unit No.</p>
+              <p class="iom-detail-row__value">{{refereeUnitNo}}</p>
+
+              <p class="iom-detail-row__label">Booking Date</p>
+              <p class="iom-detail-row__value">{{refereeBookingDate}}</p>
+            </div>
+          </article>
+        </section>
+
+        <!-- Payment Details -->
+        <section class="iom-card">
+          <h2 class="iom-section-title">Payment Details</h2>
+
+          <div class="iom-payment-grid">
+            <div class="iom-payment-box iom-payment-box--blue">
+              <p class="iom-payment-box__value">{{basicSalePrice}}</p>
+              <p class="iom-payment-box__label">Basic Sale Price</p>
+            </div>
+
+            <div class="iom-payment-box iom-payment-box--green">
+              <p class="iom-payment-box__value">{{brokeragePercent}}%</p>
+              <p class="iom-payment-box__label">Brokerage %</p>
+            </div>
+
+            <div class="iom-payment-box iom-payment-box--purple">
+              <p class="iom-payment-box__value">{{brokerageAmount}}</p>
+              <p class="iom-payment-box__label">Brokerage Amount</p>
+            </div>
+
+            <div class="iom-payment-box iom-payment-box--orange">
+              <p class="iom-payment-box__value">{{pointsAdjustmentType}}</p>
+              <p class="iom-payment-box__label">Points Adjustment Type</p>
+            </div>
+
+            <div class="iom-payment-box iom-payment-box--yellow">
+              <p class="iom-payment-box__value">{{pointsToReferrer}}%</p>
+              <p class="iom-payment-box__label">Points to Referrer</p>
+            </div>
+
+            <div class="iom-payment-box iom-payment-box--red">
+              <p class="iom-payment-box__value">{{pointsReferrerAmount}}</p>
+              <p class="iom-payment-box__label">Points Referrer Amount</p>
+            </div>
+
+            <div class="iom-payment-box iom-payment-box--pink">
+              <p class="iom-payment-box__value">{{pointsToReferee}}%</p>
+              <p class="iom-payment-box__label">Points to Referee</p>
+            </div>
+
+            <div class="iom-payment-box iom-payment-box--cyan">
+              <p class="iom-payment-box__value">{{pointsRefereeAmount}}</p>
+              <p class="iom-payment-box__label">Points Referee Amount</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Signatures -->
+        <section class="iom-card">
+          <h2 class="iom-section-title">Signatures</h2>
+          <div class="iom-signatures">
+            <div class="iom-signature-block iom-signature-block--border-right">
+              <p class="iom-signature-block__title">Prepared By Signature</p>
+              <div class="iom-signature-block__image-wrap">
+                <img
+                  class="iom-signature-block__image"
+                  src="{{preparedBySignatureUrl}}"
+                  alt="Prepared by signature"
+                />
+              </div>
+              <div class="iom-signature-block__line"></div>
+              <p class="iom-signature-block__name">{{preparedByName}}</p>
+              <p class="iom-signature-block__role">{{preparedByRole}}</p>
+            </div>
+
+            <div class="iom-signature-block iom-signature-block--border-right">
+              <p class="iom-signature-block__title">Verified By Signature</p>
+              <div class="iom-signature-block__image-wrap">
+                <img
+                  class="iom-signature-block__image"
+                  src="{{verifiedBySignatureUrl}}"
+                  alt="Verified by signature"
+                />
+              </div>
+              <div class="iom-signature-block__line"></div>
+              <p class="iom-signature-block__name">{{verifiedByName}}</p>
+              <p class="iom-signature-block__role">{{verifiedByRole}}</p>
+            </div>
+
+            <div class="iom-signature-block">
+              <p class="iom-signature-block__title">Approved By Signature</p>
+              <div class="iom-signature-block__image-wrap">
+                <img
+                  class="iom-signature-block__image"
+                  src="{{approvedBySignatureUrl}}"
+                  alt="Approved by signature"
+                />
+              </div>
+              <div class="iom-signature-block__line"></div>
+              <p class="iom-signature-block__name">{{approvedByName}}</p>
+              <p class="iom-signature-block__role">{{approvedByRole}}</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Business Exception -->
+        <section class="iom-card">
+          <h2 class="iom-section-title">Business Exception</h2>
+          <p class="iom-business-exception__text">{{businessException}}</p>
+        </section>
+
+        <!-- Finance Approvals -->
+        <section class="iom-card">
+          <h2 class="iom-section-title">Finance Approvals</h2>
+          <div class="iom-signatures iom-signatures--two">
+            <div class="iom-signature-block iom-signature-block--border-right">
+              <p class="iom-signature-block__title">Verified By Signature</p>
+              <div class="iom-signature-block__image-wrap">
+                <img
+                  class="iom-signature-block__image"
+                  src="{{financeVerifiedBySignatureUrl}}"
+                  alt="Finance verified by signature"
+                />
+              </div>
+              <div class="iom-signature-block__line"></div>
+              <p class="iom-signature-block__name">{{financeVerifiedByName}}</p>
+              <p class="iom-signature-block__role">{{financeVerifiedByRole}}</p>
+            </div>
+
+            <div class="iom-signature-block">
+              <p class="iom-signature-block__title">Approved By Signature</p>
+              <div class="iom-signature-block__image-wrap">
+                <img
+                  class="iom-signature-block__image"
+                  src="{{financeApprovedBySignatureUrl}}"
+                  alt="Finance approved by signature"
+                />
+              </div>
+              <div class="iom-signature-block__line"></div>
+              <p class="iom-signature-block__name">{{financeApprovedByName}}</p>
+              <p class="iom-signature-block__role">{{financeApprovedByRole}}</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Source Details -->
+        <section class="iom-card">
+          <div class="iom-source-row">
+            <div class="iom-source-item">
+              <p class="iom-source-item__label">Source in SAP</p>
+              <p class="iom-source-item__value">{{sourceInSAP}}</p>
+            </div>
+            <div class="iom-source-item">
+              <p class="iom-source-item__label">Source in Salesforce</p>
+              <p class="iom-source-item__value">{{sourceInSalesforce}}</p>
+            </div>
+            <div class="iom-source-item">
+              <p class="iom-source-item__label">Agreement Done</p>
+              <p class="iom-source-item__value">{{agreementDone}}</p>
+            </div>
+            <div class="iom-source-item">
+              <p class="iom-source-item__label">Referrer Paid</p>
+              <p class="iom-source-item__value">{{referrerPaid}}</p>
+            </div>
+            <div class="iom-source-item">
+              <p class="iom-source-item__label">Referee Paid</p>
+              <p class="iom-source-item__value">{{refereePaid}}</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
+ 

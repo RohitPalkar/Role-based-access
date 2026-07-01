@@ -1,0 +1,47 @@
+export enum RolesEnum {
+  SUPER_ADMIN = 'Super Admin',
+  ADMIN = 'Super User (BI Team)',
+  RM = 'RM(Relationship Manager)',
+  FINANCE_ADMIN = 'Support Department Case User',
+  FINANCE_USER = 'Finance User',
+  FINANCE_HEAD = 'Finance Head',
+  SALES_TL = 'Sales TL',
+  SALES_RSH = 'Sales RSH',
+  SALES_BH = 'Sales BH',
+  CRM = 'CRM',
+  CRM_HEAD = 'CRM Head',
+  CRM_TL = 'CRM TL',
+  GRE = 'GRE',
+  MIS = 'MIS',
+  CHANNEL_SALES = 'Channel Sales',
+  PROJECT_HEAD = 'Project Head',
+  LOYALTY = 'Loyalty',
+  BIS = 'BIS',
+}
+
+export const RolesDisplayMap: Record<RolesEnum, string> = {
+  [RolesEnum.SUPER_ADMIN]: 'Super Admin',
+  [RolesEnum.ADMIN]: 'Super User',
+  [RolesEnum.RM]: 'Relationship Manager',
+  [RolesEnum.FINANCE_ADMIN]: 'Finance Admin',
+  [RolesEnum.FINANCE_HEAD]: 'Finance Head',
+  [RolesEnum.FINANCE_USER]: 'Finance User',
+  [RolesEnum.CRM_HEAD]: 'CRM Head',
+  [RolesEnum.CRM_TL]: 'CRM TL',
+  [RolesEnum.SALES_TL]: 'Sales TL',
+  [RolesEnum.SALES_RSH]: 'Sales RSH',
+  [RolesEnum.SALES_BH]: 'Business Head',
+  [RolesEnum.CRM]: 'CRM',
+  [RolesEnum.GRE]: 'GRE',
+  [RolesEnum.MIS]: 'MIS',
+  [RolesEnum.CHANNEL_SALES]: 'Channel Sales',
+  [RolesEnum.PROJECT_HEAD]: 'Project Head',
+  [RolesEnum.LOYALTY]: 'Loyalty',
+  [RolesEnum.BIS]: 'BIS',
+};
+
+export enum RecipientRolesEnum {
+  RM = 'RM',
+  TL = 'TL',
+  RSH = 'RSH',
+}

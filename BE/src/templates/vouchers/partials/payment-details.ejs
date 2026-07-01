@@ -1,0 +1,107 @@
+<%
+let pageBreak = false;
+%>
+
+<% if (payments && payments.length) { %>
+    <% payments.forEach((pay, index) => {
+        const id = pay?.paymentDetails?.gatewayPaymentId ||
+                        pay?.paymentDetails?.transactionNumber ||
+                        pay?.paymentDetails?.chequeNumber ||
+                        '';
+        const paymentModeLabel = pay?.paymentMode
+                ? [pay.paymentMode === paymentModeEnum.GATEWAY ? paymentModeEnum.GATEWAY : 'Direct']
+                : [];
+
+        const rawMethod = pay?.paymentDetails?.method?.trim() || '';
+        const method = /upi/i.test(rawMethod)
+                            ? 'UPI'
+                            : (rawMethod || 'N/A');
+
+        const dated = pay?.date;
+        const amount = pay?.paidAmount ?? 0;
+
+        let paymentProof = pay?.paymentDetails?.paymentProof;
+        let chequeDepositSlip = pay?.paymentDetails?.chequeDepositSlip;
+
+    %>
+    <!-- Img 1 -->
+    <% if (pay?.paymentDetails) { %>
+        <% if(index === 0 || pageBreak){ %>
+            <div class="payment-documents payment-details-card page-break">
+            <% if(index === 0){ %>
+                <h3 class="title-personal-hd marginBottom">Payment Details</h3>
+            <% }} %>
+            <div class="payment-document-row">
+                <%
+                    if(paymentProof?.length > 0 || chequeDepositSlip?.length > 0){
+                        pageBreak = true;
+                    } else {
+                        pageBreak = false;
+                    }
+                %>
+                <div class="payment-info">
+                    <div class="payment-info-row">
+                        <label class="label-title">Tnx No.:</label>
+                        <span class="span-title">
+                            <%= index + 1 %>
+                        </span>
+                    </div>
+                    <div class="payment-info-row">
+                        <label class="label-title">Transaction Mode:</label>
+                        <span class="span-title">
+                            <%= paymentModeLabel %>
+                        </span>
+                    </div>
+                    <div class="payment-info-row">
+                        <label class="label-title">Transaction Reference:</label>
+                        <span class="span-title">
+                            <%= id %>
+                        </span>
+                    </div>
+                    <div class="payment-info-row">
+                        <label class="label-title">Payment Method:</label>
+                        <span class="span-title">
+                            <%= method %>
+                        </span>
+                    </div>
+                    <div class="payment-info-row">
+                        <label class="label-title">Dated:</label>
+                        <span class="span-title">
+                            <%= dated ? formatDate(dated, DISPLAY_DATE_FORMAT) : '-' %>
+                        </span>
+                    </div>
+                    <div class="payment-info-row">
+                        <label class="label-title">Amount:</label>
+                        <span class="span-title">
+                            <span>₹ <%= formatIndianAmount(amount) %></span>
+                        </span>
+                    </div>
+                </div>
+
+                <% if ((paymentProof?.length && !paymentProof?.[0].toLowerCase().endsWith('.pdf')) || (chequeDepositSlip?.length && !chequeDepositSlip?.[0].toLowerCase().endsWith('.pdf'))) { %>
+                    <div class="document-images">
+                        <% if (paymentProof?.[0]) { %>
+                            <div class="img-bg">
+                                <div class="front">Payment Proof</div>
+                                <div class="img">
+                                    <img src="<%= IMAGE_BASE_URL %><%= paymentProof[0] %>" alt="" />
+                                </div>
+                            </div>
+                        <% } %>
+                        <% if (chequeDepositSlip?.[0]) { %>
+                            <div class="img-bg">
+                                <div class="front">Cheque Deposit Slip</div>
+                                <div class="img">
+                                    <img src="<%= IMAGE_BASE_URL %><%= chequeDepositSlip[0] %>" alt="" />
+                                </div>
+                            </div>
+                        <% } %>
+                    </div>
+                <% } else { %>
+                    <div class="line-dotted"></div>
+                <% } %>
+                </div>
+            <%- (pageBreak || payments?.length == index+1) ? '</div>' : '' %>
+        <% } %>
+    <% }); %>
+<% } %>

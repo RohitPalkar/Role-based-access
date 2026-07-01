@@ -1,0 +1,37 @@
+<div class="payment-details <%= pageBreak ? 'page-break' : '' %>">
+  <div class="applicant-details-card">
+    <h3 class="title-personal-hd">Group Booking Details</h3>
+    <%
+      const list = groupDetails?.opportunities || [];
+      const count = String(list.length).padStart(2, '0');
+      const fmtINR = (n) => Number(n || 0).toLocaleString('en-IN');
+    %>
+    <p class="payment-p" style="font-weight: bold; margin-top: 20px;">Number of Units - <%= count %></p>
+
+    <div class="table-responsive-pdf">
+      <table >
+        <tr>
+          <th style="background-color: rgba(244, 246, 248, 1); color: #637381;">Project Name</th>
+          <th style="background-color: rgba(244, 246, 248, 1); color: #637381;">Unit #</th>
+          <th style="background-color: rgba(244, 246, 248, 1); color: #637381;">Sale Value</th>
+          <th style="background-color: rgba(244, 246, 248, 1); color: #637381;">Booking Amount</th>
+        </tr>
+
+        <% if (list.length) { %>
+          <% list.forEach((opp) => { %>
+            <tr>
+              <td><%= opp.Project || 'N/A' %></td>
+              <td><%= opp.unitno || 'N/A' %></td>
+              <td>₹ <%= fmtINR(opp.SalesValue) %></td>
+              <td>₹ <%= fmtINR(opp.Amount) %></td>
+            </tr>
+          <% }) %>
+        <% } else { %>
+          <tr>
+            <td colspan="4" style="text-align:center;">No units found</td>
+          </tr>
+        <% } %>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "lean-ctx": {
+      "command": "/tmp/.mount_iProgrikkeLA/usr/bin/lean-ctx",
+      "args": [],
+      "env": {
+        "LEAN_CTX_DATA_DIR": "/home/tejashreed/.lean-ctx"
+      }
+    }
+  }
+}

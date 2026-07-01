@@ -1,0 +1,2673 @@
+{
+  "demo": {
+    "lang": "English",
+    "description": "The starting point for your next project is based on MUI. Easy customization helps you build apps faster and better."
+  },
+  "main": {
+    "captchaError": "Please verify the CAPTCHA to proceed."
+  },
+  "button": {
+    "cancel": "Cancel",
+    "save": "Save",
+    "confirm": "Confirm",
+    "submit": "Submit",
+    "sendLink": "Send Link",
+    "generateLink": "Generate Link",
+    "fetch": "Fetch",
+    "yes": "Yes",
+    "no": "No",
+    "apply": "Apply",
+    "reset": "Reset",
+    "export": "Export",
+    "search": "Search",
+    "blockUnit": "Block Unit",
+    "releaseUnit": "Release Unit",
+    "okay": "Okay, got it",
+    "reject": "Reject",
+    "fetchFromSAP": "Fetch from SAP",
+    "update": "Update"
+  },
+  "common": {
+    "name": "Name",
+    "brand": "Brand",
+    "city": "City",
+    "project": "Project",
+    "filters": "Filters",
+    "columns": "Columns",
+    "passportPhoto": "Recent Passport Size Photo",
+    "startDate": "Start date",
+    "endDate": "End date",
+    "dateRange": "Date Range",
+    "createdBy": "Select and Search",
+    "edit": "Edit",
+    "delete": "Delete",
+    "copy": "Copy",
+    "campaign": "Campaign",
+    "cpName": "CP Name",
+    "voucher": "voucher",
+    "eoi": "eoi",
+    "keyword": "Keyword",
+    "phoneHelperText": "10 digit Indian mobile number",
+    "formFields": {
+      "startTime": "Start Time",
+      "endTime": "End Time",
+      "duration": "Batch Duration",
+      "recordsPerBatch": "Records per Batch",
+      "openBatchBefore": "Open Batch Before",
+      "batchCount": "Batch Count",
+      "minutes": "minutes",
+      "batchName": "Batch Name",
+      "selectIdTypes": "Select ID Types",
+      "enterDuration": "Enter Duration",
+      "enterRecordsPerBatch": "Enter records per batch",
+      "enterBatchName": "Enter batch name",
+      "enterOpenBatchBefore": "Enter open batch before",
+      "recordsShort": "Records"
+    }
+  },
+  "commonValidations": {
+    "startDate": "Start Date is required",
+    "endDate": "End Date is required",
+    "endDateLaterThanStart": "End date must be later than start date"
+  },
+  "actions": {
+    "viewCustomer": "Cx Page Link",
+    "sendLink": "Send Form Link",
+    "editEOI": "Edit EOI Details",
+    "asignClosingRM": "Assign RM",
+    "cancelEOI": "Cancel Voucher/EOI",
+    "exportRecords": "Export Assign Closing RM",
+    "view": "Transaction Details",
+    "edit": "Edit",
+    "verify": "Approve Form",
+    "ChangesRequest": "Request for Resubmission",
+    "approveCancellation": "Approve Cancellation",
+    "requestCancellation": "Request Cancellation",
+    "EOI_converted": "EOI Convert",
+    "previewForm": "Preview Form",
+    "deleteEoi": "Delete Record",
+    "restoreEoi": "Restore Record",
+    "mapAndConvertEOI": "Map Unit",
+    "unitInventory": "Unit Inventory",
+    "exportBookingForm": "Export Booking Form",
+    "changeSource": "Change Request",
+    "crmCancellationAction": "Cancel & Refund",
+    "manageSfdcOpportunity": "Update SFDC IDs",
+    "unitInventoryNew": "Unit Inventory",
+    "approveUnit": "Approve Unit",
+    "preBookingDetails": "Pre-Booking Documents"
+  },
+  "actionDialogs": {
+    "cancelEOI": {
+      "confirmText": "Yes, Cancel",
+      "placeholder": "Enter reason for cancellation",
+      "successMsg": "EOI cancelled successfully",
+      "errorMsg": "Failed to cancel EOI"
+    },
+    "approveCancellation": {
+      "confirmText": "Yes, Approve",
+      "placeholder": "Enter reason for approval",
+      "successMsg": "Cancellation approved successfully",
+      "errorMsg": "Approve cancellation failed"
+    },
+    "requestCancellation": {
+      "confirmText": "Yes, Request",
+      "placeholder": "Enter reason for cancellation request",
+      "successMsg": "Cancellation requested successfully",
+      "errorMsg": "Request cancellation failed"
+    },
+    "EOI_converted": {
+      "confirmText": "Yes, Convert",
+      "placeholder": "Enter reason for conversion",
+      "successMsg": "EOI converted successfully",
+      "errorMsg": "Conversion failed"
+    },
+    "deleteEoi": {
+      "confirmText": "Delete",
+      "placeholder": "Enter the Reason",
+      "successMsg": "EOI archived successfully",
+      "errorMsg": "EOI archiving failed"
+    },
+    "restoreEoi": {
+      "confirmText": "Restore",
+      "placeholder": "Enter the Reason",
+      "successMsg": "EOI unarchived successfully",
+      "errorMsg": "EOI unarchiving failed"
+    }
+  },
+  "manageSfdc": {
+    "title": "Update SFDC IDs",
+    "sfdcEnquiryIdLabel": "SFDC Enquiry ID",
+    "sfdcEnquiryIdPlaceholder": "Enter SFDC Enquiry ID",
+    "opportunityIdLabel": "Opportunity ID",
+    "opportunityIdPlaceholder": "Enter Opportunity ID",
+    "successMsg": "SFDC opportunity updated successfully",
+    "errorMsg": "Failed to update SFDC opportunity",
+    "invalidRowData": "Invalid row data",
+    "invalidVoucherId": "Invalid voucher ID"
+  },
+  "baseColumns": {
+    "labels": {
+      "uniqueReferenceId": "Payment Ref ID",
+      "paidVoucherId": "Voucher/EOI ID",
+      "customerName": "Customer Name",
+      "email": "Email",
+      "mobile": "Mobile No.",
+      "campaignName": "Campaign Name",
+      "primarySource": "Primary Source",
+      "cpName": "CP Name",
+      "referrerName": "Name of Referrer",
+      "typologyPreference": "Typology Preference",
+      "unitPreference": "Unit Preference (P1 | P2 | P3)",
+      "queueId": "Cx Queue ID",
+      "sequenceNo": "Sequence No",
+      "voucherCount": "# of Vouchers/EOI",
+      "leadStatus": "Lead Status",
+      "formStatus": "Form Status",
+      "paymentStatus": "Payment Status",
+      "financeStatus": "Finance Reco",
+      "sourcingRm": "Sourcing RM",
+      "closingRm": "Closing RM",
+      "amountPaid": "Amount Paid",
+      "finalPaidDate": "Final Paid Date",
+      "chronology": "Chronology",
+      "createdAt": "Created Date",
+      "actions": "Actions",
+      "deletionReason": "Delete Reason",
+      "restoreReason": "Restore Reason",
+      "sfdcEnquiryId": "SFDC Enq. Id",
+      "sfdcLeadStatus": "SFDC Lead Status",
+      "stdEoiId": "Standard EOI ID",
+      "preEoiId": "Preferential EOI ID",
+      "prefillBookingForm": "Prefill Booking Form",
+      "sourceChangeStatus": "Status",
+      "requestedDate": "Requested Date",
+      "reviewDate": "Review Date",
+      "preferredUnit": "Preferred Unit Details",
+      "opportunityId": "Opportunity ID",
+      "amountPayable": "Amount Payable",
+      "checkerRemarks": "Checker Remarks",
+      "countryCode": "Country Code",
+      "occupation": "Occupation",
+      "industry": "Industry",
+      "companyName": "Company Name",
+      "designation": "Designation",
+      "annualIncome": "Annual Income",
+      "companyAddress": "Company Address",
+      "dob": "Date of Birth",
+      "residentStatus": "Resident Status",
+      "cpType": "CP Type",
+      "referrerProjectName": "Referrer Project Name",
+      "referrerUnitNo": "Referrer Unit Number",
+      "typologyPrefEoi": "Typology Preference at EOI",
+      "customerAddress": "Customer Address",
+      "pinCode": "Pin Code",
+      "typology": "Typology",
+      "status": "Status",
+      "approvalTime": "Approval Timer",
+      "batchDate": "Batch Date",
+      "attendance": "Attendance"
+    },
+    "tooltip": {
+      "amountPaid": "Total amount paid (Partially/fully).",
+      "finalPaidDate": "Timestamp of the complete EOI/Voucher amount paid.",
+      "amountPayable": "Total amount payable (Partially/fully)."
+    }
+  },
+  "incentiveStructure": {
+    "title": "Incentive Policy",
+    "subHeading": "Region -",
+    "form": {
+      "label": {
+        "name": "Name",
+        "brand": "Brand",
+        "region": "Region",
+        "city": "City",
+        "project": "Project",
+        "startRange": "Start Range",
+        "endRange": "End Range",
+        "percentage": "Percentage",
+        "startDate": "Start Date",
+        "endDate": "End Date",
+        "maxPayableIncentive": "Maximum Payable Incentive (Optional)",
+        "minimumBookings": "Minimum Bookings",
+        "minimumBookingsPlaceholder": "Leave blank if not applicable",
+        "Incentive": "Incentive",
+        "slabRange": "Slab Range",
+        "incentiveRate": "Incentive Rate"
+      },
+      "create": {
+        "title": "Add Incentive Policy",
+        "editTitle": "Edit Incentive Policy",
+        "basicDetails": "Basic Details",
+        "eligibilitySlab": "Eligibility Slab",
+        "incentiveSlabs": "Incentive Slabs",
+        "launchProject": "Launch Projects",
+        "targetSalesValue": "Incentive Slabs & Rates",
+        "incentiveSlabStructure": "Incentive Slab Structure (Payable Cases)",
+        "substanceProject": "Sustenance Projects",
+        "incentivePercentage": "Incentive Percentage",
+        "inc": "Inc",
+        "validation": {
+          "name": "Name is required",
+          "project": "Project is required",
+          "brand": "Brand is required",
+          "region": "Region is required",
+          "city": "City is required",
+          "minimumBookings": "Minimum Bookings is required"
+        },
+        "button": {
+          "addSlab": "Add Slab"
+        }
+      }
+    }
+  },
+  "boosterStructure": {
+    "title": "Booster Structure",
+    "form": {
+      "label": {
+        "name": "Booster Scheme Name",
+        "project": "Project",
+        "brand": "Brand",
+        "city": "City",
+        "billingEntity": "Billing Entity",
+        "startDate": "Start Date",
+        "endDate": "End Date",
+        "startRange": "Start Range",
+        "endRange": "End Range",
+        "rewardType": "Reward Type",
+        "rewardValue": "Enter Reward",
+        "rewardName": "Reward / Benefit",
+        "tl": "TL",
+        "ph": "PH",
+        "gre": "GRE",
+        "rsh": "RSH",
+        "crm": "CRM"
+      },
+      "create": {
+        "title": "Add Booster Scheme",
+        "editTitle": "Edit Booster Scheme",
+        "basicDetails": "Basic Details",
+        "eligibilitySlab": "Eligibility Slab",
+        "incentiveSlabs": "Incentive Slabs",
+        "targetSalesValue": "Target Sales Value",
+        "reward": "Reward Details",
+        "validation": {
+          "name": "Booster Scheme Name is required",
+          "project": "Project is required",
+          "startDate": "Start Date is required",
+          "endDate": "End Date is required",
+          "rewardType": "Reward Type is required",
+          "rewardValue": "Reward is required",
+          "brand": "Brand is required",
+          "city": "City is required"
+        },
+        "button": {
+          "addSlab": "Add Slab"
+        }
+      }
+    }
+  },
+  "projectJson": {
+    "titleProject": "Project",
+    "titleProjectAssigned": "Project Assigned",
+    "titleTargetTracker": "Target Tracker",
+    "label": {
+      "projectImage": "Project Image",
+      "company": "Company",
+      "uploadProjectImage": "Upload Project Image",
+      "jvPartnerLogo": "JV Partner Logo",
+      "uploadJvPartnerLogo": "Upload JV Partner Logo",
+      "agreementPercentage": "Agreement execution at X% of the AV"
+    },
+    "validations": {
+      "agreementPercentageRequired": "Agreement execution at X% of the AV is required",
+      "percentagePattern": "Only positive numbers with up to 3 decimal places are allowed",
+      "percentageMax": "Value cannot be greater than 100"
+    },
+    "updateUser": {
+      "name": "name",
+      "email": "email",
+      "phoneNumber": "phoneNumber",
+      "role": "role",
+      "revenueTarget": "revenueTarget",
+      "unitsTarget": "unitsTarget",
+      "areaTarget": "areaTarget",
+      "validation": {
+        "nameVal": "Name is required",
+        "emailVal": "Invalid email address",
+        "phoneNumberVal": "Phone number is required",
+        "roleVal": "Role is required",
+        "revenueTargetVal": "Revenue Target is required",
+        "unitsTargetVal": "Units Target must be greater than 0",
+        "areaTargetVal": "Area Target is required",
+        "locationVal": "Location is required",
+        "brandNameVal": "Brand Name is required",
+        "incentiveStructureVal": "Incentive Policy is required"
+      }
+    },
+    "create": {
+      "title": "Add Project",
+      "primaryBtn": "Submit"
+    },
+    "paymentGateway": {
+      "label": "Select Payment Gateway",
+      "tooltip": "By default, the brand’s payment gateway will be used. Provide credentials to use a different gateway account.",
+      "validations": {
+        "required": "Payment Gateway is required"
+      }
+    }
+  },
+  "userJson": {
+    "titleUserDetails": "User Details",
+    "titleProjectAssigned": "Project Assigned",
+    "titleTargetTracker": "Target Tracker",
+    "updateUser": {
+      "name": "name",
+      "email": "email",
+      "phoneNumber": "phoneNumber",
+      "role": "role",
+      "userGroup": "group",
+      "revenueTarget": "revenueTarget",
+      "unitsTarget": "unitsTarget",
+      "areaTarget": "areaTarget",
+      "employeeStatus": "Employment Status",
+      "contactNoPlaceholder": "WhatsApp Number",
+      "validation": {
+        "nameVal": "Name is required",
+        "emailVal": "Invalid email address",
+        "phoneNumberVal": "Phone number is required",
+        "roleVal": "Role is required",
+        "groupVal": "User Group is required",
+        "regionVal": "Region is required",
+        "startDate": "Start Date is required",
+        "revenueTargetVal": "Revenue Target is required",
+        "unitsTargetVal": "Units Target must be greater than 0",
+        "areaTargetVal": "Area Target is required",
+        "locationVal": "Location is required",
+        "brandNameVal": "Brand Name is required",
+        "incentiveStructureVal": "Incentive Policy is required",
+        "invalidContactNumber": "WhatsApp Number is invalid"
+      }
+    }
+  },
+  "employeeList": {
+    "title": "Employee List",
+    "form": {
+      "label": {
+        "name": "Name",
+        "email": "Email",
+        "salary": "Add/Update Salary",
+        "accumulatedBalance": "Accumulated Balance",
+        "amount": "Amount",
+        "date": "Date",
+        "action": "Action",
+        "balance": "Balance"
+      },
+      "create": {
+        "editTitle": "Edit Employee Financials",
+        "accural": "Accruals",
+        "accumulatedBalance": "Accumulated Balance",
+        "payment": "Payment",
+        "balance": "Balance",
+        "amount": "Amount",
+        "date": "Date",
+        "action": "Action",
+        "validation": {
+          "name": "Name is required",
+          "email": "Email is required",
+          "salary": "Salary is required",
+          "accumulatedBalance": "Accumulated Balance is required",
+          "amount": "Amount is required",
+          "date": "Date is required",
+          "action": "Action is required",
+          "balance": "Balance is required"
+        }
+      }
+    }
+  },
+  "EOIJson": {
+    "title": "EOI Records",
+    "searchBoxPlaceholder": "Search",
+    "searchChangeRequestView": "Search by PR ID, Voucher/EOI ID, SFDC Enq ID",
+    "searchCancellationsView": "Search by PR ID, Voucher/EOI ID, SFDC Enq ID",
+    "approvalUnitView": "Search by PR ID, Customer Name, Preferred Unit, Typology",
+    "queueIdAssigned": "Voucher ID Assigned",
+    "yes": "Yes",
+    "actions": {
+      "copyUrl": "Copy URL",
+      "openNewTab": "Open in new tab",
+      "shareCxLink": "Share Link",
+      "linkCopied": "Link copied to clipboard",
+      "invalidRowData": "Invalid row data",
+      "voucherEmailSent": "Voucher form email sent successfully",
+      "failVoucherFormEmail": "Could not send voucher form email",
+      "emailFailed": "Form link copied, but Email failed!",
+      "somethingWentWrong": "Something went wrong, but form link copied!"
+    },
+    "createEOI": {
+      "btnLabel": "+ Create Voucher / EOI",
+      "title": "Create Voucher / Expression of Interest",
+      "form": {
+        "basicDetails": {
+          "title": "Basic Details",
+          "referralFormTitle": "Referral at Voucher/EOI",
+          "purvaChampion": "Purva Champion",
+          "voucherId": "Voucher ID",
+          "eoiId": "EOI ID",
+          "label": {
+            "firstName": "First Name",
+            "lastName": "Last Name",
+            "email": "Email",
+            "residentStatus": "Resident Status",
+            "campaign": "Campaign",
+            "primarySource": "Primary Source",
+            "cpName": "CP Name",
+            "buyingForSelf": "Existing customer buying for self",
+            "referredByCustomer": "Referred by an existing customer",
+            "referralOthers": "Referral others",
+            "customerName": "Customer Name",
+            "customerEmail": "Email",
+            "project": "Project",
+            "unitNumber": "Unit No/Floor/Tower",
+            "referredBy": "Referred by",
+            "activityName": "Activity Name",
+            "employeeName": "Employee Name",
+            "employeeId": "Employee ID",
+            "contactNumber": "Contact Number",
+            "typology": "Preferred Typology",
+            "sbaRange": "SBA Range",
+            "priceRange": "Price Range",
+            "voucherId": "Voucher ID",
+            "sdfcEnquiryId": "SFDC Enquiry ID",
+            "sfdcEnquiryIdText": "For existing leads, fetch details from Salesforce or create a new link by entering the details below. You can now collect the voucher amount while sharing the payment link with the customer. Simply click on Pay Online to access UPI, credit card, and other payment options.",
+            "uniqueRefId": "Payment Ref ID",
+            "existingLeadMsg": "For existing leads, fetch details from Salesforce or create a new link by entering the details below.",
+            "note": "Note",
+            "paymentNote": "You can now collect the voucher amount while sharing the payment link with the customer. Simply click on Pay Online to access UPI, credit card, and other payment options."
+          },
+          "validations": {
+            "firstName": "First Name is required",
+            "lastName": "Last Name is required",
+            "email": "Email is required",
+            "residentStatus": "Resident Status is required",
+            "invalidEmail": "Invalid email address",
+            "countryCode": "Country Code is required",
+            "campaign": "Campaign is required",
+            "primarySource": "Primary Source is required",
+            "cpName": "CP Name is required",
+            "referrer": "Please select an option",
+            "customerName": "Customer Name is required",
+            "project": "Project is required",
+            "unitNumber": "Unit No/Floor/Tower is required",
+            "referredBy": "Referred by is required",
+            "employeeName": "Employee Name is required",
+            "contactNumber": "Contact Number is required",
+            "invalidContactNumber": "Contact Number is invalid",
+            "preferredTypology": "Preferred Typology is required",
+            "sbaRange": "SBA Range is required",
+            "priceRange": "Price Range is required",
+            "referralCampaign": "Campaign is required",
+            "uniqueRefId": "Payment Ref ID is required",
+            "activityName": "Activity Name is required"
+          },
+          "confirmDialog": {
+            "createCpBtn": "Create CP Link",
+            "title": "Channel Partner Link Required",
+            "noLinkCreated": "No link has been created for {cpName}",
+            "msg": "Please create the Channel Partner link to continue. Once completed, you will be able to generate the voucher link for {cpName}'s lead."
+          }
+        },
+        "moreDetails": {
+          "title": "Unit and Voucher Preference",
+          "paymentSectionTitle": "Payment Options",
+          "eoiType": "EOI Type:",
+          "label": {
+            "purvaVoucher": "Purva Voucher",
+            "standardEoiRadio": "Standard EOI",
+            "preferentialEoiRadio": "Preferential EOI",
+            "preferential": "Preferential",
+            "standard": "Standard",
+            "typology": "Preferred Typology",
+            "cancellationCase": "Your Bank details in case of Refund:",
+            "payeeName": "Payee Name",
+            "payeeBankName": "Bank Name",
+            "ifscCode": "IFSC Code",
+            "swiftCode": "SWIFT Code - (for NRI Customer only)",
+            "payeeAccNo": "Account Number",
+            "payeeAccType": "Account Type",
+            "eoiAmountBox": "EOI",
+            "voucherAmountBox": "Voucher",
+            "priceRange": "Price Range",
+            "sbaRange": "SBA Range"
+          },
+          "validations": {
+            "preferenceTypeRequired": "{entity} Type is required",
+            "typology": "Typology is required",
+            "paymentMethod": "Payment Method is required",
+            "matchChequeNo": "Cheque Number must be exactly 6 digits",
+            "chequeNo": "Cheque/DD Number is required",
+            "matchTransactionId": "Transaction ID must be alphanumeric and at least 12 characters",
+            "transactionId": "Transaction ID is required",
+            "matchBankName": "Bank Name must contain only letters",
+            "bankName": "Bank Name is required",
+            "date": "Date is required",
+            "typeAmount": "Amount must be a number",
+            "positiveAmount": "Amount must be greater than 0",
+            "amount": "Amount is required",
+            "paymentProof": "Payment Proof is required",
+            "payeeName": "Payee Name is required",
+            "matchPayeeName": "Payee Name must contain only letters",
+            "matchPayeeBankName": "Bank Name must contain only letters",
+            "matchIFSCCode": "Enter a valid IFSC code (eg. SBIN0001537)",
+            "ifscCode": "IFSC Code is required",
+            "swiftCodePattern": "Enter valid SWIFT Code (e.g. HDFCINBB, SBININBBXXX)",
+            "swiftCodeMax": "Maximum 11 characters allowed",
+            "swiftCodeMin": "Minimum 8 characters required",
+            "swiftCode": "SWIFT Code is required",
+            "matchPayeeAccNo": "Account Number must be numeric and at least 9 digits",
+            "accNo": "Account Number is required",
+            "payeeAccType": "Account Type is required",
+            "paymentMode": "Payment Method is required",
+            "panNumber": "PAN Number must be in the format ABCDE1234F",
+            "aadhaarNumber": "Aadhaar Number must be a 12-digit number starting from 2-9",
+            "onlinePaymentDone": "Please complete the online payment to proceed with submission.",
+            "usedTransaction": "Duplicate Transaction ID detected. Enter unique ID",
+            "duplicateCheque": "Duplicate Cheque/DD Number detected. Enter unique Cheque/DD Number",
+            "lastFourDigitsRequired": "Last 4 digits of card are required",
+            "lastFourDigitsFormat": "Please enter the last 4 digits of the card (numbers only)"
+          },
+          "paymentDetails": {
+            "title": "Payment Details",
+            "paymentOptions": "Payment Options",
+            "fileDeletedMsg": "File deleted successfully!",
+            "fileErrorMsg": "An error occurred while deleting the file.",
+            "failedDeletePayment": "Failed to delete payment details",
+            "transactionRemoved": "Transaction removed successfully",
+            "transaction": "Transaction",
+            "label": {
+              "selectPayment": "Please select the payment method:",
+              "cheque": "Cheque/DD",
+              "onlineTransfer": "Online Fund Transfer (NEFT/IMPS/RTGS)",
+              "upiCard": "UPI",
+              "edcMachine": "EDC Machine",
+              "chequeNumber": "Cheque/DD Number",
+              "transactionId": "Transaction ID",
+              "date": "Transaction Date",
+              "chequeDate": "Cheque Date",
+              "bankName": "Bank Name",
+              "amount": "Amount",
+              "addNewTransaction": "Add multiple transactions",
+              "accountHolderName": "Account holder's name required on the document.",
+              "note": "Note",
+              "noteMessage": "Payments made via credit card will attract approximately 2.5% gateway charges. Actual charges will be adjusted against the amount paid.",
+              "lastFourDigitsOfCard": "Last 4 digits of Debit/Credit Card"
+            },
+            "paymentFailedModal": {
+              "title": "Payment Failed!",
+              "desc": "You can try with EaseBuzz again or proceed with RazorPay as an alternate payment gateway",
+              "descSingle": "Payment failed. Would you like to retry?",
+              "select": "Select Payment Gateway",
+              "button": "Proceed to Pay",
+              "retry": "Retry"
+            }
+          },
+          "bankDetailsTable": {
+            "label": {
+              "bankName": "Name of the Bank",
+              "accName": "Account Name",
+              "accNumber": "Account Number",
+              "address": "Address",
+              "ifscCode": "Transfer within India kindly use this IFSC Code",
+              "swiftCode": "Transfer from Outside India kindly use this Swift Code"
+            },
+            "value": {
+              "bankName": "Union Bank",
+              "accName": "Puravankara Limited",
+              "accNumber": "039211100005118",
+              "address": "N.R. Road Branch, Bangalore - 560002",
+              "ifscCode": "UBIN0803928",
+              "swiftCode": "UBININBBBNG"
+            }
+          }
+        }
+      }
+    },
+    "mapAndConvertEOI": {
+      "title": "Map & Convert",
+      "label": {
+        "campaign": "Campaign",
+        "selectUnit": "Select Unit",
+        "tower": "Tower",
+        "floor": "Floor",
+        "unit": "Unit",
+        "typing": "Start typing to search",
+        "unitCard": {
+          "unitDetails": "Unit Details",
+          "unitNo": "Unit No",
+          "tower": "Tower",
+          "floor": "Floor",
+          "configuration": "Configuration",
+          "areaSBA": "Area (SBA)",
+          "agreementValue": "Agreement Value"
+        },
+        "holdButton": "Hold this unit for conversion. (Unit will be temporarily blocked against this EOI)",
+        "assignButton": "Assign the unit and convert for Booking. (Unit will be temporarily blocked against this EOI)",
+        "convertButton": "Convert the lead to map Unit at the time of launch."
+      },
+      "validations": {
+        "campaign": "Campaign is required",
+        "tower": "Tower is required",
+        "unit": "Unit is required",
+        "floor": "Floor is required"
+      },
+      "convertLeadToOppDialog": {
+        "title": "Convert the lead to Opportunity",
+        "description": "Convert the lead now and map the Unit at the time of launch."
+      },
+      "eoiConvertDialog": {
+        "title": "Release Unit",
+        "confirmMessage": "Are you sure you want to release the mapped unit?"
+      }
+    },
+    "UnitInventoryView": {
+      "title": "Inventory",
+      "label": {
+        "campaign": "Campaign",
+        "tower": "Tower",
+        "floor": "Floor",
+        "series": "Series",
+        "configuration": "Unit Type",
+        "facing": "Facing Direction",
+        "noOfCarParks": "No. of Car Parks",
+        "inventoryStatus": "Status",
+        "minSBA": "Minimum SBA",
+        "maxSBA": "Maximum SBA",
+        "sbaAreaRange": "SBA Area Range"
+      },
+      "validations": {
+        "campaign": "Campaign is required"
+      },
+      "towerView": {
+        "title": "Inventory Details",
+        "mapUnit": "Map Unit",
+        "tooltip": {
+          "tower": "Tower",
+          "floor": "Floor",
+          "facingDirection": "Facing Direction",
+          "unitType": "Unit Type",
+          "series": "Series",
+          "status": "Status"
+        }
+      }
+    },
+    "mapUnitToVoucher": {
+      "title": "Unit Details -",
+      "unitMapped": "Unit mapped",
+      "search": "Search by PRID, Voucher ID, EOI ID, Mobile Number, Customer Name ",
+      "validations": {
+        "search": "Search by PRID, Voucher ID, EOI ID, Mobile Number, Customer Name is required"
+      },
+      "voucherDetailsCard": {
+        "uniqueReferenceId": "Payment Ref ID",
+        "voucherId": "Voucher ID",
+        "stdEoiId": "Standard EOI ID",
+        "preEoiId": "Preferential EOI ID",
+        "amountPayable": "Amount Payable",
+        "amountPaid": "Amount Paid"
+      },
+      "partialThresholdPayDialog": {
+        "title": "Payment Confirmation",
+        "intro": "Your payment meets the minimum threshold for unit blocking. However, it is below the Preferential amount.",
+        "thresholdLabel": "Threshold Amount",
+        "preferredLabel": "Preferential Amount",
+        "submittingLabel": "Total amount Paid",
+        "remainingLabel": "Remaining to reach full preferred amount",
+        "approvedBy": "Units blocked with payments below Preferential amount should be approved by",
+        "within": "within",
+        "sendForApproval": "Send for Approval",
+        "fullPay": "Pay Full Amount"
+      }
+    },
+    "changeSource": {
+      "headingCreate": "Create Change Request",
+      "headingEdit": "Edit Change Request",
+      "headingPreview": "Change Request Preview",
+      "swapBtn": "Swap Fields",
+      "changeTo": "Change To",
+      "changeFrom": "Change From",
+      "provideReason": "Reason for change request",
+      "reviewerRemark": "Reviewer's Remark",
+      "provideReasonPlaceholder": "Write a comment",
+      "provideReviewerRemarkPlaceholder": "Write a remark",
+      "label": {
+        "paymentRefId": "Payment Ref ID",
+        "name": "Name",
+        "customerEmail": "Customer Email",
+        "address": "Address",
+        "submitRequestBtn": "Submit Request",
+        "approveRequestBtn": "Approve Request",
+        "rejectRequestBtn": "Reject Request",
+        "enquiryId": "Enter Enquiry ID",
+        "changeRequested": "Change Requested",
+        "amount": "Amount Paid",
+        "emailId": "Email ID",
+        "preview": "Preview"
+      },
+      "validation": {
+        "sfdcEnquiryId": "SFDC Enquiry ID is required",
+        "paymentRefId": "Payment Ref ID is required",
+        "reason": "Reason is required",
+        "approvalProof": "Approval Proof is required",
+        "reviewerRemark": "Remark is required",
+        "amount": "Amount Paid is required",
+        "negativeAmt": "Amount Paid cannot be negative"
+      },
+      "cancellationAcceptedDialog": {
+        "title": "Cancellation Request Accepted",
+        "message": "The Cancellation process has been initiated. Update refund details post completion",
+        "approveLabel": "Approve",
+        "revokeLabel": "Revoke"
+      },
+      "cancellationApproveDialogCRM": {
+        "title": "Cancellation Completed - Confirmation",
+        "upload": "Required Uploads",
+        "remarkPlaceholder": "Enter remark",
+        "remarkLabel": "Remark",
+        "label": {
+          "refundCheque": "Cheque Scan",
+          "depositSlip": "Cheque Deposit Slip",
+          "acknowledgement": "Acknowledgement form signed by the Customer"
+        },
+        "validations": {
+          "refundCheque": "Cheque Scan is required",
+          "depositSlip": "Cheque Deposit Slip is required",
+          "acknowledgement": "Acknowledgement form signed by the Customer is required",
+          "remark": "Remark is required"
+        },
+        "fileDeletedMsg": "File deleted successfully!",
+        "fileErrorMsg": "An error occurred while deleting the file."
+      }
+    },
+    "preBookingDetails": {
+      "title": "Pre-Booking Details",
+      "upload": "Upload Documents",
+      "options": {
+        "costSheet": "Cost Sheet",
+        "allotmentLetter": "Allotment Letter",
+        "reraDocument": "RERA Document",
+        "modificationRequest": "Modification Request",
+        "consentLetter": "Consent Letter",
+        "others": "Other"
+      },
+      "label": {
+        "agreementValue": "Agreement Value",
+        "bookingAmount": "Booking Amount",
+        "docType": "Document Type",
+        "docName": "Document Name",
+        "addDoc": "Add Document"
+      },
+      "validations": {
+        "agreementValue": "Agreement Value is required",
+        "agreementValueGreaterThanZero": "Agreement Value must be greater than 0",
+        "completeDocDetails": "Please complete the document details",
+        "costSheet": "Cost Sheet is required"
+      },
+      "successMsg": "Pre-booking details updated successfully",
+      "errorMesg": "Failed to update pre-booking details"
+    }
+  },
+  "cpJSON": {
+    "title": "CP List",
+    "createCP": {
+      "btnLabel": "+ Create Channel Partner Link",
+      "title": "Create Channel Partner Link",
+      "form": {
+        "label": {
+          "campaignName": "Campaign Name",
+          "cpName": "CP Name",
+          "email": "Email",
+          "gstNo": "Company GST No.",
+          "panNo": "Company PAN Card No.",
+          "reraNumber": "Company RERA No.",
+          "name": "Name",
+          "address": "Company Address",
+          "country": "Country",
+          "state": "State",
+          "city": "City",
+          "pincode": "Pincode",
+          "unit": "Unit No/Floor/Tower",
+          "contactNumber": "Contact Number"
+        },
+        "placeholder": {
+          "campaignName": "Select Campaign",
+          "cpName": "Search channel partner",
+          "cpNameWithoutOption": "Start typing to search",
+          "contactNo": "Contact Number"
+        },
+        "validations": {
+          "campaignName": "Campaign Name is required",
+          "cpName": "CP Name is required",
+          "email": "Email is required",
+          "invalidEmail": "Invalid email format",
+          "mobNo": "Contact Number is required",
+          "invalidMobNo": "Contact Number is invalid",
+          "reraNo": "Company RERA No. is required",
+          "gstNo": "GST No. is required",
+          "matchGSTNo": "Company GST Number must be in the format 22AAAAA0000A1Z5",
+          "name": "Name is required",
+          "panNo": "PAN No. is required",
+          "matchPANNo": "Company PAN Number must be in the format ABCDE1234F",
+          "country": "Country is required",
+          "address": "Address is required",
+          "state": "State is required",
+          "city": "City is required",
+          "pincode": "Pincode is required",
+          "unit": "Unit No/Floor/Tower is required"
+        }
+      }
+    }
+  },
+  "eoiManager": {
+    "title": "Create Campaign",
+    "editTitle": "Edit Campaign",
+    "sections": {
+      "companyBankAccountDetails": "Company Bank Account Details"
+    },
+    "fields": {
+      "brandId": {
+        "label": "Brand",
+        "placeholder": "Select",
+        "validations": {
+          "required": "Brand is required"
+        }
+      },
+      "cityIds": {
+        "label": "City",
+        "placeholder": "Select",
+        "validations": {
+          "required": "City is required"
+        }
+      },
+      "campaignName": {
+        "label": "Campaign Name",
+        "placeholder": "Enter Campaign Name",
+        "validations": {
+          "pattern": "Only letters and spaces are allowed",
+          "max": "Maximum 100 characters allowed",
+          "required": "Campaign Name is required"
+        }
+      },
+      "projectId": {
+        "label": "Project",
+        "validations": {
+          "required": "Project is required"
+        }
+      },
+      "thresholdAmount": {
+        "title": "For unit mapping during Preferential allotment",
+        "label": "Threshold Amount",
+        "helperText": "The threshold amount is the minimum payment required to map a unit.",
+        "placeholder": "Enter Amount",
+        "validations": {
+          "required": "Threshold Amount is required"
+        }
+      },
+      "unitBlockDuration": {
+        "label": "Unit Block Duration",
+        "placeholder": "Enter Duration(Minutes)",
+        "validations": {
+          "required": "Unit Block Duration is required"
+        }
+      },
+      "timerExtension": {
+        "label": "Extended Duration",
+        "placeholder": "Enter Duration(Minutes)"
+      },
+      "approvalWindowHours": {
+        "label": "Approval Window",
+        "placeholder": "Enter Duration(Hours)",
+        "validations": {
+          "required": "Approval Window is required"
+        }
+      },
+      "displayUnitType": {
+        "label": "Unit Details",
+        "validations": {
+          "required": "Unit Details is required"
+        }
+      },
+      "showAgreementValue": {
+        "label": "Show Agreement Value",
+        "validations": {
+          "required": "Show Agreement Value is required"
+        }
+      },
+      "unitApproverId": {
+        "label": "Name",
+        "title": "Approver",
+        "validations": {
+          "required": "Approver is required"
+        }
+      },
+      "additionalApprovers": {
+        "label": "Name",
+        "title": "Extended Approver"
+      },
+      "pushToSfdc": {
+        "label": "Lead Push to SFDC",
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      "sfdcProjectName": {
+        "label": "SFDC Project Name",
+        "placeholder": "Enter Project Name",
+        "validations": {
+          "required": "SFDC Project Name is required",
+          "pattern": "Only letters and spaces are allowed",
+          "max": "Maximum 100 characters allowed"
+        }
+      },
+      "developmentTypeIds": {
+        "label": "Development Type",
+        "placeholder": "Select Type",
+        "validations": {
+          "required": "Development Type is required"
+        }
+      },
+      "inventoryTypeIds": {
+        "label": "Inventory Type",
+        "placeholder": "Select Type",
+        "validations": {
+          "required": "Inventory Type is required"
+        }
+      },
+      "minSBA": {
+        "label": "Minimum SBA",
+        "placeholder": "Minimum SBA",
+        "validations": {
+          "pattern": "Only numbers allowed",
+          "max": "Maximum 10 characters allowed",
+          "required": "Minimum SBA is required"
+        }
+      },
+      "maxSBA": {
+        "label": "Maximum SBA",
+        "placeholder": "Maximum SBA",
+        "validations": {
+          "pattern": "Only numbers allowed",
+          "max": "Maximum 10 characters allowed",
+          "required": "Maximum SBA is required",
+          "min": "Max SBA should be greater than or equal to Min SBA"
+        }
+      },
+      "minPrice": {
+        "label": "Minimum Price",
+        "placeholder": "Minimum Price",
+        "validations": {
+          "pattern": "Only numbers allowed",
+          "max": "Maximum 10 characters allowed",
+          "required": "Minimum Price is required"
+        }
+      },
+      "maxPrice": {
+        "label": "Maximum Price",
+        "placeholder": "Maximum Price",
+        "validations": {
+          "pattern": "Only numbers allowed",
+          "max": "Maximum 10 characters allowed",
+          "required": "Maximum Price is required",
+          "min": "Max Price should be greater than or equal to Min Price"
+        }
+      },
+      "voucherAmt": {
+        "label": "Voucher Amount",
+        "placeholder": "Enter Amount",
+        "validations": {
+          "pattern": "Only numbers allowed",
+          "max": "Maximum 10 characters allowed",
+          "required": "Voucher Amount is required"
+        }
+      },
+      "standardEOIAmt": {
+        "label": "Standard EOI Amount",
+        "placeholder": "Enter Amount",
+        "validations": {
+          "pattern": "Only numbers allowed",
+          "max": "Maximum 10 characters allowed",
+          "required": "Standard EOI Amount is required"
+        }
+      },
+      "preferentialEOIAmt": {
+        "label": "Preferential EOI Amount",
+        "placeholder": "Enter Amount",
+        "validations": {
+          "pattern": "Only numbers allowed",
+          "max": "Maximum 10 characters allowed",
+          "required": "Preferential EOI Amount is required"
+        }
+      },
+      "enquiryInitials": {
+        "label": "Payment Ref ID Prefix",
+        "finalLabel": "Payment Ref ID Series",
+        "placeholder": "e.g., PHL-CHESOU1xxxxx",
+        "validations": {
+          "pattern": "Only uppercase letters, numbers, and hyphens are allowed, but the value cannot end with a hyphen.",
+          "max": "Maximum 50 characters allowed",
+          "min": "Minimum 2 characters required",
+          "required": "Payment Ref ID Series Prefix is required"
+        }
+      },
+      "voucherIdInitials": {
+        "label": "Voucher ID Series Prefix",
+        "finalLabel": "Voucher ID Series",
+        "finalLabelStandard": "Standard EOI ID Series",
+        "finalLabelPreferential": "Preferential EOI ID Series",
+        "validations": {
+          "required": "Voucher ID Series Prefix is required"
+        }
+      },
+      "voucherIdCounter": {
+        "placeholder": "e.g., 10000",
+        "validations": {
+          "required": "Voucher ID Starting is required",
+          "requiredStandardEoiId": "Standard EOI ID Starting is required",
+          "requiredPreferentialEoiId": "Preferential EOI ID Starting is required"
+        }
+      },
+      "enquiryCounter": {
+        "label": "Series Starting",
+        "placeholder": "e.g., 90000",
+        "validations": {
+          "pattern": "Only numbers are allowed",
+          "max": "Maximum 10 characters allowed",
+          "min": "Minimum 1 character required",
+          "required": "Payment Ref ID Series Starting is required",
+          "greaterThanZero": "Series Starting Value must be greater than 0"
+        }
+      },
+      "indicativeBasePrice": {
+        "label": "Indicative Base Price",
+        "placeholder": "Enter Indicative Base Price",
+        "validations": {
+          "pattern": "Only letters, numbers, and spaces are allowed",
+          "max": "Maximum 10 characters allowed",
+          "required": "Indicative Base Price is required"
+        }
+      },
+      "accountName": {
+        "label": "Accout Holder Name",
+        "placeholder": "Enter Account Holder Name",
+        "validations": {
+          "pattern": "Only letters and spaces are allowed",
+          "max": "Maximum 100 characters allowed",
+          "required": "Accout Holder Name is required"
+        }
+      },
+      "bankName": {
+        "label": "Bank Name",
+        "placeholder": "Enter Bank Name",
+        "validations": {
+          "pattern": "Only letters and spaces are allowed",
+          "max": "Maximum 100 characters allowed",
+          "required": "Bank Name is required"
+        }
+      },
+      "accountNumber": {
+        "label": "Account Number",
+        "placeholder": "Enter Account Number",
+        "validations": {
+          "pattern": "Only numbers allowed",
+          "min": "Minimum 9 characters required",
+          "max": "Maximum 18 characters allowed",
+          "required": "Account Number is required"
+        }
+      },
+      "ifscCode": {
+        "label": "IFSC Code",
+        "placeholder": "Enter IFSC Code",
+        "validations": {
+          "pattern": "Enter valid IFSC Code (e.g. HDFC0001234)",
+          "max": "Maximum 11 characters allowed",
+          "required": "IFSC Code is required"
+        }
+      },
+      "swiftCode": {
+        "label": "Swift Code",
+        "placeholder": "Enter Swift Code",
+        "validations": {
+          "pattern": "Enter valid Swift Code (e.g. HDFCINBB, SBININBBXXX)",
+          "max": "Maximum 11 characters allowed",
+          "min": "Minimum 8 characters required",
+          "required": "Swift Code is required"
+        }
+      },
+      "phase": {
+        "label": "Launch Phase",
+        "options": [
+          "Voucher",
+          "EOI"
+        ],
+        "validations": {
+          "required": "Launch Phase is required"
+        }
+      },
+      "stage": {
+        "label": "Stage",
+        "options": [
+          {
+            "label": "Unit Allotment",
+            "value": "Pre-fill Booking Form"
+          },
+          {
+            "label": "Launch",
+            "value": "Launch"
+          }
+        ],
+        "validations": {
+          "required": "Stage is required"
+        }
+      },
+      "venueName": {
+        "label": "Venue Name",
+        "placeholder": "Enter Venue Name",
+        "tooltip": "Search and select the venue using Google Maps. You can enter the venue name or location details.",
+        "validations": {
+          "required": "Venue Name is required"
+        }
+      },
+      "venueMapLink": {
+        "label": "Venue Link",
+        "placeholder": "Enter Google Maps Link for the venue",
+        "tooltip": "Enter the Google Maps link for the launch venue location.",
+        "validations": {
+          "validUrl": "Please enter a valid venue link"
+        }
+      },
+      "agreementDocLink": {
+        "label": "Agreement Doc Link",
+        "placeholder": "Enter Agreement Doc Link",
+        "tooltip": "Enter the agreement document URL to be shared with customers.",
+        "validations": {
+          "validUrl": "Please enter a valid agreement doc link",
+          "required": "Agreement Doc Link is required"
+        }
+      },
+      "maskedQueueId": {
+        "label": "Queue ID Masking",
+        "options": [
+          "Masked",
+          "Unmasked"
+        ],
+        "validations": {
+          "required": "Queue ID Masking is required"
+        }
+      },
+      "displayQueueId": {
+        "label": "Display Queue ID",
+        "options": [
+          {
+            "label": "Immediately for Online all Payments modes",
+            "value": "Immediately for Online Payments"
+          },
+          {
+            "label": "Immediately for all payment modes",
+            "value": "Immediately for all"
+          },
+          {
+            "label": "Masked for all payment modes till finance reconciliation",
+            "value": "Masked for all"
+          }
+        ],
+        "validations": {
+          "required": "Display Queue ID is required"
+        }
+      },
+      "generateQueueId": {
+        "label": "Generate Queue ID",
+        "options": [
+          {
+            "label": "Online Payment",
+            "value": true
+          },
+          {
+            "label": "All Payment Options",
+            "value": false
+          }
+        ],
+        "validations": {
+          "required": "Queue ID generation is required"
+        }
+      },
+      "voucherFormType": {
+        "label": "Voucher Form Type",
+        "options": [
+          "Basic",
+          "KYC"
+        ],
+        "validations": {
+          "required": "Voucher Form Type is required"
+        }
+      },
+      "voucherAmountType": {
+        "voucherLabel": "Voucher Amount Type",
+        "eoiLabel": "EOI Amount Type",
+        "options": [
+          "Fixed",
+          "BHK Wise"
+        ],
+        "validations": {
+          "requiredForVoutherType": "Voucher Amount Type is required",
+          "requiredForEOIType": "EOI Amount Type is required"
+        }
+      },
+      "voucherAmount": {
+        "label": "Amount",
+        "placeholder": "Enter Amount",
+        "validations": {
+          "pattern": "Only numbers allowed",
+          "max": "Maximum 10 characters allowed",
+          "required": "Amount is required",
+          "min": "Amount must be greater than 0"
+        }
+      },
+      "voucherDuration": {
+        "label": "Voucher Duration",
+        "fields": {
+          "voucherStartDate": {
+            "label": "Start Date",
+            "placeholder": "Select Date",
+            "validations": {
+              "required": "Start Date is required"
+            }
+          },
+          "voucherEndDate": {
+            "label": "End Date",
+            "placeholder": "Select Date",
+            "validations": {
+              "min": "End Date cannot be before Start Date",
+              "required": "End Date is required"
+            }
+          }
+        }
+      },
+      "voucherTermsAndCondition": {
+        "label": "Voucher Terms and Conditions",
+        "placeholder": "Write something awesome...",
+        "validations": {
+          "max": "Maximum 2000 characters allowed",
+          "required": "Voucher Terms and Conditions is required"
+        }
+      },
+      "eoiDuration": {
+        "label": "EOI Duration",
+        "fields": {
+          "eoiStartDate": {
+            "label": "Start Date",
+            "placeholder": "Select Date",
+            "validations": {
+              "required": "Start Date is required",
+              "test": "EOI Start Date must be greater than Voucher End Date"
+            }
+          },
+          "eoiEndDate": {
+            "label": "End Date",
+            "placeholder": "Select Date",
+            "validations": {
+              "min": "End Date cannot be before Start Date",
+              "required": "End Date is required"
+            }
+          }
+        }
+      },
+      "eoiFormType": {
+        "label": "EOI Form Type",
+        "options": [
+          "Basic",
+          "KYC"
+        ],
+        "validations": {
+          "required": "EOI Form Type is required"
+        }
+      },
+      "eoiType": {
+        "label": "EOI Types",
+        "options": [
+          "Standard",
+          "Preferential"
+        ],
+        "validations": {
+          "required": "EOI Type is required"
+        }
+      },
+      "stdEoiAmount": {
+        "label": "Standard EOI Amount",
+        "placeholder": "Enter Amount",
+        "validations": {
+          "pattern": "Only numbers allowed",
+          "max": "Maximum 10 characters allowed",
+          "required": "Standard EOI Amount is required",
+          "min": "Standard EOI Amount must be greater than 0"
+        }
+      },
+      "preEoiAmount": {
+        "label": "Preferential EOI Amount",
+        "placeholder": "Enter Amount",
+        "validations": {
+          "pattern": "Only numbers allowed",
+          "max": "Maximum 10 characters allowed",
+          "required": "Preferential EOI Amount is required",
+          "min": "Preferential EOI Amount must be greater than 0"
+        }
+      },
+      "stdEoiInitials": {
+        "label": "Standard EOI ID Series Prefix",
+        "uniqueSeriesPrefix": "Series Prefix must be unique",
+        "finalLabel": "Standard EOI ID Series",
+        "validations": {
+          "required": "Standard EOI ID Series Prefix is required"
+        }
+      },
+      "preEoiInitials": {
+        "label": "Preferential EOI ID Series Prefix",
+        "finalLabel": "Preferential EOI ID Series",
+        "validations": {
+          "required": "Preferential EOI ID Series Prefix is required"
+        }
+      },
+      "eoiTermsAndCondition": {
+        "label": "EOI Terms and Conditions",
+        "placeholder": "Write something awesome...",
+        "validations": {
+          "max": "Maximum 2000 characters allowed",
+          "required": "EOI Terms and Conditions is required"
+        }
+      },
+      "unitSourceType": {
+        "label": "Inventory Source",
+        "validations": {
+          "required": "Inventory Source is required"
+        }
+      },
+      "unitPrefStaticContent": {
+        "label": "Unit Preference Disclaimer",
+        "placeholder": "Write something awesome...",
+        "validations": {
+          "max": "Maximum 2000 characters allowed",
+          "required": "Unit Preference Disclaimer is required"
+        }
+      },
+      "razorpayKey": {
+        "label": "Razorpay Merchant ID",
+        "placeholder": "Enter Razorpay Merchant ID"
+      },
+      "razorpaySecret": {
+        "label": "RazorPay Secret Key",
+        "placeholder": "Enter RazorPay Secret Key"
+      },
+      "easebuzzSalt": {
+        "label": "Easebuzz Salt",
+        "placeholder": "Enter Easebuzz Salt",
+        "validations": {
+          "pattern": "Only alphanumeric characters are allowed",
+          "max": "Maximum 50 characters allowed"
+        }
+      },
+      "easebuzzKey": {
+        "label": "Easebuzz Key",
+        "placeholder": "Enter Easebuzz Key",
+        "validations": {
+          "pattern": "Only alphanumeric characters are allowed",
+          "max": "Maximum 50 characters allowed"
+        }
+      },
+      "subMerchantId": {
+        "label": "Easebuzz Sub-Merchant ID",
+        "placeholder": "Enter Easebuzz Sub-Merchant ID",
+        "validations": {
+          "pattern": "Only alphanumeric characters are allowed",
+          "max": "Maximum 50 characters allowed"
+        }
+      },
+      "paymentGateway": {
+        "label": "Select Payment Gateway",
+        "tooltip": "By default, the brand’s payment gateway will be used. Provide credentials to use a different gateway account.",
+        "validations": {
+          "required": "Payment Gateway is required"
+        }
+      }
+    },
+    "buttons": {
+      "saveAsDraft": "Save as Draft",
+      "cancel": "Cancel",
+      "create": "Create",
+      "submitting": "Submitting",
+      "update": "Update"
+    }
+  },
+  "officeUse": {
+    "labels": {
+      "bookingRegion": "Booking Region (as per RM)",
+      "isSoldUnderScheme": "Is the unit sold under any scheme?",
+      "bookingScheme": "Booking Scheme",
+      "isSoldBelowMTP": "Is the unit sold below MTP?",
+      "bisApproval": "BIS team's approval in consent with CEO",
+      "isCustomPaymentPlan": "Is the unit sold with customised payment plan?",
+      "nvpCalculation": "NPV Calculation sheet with approval from BIS"
+    },
+    "options": {
+      "yes": "Yes",
+      "no": "No",
+      "select": "Select",
+      "notApplicable": "Not Applicable"
+    },
+    "placeholders": {
+      "bookingScheme": "Enter scheme details",
+      "selectFile": "Select File"
+    },
+    "validations": {
+      "bookingRegion": "Booking Region is required",
+      "bookingScheme": "Booking Scheme is required",
+      "isSoldBelowMTPFile": "Bis Teams Approval file is required",
+      "bisApprovalFile": "Bis Teams Approval file is required",
+      "nvpCalculationFile": "NPV Calculation file is required"
+    }
+  },
+  "bookings": {
+    "actionMenu": {
+      "preForm": "Upload Cost Sheet & Allotment Letter",
+      "bookingForm": "Booking Form",
+      "officeUse": "Office Use Section",
+      "manageApplicants": "Manage Applicants"
+    }
+  },
+  "multiunit": {
+    "actionMenu": {
+      "createGroup": "Create Multi-Unit Group",
+      "editGroup": "Edit Multi-Unit Group",
+      "addUnits": "Add Units",
+      "review": "Review Details",
+      "submit": "Create Group",
+      "edit": "Edit Group"
+    },
+    "labels": {
+      "groupName": "Group Name",
+      "noOfUnits": "Number of Units",
+      "paymentMethod": "Payment Method",
+      "amount": "Booking Amount"
+    },
+    "messages": {
+      "success": "Multi-unit booking created successfully",
+      "error": "Error creating multi-unit booking"
+    },
+    "validation": {
+      "groupName": {
+        "required": "Group Name is required"
+      },
+      "noOfUnits": {
+        "required": "Number of Units is required",
+        "positive": "Number of Units must be positive",
+        "integer": "Number of Units must be an integer"
+      },
+      "amount": {
+        "required": "Booking Amount is required",
+        "positive": "Booking Amount must be positive",
+        "number": "Booking Amount must be a number"
+      },
+      "paymentMethod": {
+        "required": "Payment Method is required"
+      }
+    }
+  },
+  "muiltiBooking": {
+    "title": "Group Listings",
+    "createCP": {
+      "btnLabel": "Create New Multi-Unit Booking",
+      "title": "Create New Multi-Unit Booking"
+    },
+    "actionMenu": {
+      "sendLink": "Send Link to CX",
+      "editgroup": "Edit Group Details",
+      "manageApplicants": "Manage Applicants"
+    }
+  },
+  "campaignListing": {
+    "heading": "Campaigns",
+    "buttonLabel": "Create Campaign",
+    "searchBoxPlaceholder": "Search by Campaign Name",
+    "table": {
+      "campaignName": "Campaign Name",
+      "city": "City",
+      "phase": "Phase",
+      "noofVouchers": "Voucher/EOI Collected",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "status": "Status",
+      "actions": "Actions"
+    },
+    "actionsLabel": {
+      "edit": "Edit",
+      "convertLeadsOnSFDC": "Convert Leads on SFDC",
+      "createLeadsOnSFDC": "Create Leads on SFDC",
+      "createLeadOnSFDC": "Create Lead on SFDC",
+      "convertLeadOnSDFC": "Convert Lead on SFDC",
+      "importExport": "Export Voucher/EOI Records"
+    },
+    "convertConfirmDialog": {
+      "title": "Convert leads on SFDC?",
+      "eoiTitle": "Convert Lead on SFDC?",
+      "desc1": "Are you sure you want to convert these leads on SFDC?",
+      "eoiDesc1": "Are you sure you want to convert this lead on SFDC?",
+      "desc2": "Once confirmed, this action can’t be undone."
+    },
+    "createConfirmDialog": {
+      "title": "Create leads on SFDC?",
+      "eoiTitle": "Create Lead on SFDC?",
+      "desc1": "Are you sure you want to create these leads on SFDC?",
+      "eoiDesc1": "Are you sure you want to create this lead on SFDC?",
+      "desc2": "Once confirmed, this action can’t be undone."
+    }
+  },
+  "bookingFormLinkDialog": {
+    "title": "Booking Application Form",
+    "description1": "Booking Form link cannot be sent as the ",
+    "description2": "are not updated. Please update these details in Salesforce and refresh the data on the RM Panel thereafter.",
+    "action": "Okay"
+  },
+  "unitInventory": {
+    "title": "Inventory",
+    "updateStatus": "Update Unit Status",
+    "editStatus": "Edit Unit Status",
+    "mapUnitToVoucher": "Map Unit",
+    "uploadBtn": "Upload Inventory",
+    "columns": {
+      "campaignName": "Campaign Name",
+      "towerName": "Tower Name",
+      "floor": "Floor",
+      "unitNumber": "Unit Number",
+      "configuration": "Unit Type",
+      "series": "Series",
+      "facing": "Facing",
+      "carParkType": "Car Park Type",
+      "noOfCarParks": "No. of Car Parks",
+      "areaSBA": "SBA Sq.ft",
+      "carpetArea": "Carpet Area Sq.ft",
+      "agreementValue": "Agreement Value",
+      "status": "Status",
+      "actions": "Actions"
+    },
+    "changeStatusDialog": {
+      "title": "Update Unit Status",
+      "editTitle": "Edit Unit Status",
+      "select": "Select",
+      "block": "Block"
+    }
+  },
+  "applicantMapping": {
+    "title": "Applicant Mapping",
+    "existingApplicants": "Existing Applicants",
+    "swapWith": "Swap With",
+    "buttons": {
+      "reset": "Reset",
+      "previous": "Previous",
+      "next": "Next",
+      "submit": "Submit",
+      "addApplicant": "Add Applicant"
+    },
+    "validations": {
+      "required": "Applicant is required",
+      "unique": "Applicant must be unique",
+      "checkbox": "Please select one option"
+    },
+    "labels": {
+      "listOfApplicants": "List of applicants based on the booking details for ",
+      "selectApplicants": "Please select the applicants for this booking",
+      "sameApplicants": "Same set of applicants for all the units booked",
+      "sameApplicantType": "Applicant type remains the same for all the units booked",
+      "moreApplicants": "There are more applicants in this group booking",
+      "authorizedSignatory": "Authorised Signatory",
+      "primaryApplicant": "Primary Applicant",
+      "applicant": "Applicant"
+    }
+  },
+  "eoiDashboard": {
+    "export": "Export",
+    "campaignName": "Campaign Name",
+    "noDataAvailable": "No data available",
+    "columns": {
+      "campaign": "Campaign",
+      "collectedEoiCount": "EOI Collected - Units",
+      "inProgressEoiCount": "EOI In Progress - Units",
+      "totalEoiAmount": "Value of EOIs",
+      "totalEoiAmountCollected": "EOI Amount Collected",
+      "allotedIdCount": "Voucher IDs Alloted",
+      "activeEoiCount": "Active Voucher/EOI",
+      "pendingMISCount": "MIS Pending",
+      "pendingCRMCount": "CRM Pending",
+      "pendingFINCount": "Finance Pending",
+      "pendingRMCount": "RM Pending",
+      "cancellationCount": "Cancellations",
+      "channelPartner": "Channel Partner",
+      "loyalty": "Loyalty",
+      "purvaChampion": "Purva Champion",
+      "direct": "Direct",
+      "digital": "Digital",
+      "paidEoiCollectedCounts": "Fully paid",
+      "partiallyPaidEoiCollectedCounts": "Partially paid"
+    },
+    "filters": {
+      "viewBy": "View By",
+      "campaign": "Campaign",
+      "cpName": "CP Name",
+      "cpType": "CP Type",
+      "unitType": "Unit Types",
+      "formPaymentStatus": "Form & Payment Status",
+      "dateRange": "Date Range",
+      "customDate": "Select Custom Date",
+      "week": "This Week",
+      "month": "This Month",
+      "placeholder": {
+        "viewBy": "Search and select",
+        "noOptionsFound": "No options found"
+      },
+      "validations": {
+        "startDate": "Start date is required",
+        "endDate": "End date is required",
+        "endDateLaterThanStart": "End date must be later than start date"
+      }
+    },
+    "tooltip": {
+      "totalEoiAmount": "The overall collectable amount of EOIs picked up",
+      "totalEoiAmountCollected": "The sum of amount collected and verified by finance",
+      "allotedIdCount": "Sum of Voucher Ids assigned post receiving complete payment",
+      "pendingMISCount": "with MIS post form submission by Customer",
+      "pendingCRMCount": "with CRM post verification by Finance team",
+      "pendingFINCount": "with Finance post verification by MIS Team",
+      "pendingRMCount": "with RMs for changes requested by MIS, CRM & Finance",
+      "cancellationCount": "Sum of cancellations that are processed and in progress."
+    },
+    "bhkWiseSplit": {
+      "title": "BHK wise Split"
+    },
+    "dailyTracker": {
+      "title": "Weekly Trend",
+      "dailyActivityTrend": "Daily Trend",
+      "series": {
+        "eoiLinkShared": "EOI Link Shared",
+        "formSubmitted": "Form Submitted",
+        "qidAssigned": "EOI Activated",
+        "newCpLink": "New CP Link"
+      },
+      "cardsTitle": {
+        "totalEOIShared": "EOIs Shared",
+        "totalFormSubmitted": "Forms Submitted",
+        "totalQidAssigned": "EOIs Activated",
+        "totalNewCpLinks": "New CP Links"
+      }
+    }
+  },
+  "channelPartners": {
+    "columns": {
+      "cpName": "CP Name",
+      "cpType": "CP Type",
+      "campaignName": "Campaign Name",
+      "noOfVouchers": "Voucher/EOI Collected",
+      "voucherValue": "Voucher Value",
+      "amountCollected": "Collected",
+      "lastCollectedDate": "EOI Last Collected",
+      "createdBy": "Created By",
+      "createdDate": "Created Date",
+      "status": "Status",
+      "actions": "Actions"
+    },
+    "actions": {
+      "copyLink": "Copy Link"
+    }
+  },
+  "paymentDetails": {
+    "heading": "Payment Details",
+    "label": {
+      "paymentMethod": "Payment Method",
+      "amount": "Amount",
+      "paymentProof": "Payment Proof",
+      "chequeDepositSlip": "Cheque Deposit Slip",
+      "rupeesOnly": "Rupees Only",
+      "srNo": "Sr No.",
+      "transaction": "Transaction Mode",
+      "beingPaid": "Transaction Reference",
+      "dated": "Dated"
+    }
+  },
+  "eoiPreview": {
+    "title": "Preview Form",
+    "export": "Export as PDF",
+    "exporting": "Exporting...",
+    "previewThankYou": {
+      "cardsTitle": {
+        "voucherAmount": "Voucher Amount",
+        "eoiAmount": "EOI Amount",
+        "amountPaid": "Amount Paid",
+        "balanceDue": "Balance Due"
+      },
+      "customerName": "Customer Name",
+      "mobileNo": "Mobile Number",
+      "uniqueRefId": "Unique Reference ID",
+      "status": "Status",
+      "queueId": "Queue ID",
+      "preferredTypology": "Preferred Typology",
+      "initiatedDate": "Initiated Date",
+      "voucherQueueId": "Voucher ID Issued",
+      "eoiQueueId": "EOI ID Issued",
+      "stdEOIQueueId": "Standard EOI ID Issued",
+      "preEOIQueueId": "Preferential EOI ID Issued",
+      "primarySource": "Primary Source",
+      "cpName": "Channel Partner Name",
+      "referrerName": "Referrer Name",
+      "employeeName": "Employee Name",
+      "sourcingRm": "Sourcing RM",
+      "closingRm": "Closing RM",
+      "standardEOIId": "Standard EOI ID",
+      "preferentialEOIId": "Preferential EOI ID"
+    },
+    "applicantDetails": {
+      "title": "Applicant",
+      "personalDetails": "Personal Details",
+      "primaryRegContactNo": "Primary Registration Phone number:",
+      "contactNo": "Contact Number:",
+      "altContactNo": "Alternate Contact No.",
+      "dob": "Date of Birth",
+      "email": "Email ID",
+      "residentStatus": "Resident Status",
+      "nriCountry": "Country of Residence",
+      "maritalStatus": "Marital Status",
+      "anniversaryDate": "Anniversary Date",
+      "gender": "Gender",
+      "panNumber": "PAN Number",
+      "aadhaarNumber": "Aadhaar Number",
+      "passportNumber": "Passport Number",
+      "ociNumber": "OCI Number",
+      "OCIAlternateDocType": "OCI Document Type",
+      "note": "Note: All uploaded documents are included in the KYC document section",
+      "communicationDetails": "Communication Details",
+      "permanentAddress": "Permanent Address",
+      "communicationAddress": "Communication Address",
+      "professionalDetails": "Professional Details",
+      "occupation": "Occupation",
+      "industry": "Industry",
+      "companyName": "Company Name",
+      "departmentDivision": "Department/Division",
+      "designation": "Designation",
+      "branch": "Branch",
+      "rank": "Rank",
+      "annualIncome": "Annual Income",
+      "companyAddress": "Company Address",
+      "officeAddress": "Office Address",
+      "firstName": "First Name",
+      "lastName": "Last Name"
+    },
+    "kycDocuments": {
+      "title": "KYC Documents",
+      "aadhaarCard": "Aadhaar Card",
+      "panCard": "PAN Card",
+      "passport": "Passport",
+      "oci": "OCI",
+      "preview": "Preview"
+    },
+    "referrerDetails": {
+      "title": "Referrer Details",
+      "customerName": "Customer Name",
+      "project": "Project",
+      "unit": "Unit No/Floor/Tower",
+      "referredBy": "Referred by",
+      "employeeId": "Employee ID",
+      "activityName": "Activity Name"
+    },
+    "refundDetails": {
+      "title": "Refund Details",
+      "payeeName": "Payee Name",
+      "bankName": "Bank Name",
+      "ifscCode": "IFSC Code",
+      "swiftCode": "SWIFT Code",
+      "accountNumber": "Account Number",
+      "accountType": "Account Type",
+      "cancelledCheque": "Cheque/Bank Statement"
+    },
+    "termsAndConditions": {
+      "title": "Terms and Conditions",
+      "noContent": "No Terms & Conditions available."
+    }
+  },
+  "eoiLeaderboard": {
+    "cp": "Top 10 Channel Partner",
+    "rm": "Top 10 Relationship Manager",
+    "filters": {
+      "campaign": "Campaign",
+      "cpName": "CP Name",
+      "rmName": "RM Name",
+      "userGroup": "User Group",
+      "dateRange": "Date Range"
+    },
+    "cards": {
+      "title": {
+        "cpEois": "CP EOIs",
+        "overallEois": "Overall EOIs",
+        "cpEoiValue": "Value",
+        "onboardedCP": "Onboarded CPs",
+        "eoiActiveCp": "EOI Active CPs",
+        "eoiValue": "EOIs Value",
+        "topTenRmContribution": "Top 10 RMs",
+        "overallPipeline": "Overall Pipeline"
+      },
+      "subtitle": {
+        "totalEois": "Total EOIs",
+        "cpEoiCollected": "Collected",
+        "eoisCollected": "EOIs Collected",
+        "formFillInProgress": "Form Fill in Progress",
+        "formLinksShared": "Form Links Shared"
+      }
+    }
+  },
+  "swapFieldsDialog": {
+    "title": "Swap Fields",
+    "desc": "Please select field name check boxes to change.",
+    "current": "Current",
+    "new": "New",
+    "label": {
+      "customerName": "Customer Name",
+      "email": "Email Address",
+      "mobile": "Mobile Number",
+      "primarySource": "Primary Source",
+      "amount": "Amount Paid"
+    }
+  },
+  "sfdcLogs": {
+    "title": "Logs",
+    "searchPlaceholder": "Search logs by ID",
+    "detailTitle": "SFDC log details",
+    "payloadSection": "Payload",
+    "responseSection": "Response",
+    "copied": "Copied to clipboard",
+    "close": "Close",
+    "filters": {
+      "search": "Search",
+      "logEvent": "Log event",
+      "logEventPlaceholder": "Select log event"
+    },
+    "actions": {
+      "view": "View"
+    },
+    "columns": {
+      "opportunityId": "ID",
+      "logEvent": "Log event",
+      "status": "Status",
+      "createdAt": "Created at",
+      "action": "Action"
+    }
+  },
+  "bankDetails": {
+    "title": "Bank Details",
+    "columns": {
+      "campaignName": "Campaign Name",
+      "accHolderName": "Account Holder Name",
+      "bankName": "Bank Name",
+      "accNumber": "Account Number",
+      "ifscCode": "IFSC Code",
+      "swiftCode": "SWIFT Code",
+      "action": "Action"
+    },
+    "actions": {
+      "share": "Share Bank Details"
+    },
+    "shareDialog": {
+      "title": "Bank Details",
+      "desc": "Enter email address to share the  bank details (Maximum of {maxEmail} email addresses are allowed)",
+      "label": {
+        "email": "Email Address",
+        "emailPlaceholder": "Enter Email Address",
+        "add": "Add",
+        "emailRecipents": "Email Recipients ({count}/{max})",
+        "sending": "Sending...",
+        "sendLink": "Send Link"
+      },
+      "toastMsg": {
+        "required": "Please enter an email address",
+        "ValidEmail": "Please enter a valid email address",
+        "duplicateEmail": "Email address already added",
+        "maxEmailId": "Maximum {maxEmails} email addresses allowed for bank details",
+        "minEmail": "Please add at least one email address",
+        "sendSuccessfully": "Bank details email sent successfully",
+        "failedSendEmail": "Failed to send bank details email. Please try again.",
+        "errorWhileSendingEmail": "An error occurred while sending the email. Please try again."
+      }
+    }
+  },
+  "financeTxn": {
+    "fileUpload": {
+      "heading": "Upload Transactions",
+      "toastMsg": {
+        "errorSampleDownload": "Error while downloading sample Excel",
+        "errorUploadDoc": "Error while uploading document",
+        "fileSizeExceed": "File size exceeds 10MB. Please upload a smaller file.",
+        "invalidFileFormat": "Invalid file format. Please upload only .xlsx",
+        "oneFileAllowed": "Only 1 .xlsx file at a time is allowed.",
+        "duplicateFile": "This file has already been uploaded. Please choose a different file.",
+        "colHeaderMismatch": "File must contain exactly {colLength} columns",
+        "missingExpectedCol": "Missing expected columns",
+        "atleastOneDataRow": "Excel file must contain at least one data row with values.",
+        "valCanNotBeEmpty": "Row {rowIndex}: \"{originalColName}\" cannot be empty.",
+        "fileProcessingFailed": "File processing failed. Please check the file and try again.",
+        "bulkJobRowFailuresSummary": "Some rows could not be processed. See details below.",
+        "bulkJobRowFailuresHeading": "Row errors",
+        "bulkJobNoRowsSucceeded": "No rows were processed successfully."
+      },
+      "label": {
+        "downloading": "Downloading...",
+        "sampleExel": "Sample Excel",
+        "instructions": "Instructions",
+        "columnInfo": "The Excel template contains {colLength} columns",
+        "fileUploading": "Your file is uploading...",
+        "uploadingSubmit": "Uploading…",
+        "clickToUpload": "Click to upload or drag and drop",
+        "maxFileSize": ".xlsx (File size: Maximum 10 MB)",
+        "reuploadTooltip": "Reupload"
+      }
+    }
+  },
+  "agreementESignature": {
+    "pageHeading": "Agreement E- Signature",
+    "pageTitle": "Agreement E- Signature Form",
+    "opportunityIdSection": "Fetch signatory details from Salesforce or enter the details manually",
+    "opportunityDetails": "Signatory Details",
+    "uploadDocuments": "Upload Documents",
+    "addDocuments": "Add Documents",
+    "addSignatory": "Add Signatory",
+    "removeSignatoryRowAria": "Remove signatory row",
+    "mergePdf": "Merge Documents?",
+    "internalSignatoryRequired": "Internal Signatory Required?",
+    "removeDocumentRowAria": "Remove document row",
+    "fields": {
+      "opportunityId": "Opportunity ID",
+      "enterOpportunityId": "Enter Opportunity ID",
+      "projectName": "Project Name",
+      "enterProjectName": "Enter Project Name",
+      "unitNumber": "Unit Number",
+      "enterUnitNumber": "Enter Unit Number",
+      "fetchingDetails": "Fetching details...",
+      "applicantName": "Signatory Name",
+      "enterApplicantName": "Enter Signatory Name",
+      "emailId": "Email ID",
+      "enterEmailId": "Enter Email ID",
+      "phoneIndianMobile": "10 digit Indian mobile number",
+      "optionalNonIndia": "Optional for Non-India",
+      "documentType": "Document Type",
+      "selectDocumentType": "Select document type",
+      "documentName": "Document Name",
+      "enterDocumentName": "Enter Document Name",
+      "applicantLabel": "Signatory {{n}}",
+      "mergeDocumentName": "Merge Document Name"
+    },
+    "documentTypes": {
+      "agreement": "Agreement",
+      "allotmentLetter": "Allotment Letter",
+      "consentLetter": "Consent Letter",
+      "costSheet": "Cost Sheet",
+      "indemnity": "Indemnity",
+      "possessionDocument": "Possession Document",
+      "othersCustom": "Other Document"
+    },
+    "actions": {
+      "previous": "Previous",
+      "next": "Next",
+      "finish": "Finish",
+      "send": "Send",
+      "previousDisabledMergePdfNoTooltip": "Merge PDF is set to No. Returning to edit the previous step is not available for this combination."
+    },
+    "toast": {
+      "fileDeleted": "File deleted successfully!",
+      "deleteFileError": "An error occurred while deleting the file.",
+      "fetchAgreementFailed": "Failed to fetch",
+      "createdSuccess": "Created Successfully!",
+      "createFailed": "Create failed: {{error}}",
+      "updatedSuccess": "Updated Successfully!",
+      "updateFailed": "Update failed: {{error}}",
+      "opportunityFetchFailed": "Failed to fetch opportunity details: {{error}}",
+      "opportunityFetched": "Opportunity details fetched successfully",
+      "unexpectedFetchError": "Unexpected error while fetching opportunity details",
+      "maxDocuments": "You can only add up to 10 documents.",
+      "maxSignatories": "You can add up to 4 signatories."
+    },
+    "validation": {
+      "opportunityId": "Please enter valid Opportunity ID",
+      "projectName": "Project Name is required",
+      "invalidEmail": "Invalid Email Address",
+      "phoneIndian10": "Must be 10 digits for Indian number",
+      "inviteeName": "Name is required",
+      "inviteeEmail": "Email is required",
+      "inviteePhone": "Phone is required",
+      "countryCode": "Country code is required",
+      "atLeastOneSignatory": "At least one signatory is required",
+      "documentType": "Document type is required",
+      "documentName": "Document name is required",
+      "fileRequired": "File is required",
+      "atLeastOneDocument": "At least one document must be uploaded",
+      "maxTenDocuments": "You can only add up to 10 documents",
+      "approvalProofRequired": "Approval proof is required",
+      "mergeDocumentName": "Merge document name is required"
+    }
+  },
+  "batchManager": {
+    "idTypesFpPpHelper": "(Fully Paid - FP, Partially Paid - PP)",
+    "pageTitle": "Batch Manager",
+    "breadcrumbsHeading": "Create Batch",
+    "createNewBatch": "Create New Batch",
+    "campaignLabel": "Campaign",
+    "selectCampaignPlaceholder": "Select Campaign",
+    "batchStageLabel": "Batch Stage",
+    "selectBatchStageHint": "Select a batch stage to continue",
+    "unitAllotment": "Unit Allotment",
+    "launch": "Launch",
+    "residencyLabel": "Residency",
+    "selectStatusPlaceholder": "Select Status",
+    "typologyLabel": "Typology",
+    "selectTypologyPlaceholder": "Select typology",
+    "typologyHelper": "Select at least one typology",
+    "previewGenerateDisabledReason": "Run Preview Batch after the preview API returns rows, or generate from the server when that action is available.",
+    "generateBatchesToast": "Generate batches will run when the flow is connected.",
+    "generateBatchesDisabledFallback": "Cannot generate batches yet",
+    "batchTrackerHeading": "Batch Tracker",
+    "batchTrackerBreadcrumbBatch": "Batch",
+    "batchTrackerBreadcrumbTracker": "Tracker",
+    "batchTrackerPlaceholder": "Batch tracker will appear here once the data source is connected.",
+    "batchListingHeading": "Campaigns - Batch Listing",
+    "viewRecords": "View Records",
+    "searchPlaceholder": "Search by Campaign Name, Batch Name",
+    "columns": {
+      "campaignName": "Campaign Name",
+      "slotCount": "No. of Batches",
+      "slotDuration": "Batch Duration",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "stage": "Batch Stage",
+      "recordsPerBatch": "Records per Batch",
+      "batchName": "Batch Name",
+      "status": "Status",
+      "action": "Action"
+    },
+    "actions": {
+      "notifyCx": "Notify Cx",
+      "mapEois": "Map EOIs",
+      "editBatch": "Edit Batch",
+      "deleteBatch": "Delete Batch",
+      "moveTo": "Move to",
+      "openBatch": "Open Batch",
+      "lockBatch": "Lock Batch",
+      "unlockBatch": "Unlock Batch",
+      "generateBatches": "Map EOIs to batches",
+      "sharePreview": "Share"
+    },
+    "breakdown": {
+      "totalLabel": "Total"
+    },
+    "idTypeStatTile": {
+      "fullyPaid": "Fully paid",
+      "partiallyPaid": "Partially paid"
+    },
+    "previewTable": {
+      "headingPrefix": "Launch Day",
+      "headingTotalBatches": "(Total batches: {{total}})",
+      "batchNameFallback": "—",
+      "addBatches": "Add Batches",
+      "searchPlaceholder": "Search by Batch Name, Payment Ref ID, Voucher/EOI ID, Customer Name & Mobile",
+      "columnBatchNo": "Batch No.",
+      "columnIdType": "ID Type",
+      "columnRecords": "Record Count",
+      "attended": "Attended",
+      "headCount": "Head Count",
+      "columnDate": "Date",
+      "batchListing": "Batch Listing"
+    },
+    "previewTableRow": {
+      "applyRowChangesAria": "Apply batch row changes",
+      "cancelEditRowAria": "Cancel editing batch row",
+      "editRowAria": "Edit batch row"
+    },
+    "configuration": {
+      "title": "Batch Configuration",
+      "idTypeOrderTooltip": "Batches will be created in the order the ID types are placed",
+      "idTypeOrderAriaLabel": "How ID type order affects batches",
+      "sameTimeAllDatesLabel": "Is the start and end time same for all the dates?",
+      "scheduleTimeConnector": " to ",
+      "scheduleDefaultWindowIntro": "Default window is",
+      "scheduleDefaultWindowOutro": ". Adjust above to apply to every date in the range.",
+      "schedulePerDateIntro": "Set start and end time for each date below (default",
+      "schedulePerDateOutro": "for new dates). All times are required.",
+      "scheduleWindowVariesSuffix": " (varies by date — expand each row)",
+      "runBatch": "Run Batch",
+      "previewTooltipReady": "Send configuration to preview on the server",
+      "toastPreviewInvalid": "Please complete all required fields before preview.",
+      "previewBlockCompleteFields": "Complete and fix all required fields",
+      "previewBlockCannotPreview": "Cannot preview yet",
+      "validation": {
+        "idTypesMin": "Select at least one ID type",
+        "batchNameRequired": "Batch name is required",
+        "startDateRequired": "Start date is required",
+        "startDateNotPast": "Start date cannot be in the past",
+        "endDateRequired": "End date is required",
+        "endDateNotPast": "End date cannot be in the past",
+        "endOnOrAfterStart": "End date must be the same as or after the start date",
+        "scheduleNeedDates": "Select start and end date to build the schedule",
+        "scheduleTimesPerDate": "Enter start and end time for every date"
+      }
+    },
+    "planSummary": {
+      "liveEstimate": "Live estimate",
+      "planAtGlance": "Batch Schedule Overview",
+      "planAtGlanceHint": "Get a quick overview of your batch schedule plan, including schedule, batch size, execution timeline, and records distribution before initiating the Batch.",
+      "chipBatchSingle": "{{count}} batch",
+      "chipBatchPlural": "{{count}} batches",
+      "sectionDateRange": "DATE RANGE",
+      "sectionWorkingHours": "WORKING HOURS",
+      "sectionSlotSetup": "SLOT SETUP",
+      "perDaySeeSchedule": "Per day (see schedule)",
+      "sameWindowEveryDay": "Same window every day in the range",
+      "eachDateOwnTimes": "Each date can have its own start and end time",
+      "minSlotsLabel": "{{minutes}} min slots",
+      "recordsPerSlotLabel": "{{count}} records assigned per batch slot",
+      "plannedBatchesRequired": "Planned batches (required records)",
+      "estimatedScheduleCapacity": "Estimated schedule capacity",
+      "requiredWithLabel": "Required ({{label}})",
+      "calendarDaysSingle": "{{count}} calendar day in the window",
+      "calendarDaysPlural": "{{count}} calendar days in the window",
+      "wordBatch": "batch",
+      "wordBatches": "batches",
+      "wordTimeWindow": "time window",
+      "wordTimeWindows": "time windows",
+      "scopeRequiredLead": "records in",
+      "scopeScheduleWithCapacity": "The schedule has {{windowCount}} {{windowsNoun}} (up to {{capacity}} records). Batching stops after the required total — not the full calendar capacity.",
+      "scopeCapacityMuted": "records max on calendar · {{slotCount}} {{batchesNoun}} for selected ID lines",
+      "scopeTimeWindowsParen": " ({{count}} time windows)",
+      "emptyTitle": "Complete the plan to see your estimate",
+      "emptyBody": "Add batch name, ID types, dates, daily schedule, duration, and records per batch — then a visual summary of slots and capacity will appear here.",
+      "valueEmDash": "—",
+      "dateRangeArrow": "→",
+      "workingHoursRangeSeparator": " – "
+    },
+    "addBatchModal": {
+      "title": "Add Additional Batches",
+      "loadingSummary": "Loading summary...",
+      "summaryTitle": "Summary",
+      "totalRecords": "Total Records:",
+      "alreadyBatched": "Already Batched:",
+      "remainingRecords": "Remaining Records:",
+      "allBatchedInfo": "All records are already batched. No additional batches needed.",
+      "toastSummaryFailed": "Failed to fetch batch summary",
+      "toastExceedsSlots": "Batch count exceeds available slots!",
+      "toastCreateSuccess": "Batches created successfully!",
+      "toastCreateFailed": "Failed to create batches",
+      "helperExceedsCapacity": "Exceeds capacity. Max {{max}} slots available.",
+      "helperBatchSlots": "Based on current configuration, {{batches}} batches can be created.",
+      "creating": "Creating...",
+      "createBatches": "Create Batches"
+    },
+    "dialog": {
+      "move": {
+        "title": "Move customer between batches",
+        "batch1Label": "From",
+        "selectBatch": "Select Batch",
+        "toBatchLabel": "To",
+        "comment": "Comments",
+        "commentPlaceholder": "Enter Comments..",
+        "actionLabel": "Move"
+      },
+      "delete": {
+        "title": "Delete Batch?",
+        "content": "This action will permanently remove the selected batch along with all its associated configurations.",
+        "actionLabel": "Delete Batch"
+      },
+      "lock": {
+        "title": "Lock Batch?",
+        "content": "This will lock the selected batch and restrict any further action.",
+        "actionLabel": "Lock Batch"
+      },
+      "unlock": {
+        "title": "Unlock this Batch?",
+        "content": "Unlocking will allow edits and modifications to this batch.",
+        "actionLabel": "Unlock Batch"
+      },
+      "openBatch": {
+        "title": "Open Batch?",
+        "content": "This action will make the batch active and enabled for processing and tracking activities.\n\nProceed with opening the batch?",
+        "actionLabel": "Open Batch"
+      },
+      "release": {
+        "title": "Release Units?",
+        "content": [
+          "This action will release the units.",
+          "Proceed with releasing the units?"
+        ],
+        "actionLabel": "Release Units"
+      },
+      "nofityCx": {
+        "title": "Notify Customers?",
+        "content": "Are you sure you want to notify the customers?",
+        "cancdlLabel": "Schedule for later",
+        "actionLabel": "Notify Now",
+        "date": "Date",
+        "time": "Time"
+      }
+    },
+    "dashboard": {
+      "title": "Dashboard",
+      "labels": {
+        "campaign": "Campaign",
+        "stage": "Stage",
+        "dateRange": "Date Range",
+        "residentStatus": "Resident Status"
+      },
+      "cardLabel": {
+        "invited": "Invited",
+        "attended": "Attended",
+        "proratedInvites": "Prorated Invites",
+        "totalHeadcount": "Total Headcount",
+        "unitsBooked": "Units Booked",
+        "totalSalesValue": "Total Sales Value",
+        "agreementValueCollected": "Agreement Value Collected"
+      },
+      "dayWiseStatistics": {
+        "title": "Day Wise Stats",
+        "series": {
+          "invited": "Invited",
+          "attended": "Attended",
+          "unitsBooked": "Units Booked",
+          "agreeementSigned": "Agreements Signed"
+        },
+        "categories": [
+          "Day 1",
+          "Day 2",
+          "Day 3",
+          "Day 4"
+        ]
+      },
+      "overallSummary": {
+        "overallSummary": "Overall Summary",
+        "segment": "Segment",
+        "invited": "Invited",
+        "attended": "Attended",
+        "unitsBooked": "Units Booked",
+        "agreementsSigned": "Agreements Signed",
+        "salesValue": "Sales Value (in Cr.)",
+        "agreementAmountCollected": "Agreement Amount Collected (in Cr.)",
+        "percentageOfSaleValue": "% of Sale Value Collected",
+        "onlineBookingForms": "Online Booking Forms",
+        "signed": "Signed",
+        "crmPushed": "CRM Pushed",
+        "batchesActiveElapsed": "Batches Active & Elapsed",
+        "freshWalkIns": "Fresh Walk-ins",
+        "activeElapsedAmtSubtext": "(During Launch 85.22Cr)",
+        "freshWalkInsAmtSubtext": "(During Launch 7.85Cr)",
+        "totalAmtSubtext": "(During Launch 93.07Cr)",
+        "total": "Total"
+      }
+    }
+  },
+  "batchSlotListing": {
+    "columns": {
+      "batchNo": "Batch No.",
+      "date": "Date",
+      "timings": "Timings",
+      "records": "Records",
+      "attended": "Attended",
+      "status": "Status",
+      "action": "Action"
+    },
+    "cards": {
+      "expectedWalkin": "Invited EOIs",
+      "proratedWalkin": "Prorated Invites Expected",
+      "directWalkin": "Direct Walk-in",
+      "actualWalkin": "Attended",
+      "bookings": "Booked",
+      "agreements": "Agreement Signed"
+    }
+  },
+  "batchVoucherListing": {
+    "searchPlaceholder": "Search by Customer Name, Payment Ref ID",
+    "columns": {
+      "pridId": "Payment Ref ID",
+      "customerName": "Customer Name",
+      "closingRmName": "Closing RM Name",
+      "status": " Cx Status",
+      "action": "Action"
+    }
+  },
+  "signatureBooking": {
+    "dialog": {
+      "title": "Signature Required",
+      "message1": "Please upload your signature to continue.",
+      "message2": "The uploaded signature will be used on the Cost Sheet during the booking process.",
+      "upload": "Upload",
+      "cancel": "Later"
+    },
+    "crmDialog": {
+      "title": "Signature Required",
+      "message1": "Please upload your signature to continue.",
+      "message2": "The uploaded signature will be used on IOMs.",
+      "upload": "Upload",
+      "cancel": "Skip for now"
+    }
+  },
+  "batchViewRecords": {
+    "checkIn": "Check In",
+    "attended": "Checked In",
+    "searchPlaceholder": "Search by Payment Ref ID, Voucher/EOI ID, Customer Name & Mobile",
+    "otpDialog": {
+      "title": "Check-In",
+      "description": "We've sent you a 6-digit confirmation code. Please enter the code below to mark the attendance",
+      "submitButtonText": "Submit",
+      "headCountLabel": "Head Count",
+      "headCountPlaceholder": "Enter Head Count",
+      "headCountValidation": "Head count must be at least 1",
+      "invalidOtp": "Invalid OTP",
+      "failedToSendOtp": "Failed to send OTP",
+      "failedToResendOtp": "Failed to resend OTP",
+      "blockedMessage": "You have entered an invalid OTP 5 times. Please try again later.",
+      "didNotReceiveCode": "Didn't receive a Code?",
+      "resendCode": "Resend code",
+      "resendCodeIn": "Resend code in {timer} sec",
+      "otpSentSuccess": "OTP sent successfully",
+      "otpResentSuccess": "OTP resent successfully",
+      "attendanceMarkedSuccess": "Attendance marked successfully"
+    }
+  },
+  "internalOfficeMemo": {
+    "title": "IOM Management",
+    "tabs": {
+      "iom": "IOM",
+      "myTeam": "My Team"
+    },
+    "searchPlaceholder": "Search by Project Name, Unit Number and IOM Number",
+    "columns": {
+      "salesOrderId": "Sales Order ID",
+      "project": "Project Name",
+      "unit": "Unit No.",
+      "customer": "Customer Name",
+      "saleValue": "Sale Value",
+      "percentageCollected": "% of SV Collected",
+      "amountCollected": "Amt Collected",
+      "fifteenPercentDate": "15% Date",
+      "referralPts": "Referral Pts",
+      "referralPointsEdited": "Referral Points Edited",
+      "pointsAdjustment": "Points Adjustment",
+      "pointsClassification": "Points Classification",
+      "pointsUpdated": "Points Updated",
+      "invoiceReqNumber": "Invoice Req No.",
+      "invoiceStatus": "Invoice Status",
+      "ageing": "Ageing",
+      "invoiceNo": "Invoice No.",
+      "invoiceDate": "Invoice Date",
+      "requestedDate": "Requested Date",
+      "iomCount": "No. of IOM's",
+      "sumOfIomAmount": "Sum of IOM Amount",
+      "amountWithGst": "Amount with GST",
+      "entity": "Entity",
+      "status": "Status",
+      "iomDate": "IOM Date",
+      "iomNumber": "IOM No.",
+      "createdBy": "Created By",
+      "verifiedBy": "Verified By",
+      "approvedBy": "Approved By",
+      "financeVerifiedBy": "Finance Verifier",
+      "financeApprovedBy": "Finance Approver",
+      "action": "Action"
+    },
+    "actions": {
+      "view": "View",
+      "generateIOM": "Generate IOM",
+      "editIOM": "Edit IOM",
+      "verifyIOM": "Verify IOM",
+      "verifyGeneratedIOM": "Review Generated IOM",
+      "submitInvoice": "Submit Invoice",
+      "closeInvoice": "Close Invoice",
+      "addLoyaltyPoints": "Add Loyalty Points"
+    },
+    "invoiceListing": {
+      "linkedIoms": "Linked IOMs",
+      "searchPlaceholder": "Search by...",
+      "invoiceNoTitle": "Invoice No. : {invoiceNo}"
+    },
+    "view": {
+      "generatedOn": "Generated On",
+      "iomDate": "IOM Date",
+      "createdBy": "Created By",
+      "referrerDetails": "Referrer Details",
+      "refereeDetails": "Referee Details",
+      "customerName": "Customer Name",
+      "mobileNo": "Mobile No.",
+      "bpCode": "BP Code",
+      "project": "Project",
+      "location": "Location",
+      "unitNo": "Unit No.",
+      "bookingDate": "Booking Date",
+      "basicSalePrice": "Basic Sale Price",
+      "brokeragePercent": "Brokerage %",
+      "brokerageAmount": "Brokerage Amount",
+      "totalAmount": "Total Amount",
+      "pointsAdjustmentType": "Points Adjustment Type",
+      "paymentDetails": "Payment Details",
+      "availablePoolAmount": "Available Pool Amount",
+      "signatures": "Signatures",
+      "preparedBySignature": "Prepared By Signature",
+      "verifiedBySignature": "Verified By Signature",
+      "approvedBySignature": "Approved By Signature",
+      "businessException": "Business Exception",
+      "financeApprovals": "Finance Approvals",
+      "cancelIom": "Cancel IOM",
+      "approve": "Approve",
+      "reject": "Reject",
+      "approveConfirmTitle": "Approve IOM?",
+      "approveConfirmContent": "Are you sure you want to approve this IOM?",
+      "approveSuccess": "IOM approved successfully.",
+      "approveError": "Failed to approve IOM. Please try again.",
+      "exportError": "Failed to export IOM PDF. Please try again.",
+      "exportSuccess": "IOM PDF exported successfully.",
+      "rejectSuccess": "IOM rejected successfully.",
+      "rejectError": "Failed to reject IOM. Please try again.",
+      "rejectMinLengthHint": "Minimum 3 characters required",
+      "sourceInSAP": "Source in SAP",
+      "sourceInSalesforce": "Source in Salesforce",
+      "agreementDone": "Agreement Done",
+      "referrerPaid": "Referrer Paid",
+      "refereePaid": "Referee Paid",
+      "pointsToReferrer": "Points to Referrer",
+      "pointsReferrerAmount": "Points Referrer Amount",
+      "pointsToReferee": "Points to Referee",
+      "pointsRefereeAmount": "Points Referee Amount",
+      "deviation": "Deviation",
+      "pendingVerification": "Pending Verification",
+      "edited": "Edited"
+    },
+    "generateIOM": {
+      "iom": "IOM",
+      "generate": "Generate",
+      "verify": "Verify",
+      "labels": {
+        "projectName": "Project Name",
+        "projectLocation": "Project Location",
+        "brokeragePercent": "Brokerage (%)",
+        "pointsToReferrer": "Points to Referrer (%)",
+        "pointsReferrerAmount": "Points Referrer Amount",
+        "pointsToReferee": "Points to Referee (%)",
+        "pointsRefereeAmount": "Points Referee Amount",
+        "pointsRatio": "Points Ratio",
+        "submit": "Submit for Approval",
+        "saveDraft": "Save Draft",
+        "back": "Back",
+        "cancel": "Cancel",
+        "cancelIom": "Cancel IOM",
+        "delete": "Delete",
+        "preview": "Preview"
+      },
+      "deviationCheckboxLabel": "Brokerage adjustment other than loyalty points",
+      "deleteConfirmTitle": "Delete IOM?",
+      "deleteConfirmContent": "Are you sure you want to delete this IOM? This action cannot be undone.",
+      "deleteSuccess": "IOM deleted successfully.",
+      "deleteError": "Failed to delete IOM. Please try again.",
+      "approvalProof": "Approval Proof",
+      "approvalProofHelper": "Supported file types: JPG, JPEG, PNG, PDF (max 10 MB)",
+      "viewProof": "View Proof",
+      "businessExceptionText": "Yes, {percent}% referral points to referrer.",
+      "submitConfirmTitle": "Submit for Approval?",
+      "submitConfirmContent": "Are you sure you want to submit this IOM for approval?",
+      "submitSuccess": "IOM submitted for approval successfully.",
+      "submitError": "Failed to submit IOM for approval. Please try again.",
+      "saveDraftSuccess": "Draft saved successfully.",
+      "saveDraftError": "Failed to save draft. Please try again.",
+      "deleteProofSuccess": "Approval proof deleted successfully.",
+      "deleteProofError": "Failed to delete approval proof. Please try again.",
+      "editedTooltip": {
+        "basicSalePrice": "Basic Sale Price has been updated from the original value.",
+        "brokerage": "Brokerage has been updated from the original value.",
+        "pointsAdjustmentType": "Points Adjustment Type has been updated from the original value."
+      },
+      "validation": {
+        "basicSalePriceRequired": "Basic Sale Price is required",
+        "basicSalePricePositive": "Basic Sale Price must be greater than 0",
+        "brokerageRequired": "Brokerage % is required",
+        "brokerageRange": "Brokerage % must be between 0 and 5",
+        "adjustmentTypeRequired": "Points Adjustment Type is required",
+        "pointsRatioRequired": "Points Ratio is required",
+        "pointsRatioRange": "Allow values up to 5 with up to 2 decimals",
+        "pointsRatioDuplicate": "Use the dropdown for 1:1, 2:0, 0:2",
+        "pointsRatioSum": "Points Ratio sum must equal 2 (e.g. 1.5:0.5, 1.25:0.75)",
+        "approvalProofRequired": "Approval Proof is required when Other is selected"
+      }
+    },
+    "addLoyaltyPoints": {
+      "title": "Add Loyalty Points",
+      "updatePoints": "Update Points",
+      "pointsClassification": {
+        "title": "Points Classification",
+        "clarificationStatus": "Clarification Status",
+        "description": "1% to referee and 1% to referral",
+        "eligiblePoolAmount": "Eligible Pool Amount",
+        "redeemablePoolAmount": "Redeemable Pool Amount"
+      },
+      "statusAlert": {
+        "verified": "The record has been fetched and verified against the Pine Labs database.",
+        "partiallyVerified": "The record has been fetched and partially verified against the Pine Labs database. The Pine Labs ID associated with this record is: {PineLabsID}.",
+        "instruction": "Verbiage for instruction",
+        "noRecord": "No record present."
+      },
+      "createProfile": {
+        "createReferrerTitle": "Create Referrer Profile",
+        "createRefereeTitle": "Create Referee Profile",
+        "submit": "Create Profile",
+        "select": "Select",
+        "gender": {
+          "male": "Male",
+          "female": "Female",
+          "other": "Other"
+        },
+        "labels": {
+          "firstName": "First Name",
+          "lastName": "Last Name",
+          "sfdcId": "SFDC ID",
+          "gender": "Gender",
+          "mobileNo": "Mobile No.",
+          "emailId": "Email ID",
+          "address": "Address",
+          "address2": "Address 2",
+          "pinCode": "Pin Code",
+          "location": "Location",
+          "projectName": "Project Name",
+          "unitNo": "Unit No."
+        },
+        "placeholders": {
+          "firstName": "Enter first name",
+          "lastName": "Enter last name",
+          "sfdcId": "Enter SFDC ID",
+          "mobileNo": "Enter mobile number",
+          "emailId": "Enter email ID",
+          "address2": "Enter address",
+          "pinCode": "Enter pincode",
+          "location": "Enter location",
+          "projectName": "Enter project name",
+          "unitNo": "Enter unit no."
+        },
+        "validation": {
+          "firstNameRequired": "First Name is required",
+          "lastNameRequired": "Last Name is required",
+          "emailRequired": "Email ID is required",
+          "invalidEmail": "Enter a valid email",
+          "invalidPinCode": "Enter a valid pincode",
+          "projectNameRequired": "Project Name is required",
+          "unitNoRequired": "Unit No. is required"
+        }
+      },
+      "editProfile": {
+        "editReferrerTitle": "Edit Referrer Details",
+        "editRefereeTitle": "Edit Referee Details",
+        "sap": "SAP",
+        "pineLabs": "PineLabs"
+      }
+    },
+    "myTeam": {
+      "searchPlaceholder": "Search by Name and Email",
+      "columns": {
+        "empId": "Emp ID",
+        "name": "Name",
+        "email": "Email ID",
+        "project": "Project",
+        "iomsAllotted": "IOM's Allotted",
+        "status": "Status",
+        "fromDateTime": "From Date & Time",
+        "toDateTime": "To Date & Time",
+        "action": "Action"
+      },
+      "actions": {
+        "edit": "Edit"
+      },
+      "markAvailability": {
+        "title": "Mark Availability Status",
+        "availabilityStatus": "Availability Status",
+        "startDate": "Start Date",
+        "startTime": "Start Time",
+        "endDate": "End Date",
+        "endTime": "End Time",
+        "submit": "Submit",
+        "cancel": "Cancel",
+        "endAfterStart": "End date & time must be after start date & time",
+        "submitSuccess": "Availability status updated successfully.",
+        "submitError": "Failed to update availability status. Please try again."
+      }
+    },
+    "closeInvoice": {
+      "title": "Close Invoice",
+      "paymentDate": "Payment Date",
+      "amountPaid": "Amount Paid (₹)",
+      "utrNumber": "UTR Number",
+      "billingName": "Billing Name",
+      "address": "Address",
+      "gstin": "GSTIN",
+      "panNo": "PAN No.",
+      "iomCount": "No. of IOM",
+      "sumOfIomAmount": "Sum of IOM Amount (₹)",
+      "invoiceRefNumber": "Invoice Ref Number",
+      "invoiceNumber": "Invoice Number",
+      "invoiceDate": "Invoice Date",
+      "amountPaidPlaceholder": "Enter amount",
+      "utrNumberPlaceholder": "Enter UTR no.",
+      "closeInvoice": "Close Invoice",
+      "submitError": "Failed to close invoice. Please try again."
+    },
+    "requestInvoice": {
+      "title": "Request Invoice",
+      "requestInvoice": "Request Invoice"
+    },
+    "submitInvoice": {
+      "title": "Submit Invoice",
+      "submitInvoice": "Submit Invoice"
+    }
+  }
+}

@@ -1,0 +1,54 @@
+<div class="purva-privilege <%= pageBreak ? 'page-break' : '';%>" >
+    <div class="applicant-details-card">
+      <% if(refundDetails) { %>
+        <h3 class="title-personal-hd marginBottom16">Refund Details</h3>
+        <div class="personal-info referrer-privilege">
+          <div class="personal-info-row">
+            <label class="label-title">Payee Name:</label>
+            <span class="span-title"><%= refundDetails?.payeeName ?? '' %></span>
+          </div>
+          <div class="personal-info-row">
+            <label class="label-title">Bank Name:</label>
+            <span class="span-title"><%= refundDetails?.bankName ?? '' %></span>
+          </div>
+          <div class="personal-info-row">
+            <label class="label-title">IFSC Code:</label>
+            <span class="span-title">
+              <%= refundDetails?.ifscCode ?? '' %>
+            </span>
+          </div>
+          <% if (refundDetails?.swiftCode) { %>
+            <div class="personal-info-row">
+              <label class="label-title">Swift Code:</label>
+              <span class="span-title"><%= refundDetails?.swiftCode %></span>
+            </div>
+          <% } %>
+          <div class="personal-info-row">
+            <label class="label-title">Account Number:</label>
+            <span class="span-title"><%= refundDetails?.accountNumber ?? '' %></span>
+          </div>
+          <div class="personal-info-row">
+            <label class="label-title">Account Type:</label>
+            <span class="span-title"><%= refundDetails?.accountType ?? '' %></span>
+          </div>
+        </div>
+        <div class="kyc-document-row">
+          <div class="document-row full-row" style="display: ruby-text;">
+            <label class="label-title">Cheque/Bank Statement:</label>
+            <%if(refundDetails?.isPhysicalCancelledCheque){ %>
+            <span class="span-title">Physical Copy to be submitted offline</span>
+            <%}%>
+          </div>
+          <%if(refundDetails?.cancelledCheque?.length && !refundDetails?.cancelledCheque?.[0]?.toLowerCase().endsWith('.pdf')){ %>
+            <div class="document-images">
+              <div class="img-bg">
+                <div class="img">
+                  <img src="<%= IMAGE_BASE_URL %><%= refundDetails?.cancelledCheque[0] %>" alt="" />
+                </div>
+              </div>
+            </div>
+          <% } %>
+        </div>
+      <% } %>
+    </div>
+  </div>

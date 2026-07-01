@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Voucher Application Form</title>
+  <link rel="icon" href="data:,">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+
+  <style type="text/css">
+    body {
+      margin: 0;
+      font-family: "Poppins", serif;
+    }
+
+    .wrapper {
+      background: white;
+      max-width: 1299px;
+      font-family: "Poppins", serif;
+      font-weight: 400;
+      font-style: normal;
+      margin: 0px auto;
+      position: relative;
+    }
+
+    .header-logo-wrap {
+      background: #1a407d;
+      margin-bottom: 36px;
+    }
+
+    .header-logo-box {
+      max-width: 1299px;
+      margin: 0px auto;
+      padding-top: 24px;
+      padding-bottom: 24px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .header-title {
+      font-size: 24px;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .header-logo {
+      position: absolute;
+      top: 24px;
+      right: 15px;
+      width: 276px;
+      height: 32px;
+      text-align: right;
+    }
+
+    .header-logo img {
+      max-width: 85%;
+      max-height: 100%;
+    }
+
+    .applicant-details-card {
+      margin: 10px 15px;
+      padding: 24px 24px;
+      border: 1px solid rgba(26, 64, 125, 0.3);
+      border-radius: 8px;
+      margin-bottom: 18px;
+    }
+
+    .kyc-details-card {
+      margin: 10px 15px;
+      padding: 24px 24px;
+      border: 1px solid rgba(26, 64, 125, 0.3);
+      border-radius: 8px;
+      margin-bottom: 18px;
+      min-height: 700px;
+    }
+
+    .payment-details-card {
+      margin: 10px 15px;
+      padding: 24px 24px;
+      border: 1px solid rgba(26, 64, 125, 0.3);
+      border-radius: 8px;
+      margin-bottom: 18px;
+      min-height: 700px;
+    }
+
+    .position-relative {
+      position: relative;
+    }
+
+    .position-absolute {
+      position: absolute;
+    }
+
+    .padding24 {
+      padding: 24px;
+    }
+
+    .d-flex {
+      display: flex;
+    }
+
+    .d-block {
+      display: block;
+    }
+
+    .line-dotted {
+      border-bottom: 2px dashed #d6d6d6;
+      margin-bottom: 16px;
+    }
+
+    /* 1 */
+    .edit-title-row {
+      margin: 0px 0px 34px 0px;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .edit-title-row .btn-applicant-top {
+      padding: 10px 48px;
+      border-radius: 8px;
+      background: #1a407d;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 22px;
+      min-width: 129px;
+      min-height: 26px;
+      text-align: center;
+    }
+
+    /* 2 */
+    .personal-information {
+      display: flex;
+      margin-bottom: 16px;
+      gap: 35px;
+    }
+
+    .personal-information .photo {
+      width: 238px;
+      height: 250px;
+      flex-shrink: 0;
+      overflow: hidden;
+      border-radius: 8px;
+      width: 20%;
+      margin-top: 25px;
+    }
+
+    .personal-information .photo img {
+      object-fit: contain;
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+    }
+
+    .information-details {
+      margin: 0;
+      padding: 22px 0px 0px 0px;
+      width: 79%;
+    }
+
+    .information-details .name {
+      margin: 0px 0px 14px 0px;
+      padding: 0;
+      font-size: 24px;
+      color: #1a407d;
+      font-weight: 600;
+      line-height: 22px;
+    }
+
+    .title-personal-hd {
+      margin: 0px 0px 4px 0px;
+      padding: 0;
+      font-size: 16px;
+      color: #1a407d;
+      font-weight: 600;
+      line-height: 22px;
+    }
+
+    .personal-info {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .personal-info .personal-info-row {
+      margin: 0px 0px 14px 0px;
+      display: flex;
+      width: 50%;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .main-applicant .personal-info-row:nth-child(odd) {
+      margin: 0px 0px 14px 0px;
+      display: flex;
+      width: 44%;
+    }
+
+    .main-applicant .personal-info-row:nth-child(even) {
+      margin: 0px 0px 14px 0px;
+      display: flex;
+      width: 56%;
+    }
+
+    .label-title {
+      margin: 0px 5px 0px 0px;
+      padding: 0;
+      font-size: 14px;
+      color: #1c252e;
+      font-weight: 400;
+      line-height: 22px;
+      flex-shrink: 0;
+      width: 140px;
+    }
+
+    .personal-information .personal-info-row:nth-child(even) .label-title {
+      width: 120px;
+    }
+
+    .personal-information .personal-info-row:nth-child(odd) .label-title {
+      width: 150px;
+    }
+
+    .other-details .label-title {
+      width: 200px;
+    }
+
+    .span-title {
+      display: block;
+      margin: 0px 0px 0px 0px;
+      padding: 0;
+      font-size: 14px;
+      color: #1c252e;
+      font-weight: 600;
+      line-height: 22px;
+    }
+
+    .notes {
+      font-size: 14px;
+      font-style: italic;
+      font-weight: 600;
+      line-height: 22px;
+      color: #1c252e;
+      margin-top: 18px;
+      /* margin-left: 14px; */
+      padding-bottom: 30px;
+    }
+
+    .Communication {
+      flex-direction: column;
+    }
+
+    .Communication .personal-info-row {
+      width: 100%;
+    }
+
+    .personal-info.professional-details .personal-info-row:nth-child(odd) {
+      width: 45%;
+    }
+
+    .personal-info.professional-details .personal-info-row:nth-child(even) {
+      width: 55%;
+    }
+
+    .full-row {
+      width: 100% !important;
+    }
+
+    .Communication .personal-info-row .label-title,
+    .professional-details .personal-info-row .label-title {
+      width: 180px;
+    }
+
+    .marginBottom {
+      margin-bottom: 28px;
+    }
+
+    .marginBottom16 {
+      margin-bottom: 16px;
+    }
+
+    .unit-details .personal-info-row .label-title {
+      width: 200px;
+    }
+
+    .other-details .personal-info-row {
+      width: 100%;
+    }
+
+    /* 2 */
+    /* 3 */
+    .payment-p {
+      margin: 0px 0px 12px 0px;
+      padding: 0;
+      font-size: 14px;
+      color: #1c252e;
+      font-weight: 400;
+      line-height: 22px;
+    }
+
+    .payment-p b {
+      margin-left: 0px;
+      margin-right: 6px;
+    }
+
+    .table-responsive-pdf table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    .table-responsive-pdf table tr th {
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 20px;
+      color: #101828;
+      padding-top: 16px;
+      padding-bottom: 16px;
+      padding-left: 10px;
+      padding-right: 10px;
+      text-align: left;
+      border: 1px solid #dadada;
+    }
+
+    .table-responsive-pdf table tr td {
+      background-color: #fff;
+      border-bottom: 1px solid #e4e7ec;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 20px;
+      color: #101828;
+      padding-top: 16px;
+      padding-bottom: 16px;
+      padding-left: 10px;
+      padding-right: 10px;
+      border: 1px solid #dadada;
+    }
+
+    .table-responsive-pdf.tbl-border tr th,
+    .table-responsive-pdf.tbl-border tr td {
+      border: 1px solid #dadada;
+    }
+
+    .table-responsive-pdf.tbl-border {
+      margin-bottom: 16px;
+    }
+
+    .privilege {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 22px;
+      color: #1c252e;
+    }
+
+    .privilege ol {
+      margin: 0px 0px 16px 12px;
+      padding: 0;
+    }
+
+    .privilege ol li {
+      list-style: auto;
+    }
+
+    .personal-info.referrer-privilege .personal-info-row:nth-child(odd) {
+      width: 45%;
+    }
+
+    .personal-info.referrer-privilege .personal-info-row:nth-child(even) {
+      width: 55%;
+    }
+
+    .referrer-privilege .personal-info-row .label-title {
+      width: 170px;
+    }
+
+    .list-number {
+      margin: 0;
+      padding: 0;
+    }
+
+    .list-number li {
+      list-style-type: none;
+      margin: 0px 0px 14px 0px;
+      padding: 0px 0px 0px 0px;
+      font-size: 14px;
+      font-weight: 400;
+    }
+
+    .list-number li.liB {
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .list-number li ul {
+      margin: 0;
+      padding: 0;
+      margin-left: 26px;
+    }
+
+    .list-number li ul li {
+      margin: 0;
+      padding: 0;
+      list-style-type: disc;
+    }
+
+    .declaration-wrap p {
+      margin: 0px 0px 22px 0px;
+      padding: 0;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 22px;
+    }
+
+    .declaration-wrap p:last-child {
+      margin-bottom: 0px;
+    }
+
+    .kyc-document-row {
+      margin-bottom: 20px;
+    }
+
+    .kyc-document-row .document-row {
+      display: flex;
+      margin-bottom: 20px;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 22px;
+      color: #1c252e;
+    }
+
+    .cost-sheet-disclaimer {
+      font-size: 13px;
+    }
+
+    .kyc-document-row .document-row p {
+      margin: 0px 18px 0px 0px;
+      padding: 0;
+    }
+
+    .kyc-document-row .document-row span {
+      display: block;
+      font-weight: 600;
+    }
+
+    .kyc-document-row .document-images {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .kyc-document-row .document-images .front {
+      color: #1c252e;
+      font-size: 14px;
+      font-weight: 500;
+      text-align: center;
+      padding-top: 16px;
+      padding-bottom: 10px;
+    }
+
+    .kyc-document-row .document-images .img-bg {
+      width: 49%;
+      border-radius: 8px;
+      border: 1px solid rgba(26, 64, 125, 0.5);
+      background: #fff;
+      overflow: hidden;
+      height: 372px;
+    }
+
+    .kyc-document-row .document-images .img-bg .img {
+      border-radius: 16px;
+      height: 300px;
+      border: 10px solid #fff;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .kyc-document-row .document-images .img-bg .img img {
+      object-fit: contain;
+      height: 100%;
+      width: 100%;
+    }
+
+    .kyc-document-row .document-images .img-bg .img.height100 {
+      height: 100%;
+    }
+
+    .sub-heading {
+      display: block;
+      margin-top: 5px;
+      font-size: 13px;
+      padding: 0;
+      color: #1a407d;
+      line-height: 22px;
+      font-weight: 400;
+    }
+
+    .title-have-stated {
+      display: block;
+      font-size: 18px;
+      padding: 5px 0px;
+      color: #1a407d;
+      font-weight: 600;
+      text-align: center;
+      text-transform: uppercase;
+      border-top: 1px solid #1a407d;
+      border-bottom: 1px solid #1a407d;
+    }
+
+    .ul-list-pan {
+      list-style: none;
+      margin-left: 0;
+      padding-left: 16px;
+    }
+
+    .blue-line {
+      display: block;
+      height: 2px;
+      width: 100%;
+      background-color: #1a407d;
+      margin-bottom: 10px;
+    }
+
+    .link-anch {
+      color: #000;
+      text-decoration: none;
+    }
+
+    .ul-notes {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-size: 14px;
+    }
+
+    .signature-row {
+      margin: 0px;
+      padding: 0px;
+      display: flex;
+      justify-content: flex-end;
+      gap: 16px;
+    }
+
+    .signature-row .signature {
+      margin-bottom: 24px;
+      width: 25%;
+    }
+
+    .signature-row .signature p {
+      margin: 0px;
+      padding: 0px;
+      display: block;
+      height: 50px;
+      background-color: yellowgreen;
+    }
+
+    .signature-row .signature span {
+      margin: 0px;
+      padding: 5px 0px 0px 0px;
+      display: block;
+      border-top: 2px dashed #000000;
+    }
+
+    .reserved-row {
+      margin: 0px;
+      padding: 0px;
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+    }
+
+    .signature-wrapper {
+      display: none;
+    }
+
+    .dashedBorder {
+      border-top: 1px dashed #dadada;
+      margin-bottom: 16px;
+    }
+
+    .check-terms {
+      display: block;
+      padding-left: 16px;
+      position: relative;
+      color: #344054;
+      cursor: pointer;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 20px;
+      margin-bottom: 0;
+      user-select: none;
+    }
+
+    .check-terms input {
+      cursor: pointer;
+      height: 0;
+      opacity: 0;
+      position: absolute;
+      width: 0;
+    }
+
+    .check-terms input:checked~.checkmark {
+      background-color: #1a407d;
+      border: 1px solid #1a407d;
+    }
+
+    .check-terms .checkmark {
+      border-radius: 4px;
+      height: 11px;
+      left: 0;
+      position: absolute;
+      top: 3px;
+      width: 11px;
+    }
+
+    .check-terms input:checked~.checkmark:after {
+      display: block;
+    }
+
+    .check-terms .checkmark:after {
+      border: solid #fff;
+      border-width: 0 2px 2px 0;
+      height: 7px;
+      left: 3px;
+      top: 0;
+      transform: rotate(45deg);
+      width: 3px;
+    }
+
+    .check-terms .checkmark:after {
+      content: "";
+      display: none;
+      position: absolute;
+    }
+
+    .voucher-comment {
+      margin-top: 10px;
+    }
+
+    .voucher-comment .marginBottom {
+      margin-bottom: 10px;
+    }
+
+    .voucher-comment .information-details,
+    .voucher-comment .information-details .personal-info-row {
+      width: 100%;
+    }
+
+    .voucher-comment .information-details .span-title {
+      font-weight: 400;
+      white-space: pre-line;
+    }
+
+    .gst-certificate-img {
+      width: 50%;
+      border: 1px solid rgba(26, 64, 125, 0.5);
+      border-radius: 8px;
+      padding: 10px;
+      margin-top: 15px;
+      text-align: left;
+      max-height: 700px;
+    }
+
+    .kyc-back-img {
+      margin-top: 65px;
+    }
+
+    .address-title {
+      font-weight: bold;
+      font-size: 16px;
+      color: #1a407d;
+    }
+
+    /* customer-details-card */
+    .customer-details-card {
+      margin: 10px 15px;
+      padding: 24px 24px;
+      border: 1px solid rgba(26, 64, 125, 0.3);
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    .customer-details-card h5 {
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 22px;
+      color: #1c252e;
+      margin: 0;
+      padding: 0;
+    }
+    .customer-details-card h5 span {
+      font-weight: 400;
+      margin-right: 8px;
+    }
+    .skyBlueBg,
+    .orangeBtn,
+    .greenBtn,
+    .purpleBtn {
+    display: inline-block;
+    width: fit-content;
+    background: rgba(0, 184, 217, 0.08);
+    border-radius: 8px;
+    padding: 6px 14px;
+    margin-left: -12px;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 600;
+    color: #1976d2;
+  }
+    .orangeBtn {
+      background: rgba(255, 171, 0, 0.08);
+      color: #B76E00;
+    }
+    .greenBtn {
+      background: rgba(34, 197, 94, 0.08);
+      color: #118d57;
+    }
+    .purpleBtn {
+      background: rgba(142, 51, 255, 0.08);
+      color: #5119b7;
+    }
+    .contentWrap {
+      padding: 24px 16px;
+    }
+    .justify-content-between {
+      justify-content: space-between;
+    }
+    .align-items-center {
+      align-items: center;
+    }
+    .amountList {
+      margin: 34px 0 0 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      gap: 24px;
+    }
+    .amountList li {
+      position: relative;
+      background: #fff;
+      border-radius: 16px;
+      padding: 24px;
+      text-align: left;
+      flex: 1;
+      border: 1px solid rgba(145, 158, 171, 0.12);
+      box-shadow: rgba(145, 158, 171, 0.12) 0px 1px 2px 0px;
+      overflow: hidden;
+    }
+    .amountList h3 {
+      margin: 0px;
+      padding: 0;
+      font-size: 24px;
+      color: #1c252e;
+      font-weight: 700;
+      line-height: 48px;
+    }
+    .amountList p{
+      margin: 0px;
+      padding: 0;
+      font-size: 14px;
+      color: #637381;
+      font-weight: 600;
+      line-height: 22px;
+    }
+    .skyBlueBox,
+    .greenBox,
+    .lightOrangeBox {
+      position: absolute;
+      top: -40px;
+      right: -100px;
+      width: 160px;
+      height: 160px;
+      border-radius: calc(3 * 8px);
+      transform: rotate(130deg);
+      background: #c3d7fa;
+      opacity: 0.6;
+    }
+    .greenBox {
+      background: #d9ede4;
+    }
+    .lightOrangeBox {
+      background: #fcebd6;
+    }
+    .terms-wrapper p{
+      font-size: 14px;
+    }
+
+    .payment-info {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .payment-info .payment-info-row {
+      margin: 0px 0px 14px 0px;
+      display: flex;
+      width: 33%;
+      align-items: center;
+      gap: 0px;
+    }
+
+    .payment-info-row .label-title {
+      width: 162px;
+    }
+
+    .payment-document-row {
+      margin-bottom: 20px;
+    }
+
+    .payment-document-row .document-row {
+      display: flex;
+      margin-bottom: 20px;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 22px;
+      color: #1c252e;
+    }
+
+    .payment-document-row .document-row p {
+      margin: 0px 18px 0px 0px;
+      padding: 0;
+    }
+
+    .payment-document-row .document-row span {
+      display: block;
+      font-weight: 600;
+    }
+
+    .payment-document-row .document-images {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .payment-document-row .document-images .front {
+      color: #1c252e;
+      font-size: 14px;
+      font-weight: 500;
+      text-align: center;
+      padding-top: 16px;
+      padding-bottom: 10px;
+    }
+
+    .payment-document-row .document-images .img-bg {
+      width: 49%;
+      border-radius: 8px;
+      border: 1px solid rgba(26, 64, 125, 0.5);
+      background: #fff;
+      overflow: hidden;
+      height: 372px;
+    }
+
+    .payment-document-row .document-images .img-bg .img {
+      border-radius: 16px;
+      height: 300px;
+      border: 10px solid #fff;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .payment-document-row .document-images .img-bg .img img {
+      object-fit: contain;
+      height: 100%;
+      width: 100%;
+    }
+
+    .payment-document-row .document-images .img-bg .img.height100 {
+      height: 100%;
+    }
+
+    .margin-top-10 {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header-logo-wrap">
+    <div class="header-logo-box">
+      <div class="header-title">
+        <%- voucher?.formPhase == voucherFormType.VOUCHER ? 'Voucher Form' : 'Expression Of Interest'; %>
+      </div>
+      <div class="header-logo">
+        <img src="<%= IMAGE_BASE_URL%><%= termsCondition?.logoImage %>" alt="" />
+      </div>
+    </div>
+  </div>
+  <div class="wrapper applicantDetailsCard">
+    <%
+      VOUCHER_DATE_FORMAT="DD-MMM-YYYY";
+      primarySource=voucher?.primarySource ?? '';
+
+
+      // Helper to print 1st/2nd/3rd/4th... const
+      ordinal=(n)=> {
+        const suffixes = { 1: 'st', 2: 'nd', 3: 'rd' };
+        const v = n % 100;
+        const suffix = suffixes[v] && v % 10 === v ? suffixes[v] : 'th';
+        const label = `${n}<sup>${suffix}</sup> Applicant`;
+        return label;
+      };
+    %>
+      <div class="customer-details-card">
+        <div class="contentWrap">
+          <%
+            const primaryApplicant = voucher?.applicant1 ?? {};
+            const formPhase = voucher?.formPhase ?? voucherFormType.VOUCHER;
+          %>
+          <div class="d-flex marginBottom16 align-items-start" style="justify-content: space-between;">
+            <!-- LEFT SIDE -->
+            <div style="width: 60%; display: flex; flex-direction: column; gap: 15px; align-items: flex-start;">
+              <h5>
+                <span> Customer Name:</span>
+                <%=primaryApplicant?.personalDetails?.firstName ?? ''%>
+                <%=primaryApplicant?.personalDetails?.lastName ?? ''%>
+              </h5>
+          
+              <h5>
+                <span> Mobile Number:</span>
+                <%=primaryApplicant?.personalDetails?.countryCode ?? ''%>
+                <%=primaryApplicant?.personalDetails?.contactNumber ?? ''%>
+              </h5>
+          
+              <div class="skyBlueBg">
+                Payment Ref ID: <%= voucher?.uniqueReferenceId %>
+              </div>
+          
+              <% if(voucher?.paidVoucherId) { %>
+                <div class="skyBlueBg">
+                  Voucher ID: <%= voucher?.paidVoucherId %>
+                </div>
+              <% } %>
+              <% if(voucher?.stdEoiId) { %>
+                <div class="skyBlueBg">
+                  Standard EOI ID: <%= voucher?.stdEoiId %>
+                </div>
+              <% } %>
+              <% if(voucher?.preEoiId) { %>
+                <div class="skyBlueBg">
+                  Preferential EOI ID: <%= voucher?.preEoiId %>
+                </div>
+              <% } %>
+          
+              <div class="orangeBtn">
+                Status: <%= voucher?.voucherFormStatus %>
+              </div>
+          
+              <div class="purpleBtn">
+                Preferred Typology: <%= voucher?.eoiDetails?.typology %>
+              </div>
+          
+            </div>
+          
+            <!-- RIGHT SIDE -->
+            <div style="width: 40%; display: flex; flex-direction: column; gap: 20px; align-items: flex-end; text-align: right;">
+              <h5>
+                <span>Initiated Date:</span>
+                <%= voucher?.createdAt ? formatDate(voucher?.createdAt, VOUCHER_DATE_FORMAT) : '-' %>
+              </h5>
+
+              <h5>
+                <%
+                  if((formPhase === voucherFormType.VOUCHER) ||
+                  (formPhase === voucherFormType.EOI &&
+                  voucher?.voucherIssuedAt)) {
+                %>
+                <span> Voucher ID Issued:</span>
+                <%- voucher?.voucherIssuedAt ? formatDate(voucher?.voucherIssuedAt, VOUCHER_DATE_FORMAT) : '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'%>
+                <% } %>
+              </h5>
+                <% if (formPhase === voucherFormType.EOI) { %>
+                <% if (voucher?.stdEoiIssuedAt) { %>
+              <h5>
+                <span>Standard EOI ID Issued:</span>
+                <%= formatDate(voucher.stdEoiIssuedAt, VOUCHER_DATE_FORMAT) %>
+              </h5>
+                <% } %>
+                <% if (voucher?.preEoiIssuedAt) { %>
+              <h5>
+                <span>Preferential EOI ID Issued:</span>
+                <%= formatDate(voucher.preEoiIssuedAt, VOUCHER_DATE_FORMAT) %>
+                </h5>
+                <% } %>
+                <% } %>
+              <h5><span> Primary Source:</span> <%= voucher?.primarySource %></h5>
+          
+              <% if(voucher?.sourceDetails?.channelPartner) { %>
+                <h5><span> Channel Partner Name:</span> <%= voucher?.sourceDetails?.channelPartner %></h5>
+              <% } else { %>
+                <% if(voucher?.sourcingRm) { %>
+                  <h5><span> Sourcing RM:</span> <%= voucher?.sourcingRm %></h5>
+                <% } else if(voucher?.closingRm) { %>
+                  <h5><span> Closing RM:</span> <%= voucher?.closingRm %></h5>
+                <% } %>
+              <% } %>
+
+              <% if(voucher?.sourceDetails?.channelPartner && voucher?.sourcingRm) { %>
+                <h5><span> Sourcing RM:</span> <%= voucher?.sourcingRm %></h5>
+              <% } else if(voucher?.sourceDetails?.channelPartner && !voucher?.sourcingRm && voucher?.closingRm) { %>
+                <h5><span> Closing RM:</span> <%= voucher?.closingRm %></h5>
+              <% } else if(!voucher?.sourceDetails?.channelPartner && voucher?.sourcingRm && voucher?.closingRm) { %>
+                <h5><span> Closing RM:</span> <%= voucher?.closingRm %></h5>
+              <% } %>
+
+
+              <% if(voucher?.sourceDetails?.channelPartner && voucher?.sourcingRm && voucher?.closingRm) { %>
+                <h5><span> Closing RM:</span> <%= voucher?.closingRm %></h5>
+              <% } %>
+            </div>
+          </div>
+          <ul class="amountList">
+            <li>
+              <div class="skyBlueBox"></div>
+              <h3>₹ <%= formatIndianAmount(voucher?.paymentDetails?.amountPayable) %></h3>
+              <p>EOI Amount</p>
+            </li>
+            <li>
+              <div class="greenBox"></div>
+              <h3>₹ <%= formatIndianAmount(voucher?.paymentDetails?.totalAmountPaid) %></h3>
+              <p>Amount Paid</p>
+            </li>
+            <li>
+              <div class="lightOrangeBox"></div>
+              <h3>₹ <%= formatIndianAmount(Math.max(0, (voucher?.paymentDetails?.amountPayable || 0) - (voucher?.paymentDetails?.totalAmountPaid || 0))) %></h3>
+              <p>Balance Due</p>
+            </li>
+          </ul>
+          </ul>
+        </div>
+      </div>
+
+      <%- include('partials/payment-details', {
+        paymentDetails: voucher?.paymentDetails,
+        payments: voucher?.payments,
+        pageBreak: false
+      }); %>
+
+      <!-- Render General Details -->
+      <%- include('partials/applicant', {
+        applicant: voucher?.applicant1,
+        label: "Primary Applicant",
+        isPrimaryApplicant: true,
+        pageBreak: true
+      }); %>
+      <% if(voucher?.applicant2) { %>
+        <%- include('partials/applicant', {
+          applicant: voucher?.applicant2,
+          label: ordinal(2),
+          isPrimaryApplicant: false,
+          pageBreak: true
+        });%>
+      <% } %>
+      <% if(voucher?.applicant3) { %>
+        <%- include('partials/third-applicant', {
+          applicant: voucher?.applicant3,
+          label: ordinal(3),
+          isPrimaryApplicant: false,
+          pageBreak: true
+        }); %>
+      <% } %>
+      <% if(voucher?.applicant4) { %>
+        <%- include('partials/third-applicant', {
+          applicant: voucher?.applicant4,
+          label: ordinal(4),
+          isPrimaryApplicant: false,
+          pageBreak: false
+        }); %>
+      <% } %>
+
+      <!-- 5 -->
+      <div class="kyc-documents page-break">
+        <div class="kyc-applicant-1">
+          <%- include('partials/kyc-details', {
+            kycDetails: voucher?.applicant1?.contactDetails,
+            label: "Primary Applicant",
+            pageBreak: false
+          }) %>
+        </div>
+
+        <% if (voucher?.applicant2) { %>
+          <div class="kyc-applicant-2 page-break">
+            <%- include('partials/kyc-details', {
+              kycDetails: voucher?.applicant2?.contactDetails,
+              label: ordinal(2),
+              pageBreak: false
+            }) %>
+          </div>
+        <% } %>
+      <!-- 5 -->
+      <!-- 6 -->
+       <% if(['Purva Privilege','Provident Premier'].includes(primarySource)) { %>
+        <%- include('partials/referrer-details', {
+          sourceDetails: voucher?.sourceDetails,
+          primarySource: primarySource,
+          secondarySource: voucher?.secondarySource ?? null,
+          pageBreak: true
+        }); %>
+      <% } %>
+      <!-- 6 -->
+      <%- include('partials/refund-details', {
+        refundDetails: voucher?.paymentDetails?.recoveryAccountDetails,
+        pageBreak: true
+      }); %>
+
+      <div class="terms-wrapper page-break">
+        <div class="terms-condition">
+          <div class="applicant-details-card">
+            <h3 class="title-personal-hd marginBottom16">Terms and Conditions</h3>
+            <%- voucher?.termsAndCondition;%>
+          </div>
+        </div>
+      </div>
+  </div>
+</body>
+
+</html>

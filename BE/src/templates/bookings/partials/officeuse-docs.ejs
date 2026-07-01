@@ -1,0 +1,66 @@
+<%
+  const docs = documents || {};
+  const pageBreakClass = pageBreak ? 'page-break' : '';
+
+  const LABELS = {
+    chequeImages: 'Cancelled Cheque',
+    npvSheetApproval: 'NPV Calculation sheet with approval from BIS',
+    businessHeadApproval: 'Approval mail from Business Head',
+    bisMTPApproval: `BIS team’s approval in consent with CEO for unit sold below MTP`,
+    bisPaymentPlanApproval: `BIS team’s approval in consent with CEO for unit sold with customised payment plan`,
+    leadRegProof: 'Lead Registration Proof',
+  };
+
+  const isPdf = (p) => typeof p === 'string' && p.toLowerCase().endsWith('.pdf');
+  const isImg = (p) => typeof p === 'string' && !isPdf(p);
+
+  const renderFrontBack = (arr, showLabels = true) => { %>
+    <div class="document-images">
+      <% if (arr[0] && isImg(arr[0])) { %>
+        <div class="img-bg">
+          <% if (showLabels) { %><div class="front">Front</div><% } %>
+          <div class="img">
+            <img src="<%= IMAGE_BASE_URL %><%= arr[0] %>" alt="" />
+          </div>
+        </div>
+      <% } %>
+      <% if (arr[1] && isImg(arr[1])) { %>
+        <div class="document-images kyc-back-img page-break">
+          <div class="img-bg">
+            <% if (showLabels) { %><div class="front">Back</div><% } %>
+            <div class="img">
+              <img src="<%= IMAGE_BASE_URL %><%= arr[1] %>" alt="" />
+            </div>
+          </div>
+        </div>
+      <% } %>
+    </div>
+<% }; %>
+
+<% Object.keys(LABELS).forEach((key) => {
+     const arr = Array.isArray(docs[key]) ? docs[key] : [];
+     if (!arr.length) return;
+
+     const hasImages = arr.some(isImg);
+
+     // Skip entire section if there are no images at all (PDF only)
+     if (!hasImages) return;
+%>
+  <div class="kyc-document-row kyc-details-card <%= pageBreakClass %>">
+    <h3 class="title-personal-hd marginBottom"><%= LABELS[key] %></h3>
+
+    <% if (key === 'chequeImages') { %>
+      <% renderFrontBack(arr, true); %>
+    <% } else { %>
+      <div class="document-images">
+        <% arr.forEach((p, i) => { if (!isImg(p)) return; %>
+          <div class="img-bg <%= i === 1 ? 'page-break' : '' %>">
+            <div class="img">
+              <img src="<%= IMAGE_BASE_URL %><%= p %>" alt="" />
+            </div>
+          </div>
+        <% }); %>
+      </div>
+    <% } %>
+  </div>
+<% }); %>

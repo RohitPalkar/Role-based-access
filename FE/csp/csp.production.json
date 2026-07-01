@@ -1,0 +1,89 @@
+{
+  "csp": {
+    "default-src": [
+      "'self'"
+    ],
+    "script-src": [
+      "'self'",
+      "https://www.googletagmanager.com",
+      "https://maps.googleapis.com",
+      "https://challenges.cloudflare.com",
+      "https://checkout.razorpay.com",
+      "https://cdn.razorpay.com",
+      "https://checkout-static-next.razorpay.com",
+      "https://magic-plugins.razorpay.com",
+      "https://ebz-static.s3.ap-south-1.amazonaws.com",
+      "https://pay.easebuzz.in",
+      "https://www.google-analytics.com"
+    ],
+    "worker-src": [
+      "'self'",
+      "blob:"
+    ],
+    "style-src": [
+      "'self'",
+      "https://fonts.googleapis.com"
+    ],
+    "img-src": [
+      "'self'",
+      "data:",
+      "https:",
+      "blob:",
+      "https://assets.puravankaraprojects.com",
+       "https://cdn.razorpay.com",
+      "https://checkout-static-next.razorpay.com",
+      "https://ebz-static.s3.ap-south-1.amazonaws.com",
+      "https://pay.easebuzz.in"
+    ],
+    "font-src": [
+      "'self'",
+      "https://fonts.gstatic.com"
+    ],
+    "frame-src": [
+      "'self'",
+      "https://challenges.cloudflare.com",
+      "https://checkout.razorpay.com",
+      "https://api.razorpay.com",
+      "https://assets.puravankaraprojects.com",
+      "https://ebz-static.s3.ap-south-1.amazonaws.com",
+      "https://pay.easebuzz.in"
+    ],
+    "connect-src": [
+      "'self'",
+      "https://bookingform-api.puravankaraprojects.com",
+      "https://ws-api.puravankaraprojects.com",
+      "https://assets.puravankaraprojects.com",
+      "https://o4510061642121216.ingest.de.sentry.io",
+      "https://maps.googleapis.com",
+      "https://api.iconify.design",
+      "https://api.simplesvg.com",
+      "https://api.unisvg.com",
+      "https://checkout.razorpay.com",
+      "https://purvankara-assests-prod.s3.ap-south-1.amazonaws.com",
+      "https://api.razorpay.com",
+      "https://lumberjack.razorpay.com",
+      "https://lumberjack-cx.razorpay.com",
+      "https://lumberjack-metrics.razorpay.com",
+      "https://ebz-static.s3.ap-south-1.amazonaws.com",
+      "https://dev-easebuzz-assets.s3.ap-south-1.amazonaws.com",
+      "https://pay.easebuzz.in",
+       "https://www.google-analytics.com"
+
+    ],
+    "object-src": [
+      "'none'"
+    ],
+    "base-uri": [
+      "'self'"
+    ],
+    "form-action": [
+      "'self'"
+    ],
+    "frame-ancestors": [
+      "'self'"
+    ],
+    "upgrade-insecure-requests": [],
+    "block-all-mixed-content": []
+  },
+  "meta": "default-src 'self'; script-src 'self' https://www.googletagmanager.com https://maps.googleapis.com https://challenges.cloudflare.com; worker-src 'self' blob:; style-src 'self' https://fonts.googleapis.com; img-src 'self' data: https: blob: https://assets.puravankaraprojects.com;https://o4510061642121216.ingest.de.sentry.io https://maps.googleapis.com https://api.iconify.design https://api.simplesvg.com https://api.unisvg.com; font-src 'self' https://fonts.gstatic.com; frame-src 'self' https://challenges.cloudflare.com; connect-src 'self' https://bookingform-api.puravankaraprojects.com https://ws-api.puravankaraprojects.com https://assets.puravankaraprojects.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self';"
+}

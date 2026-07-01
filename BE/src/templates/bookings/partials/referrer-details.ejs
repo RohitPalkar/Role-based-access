@@ -1,0 +1,71 @@
+<div class="purva-privilege page-break" >
+    <div class="applicant-details-card">
+      <h3 class="title-personal-hd marginBottom16"><%= projectBrandName == "Provident" ? "Provident Premier" : "Purva Privilege" %></h3>
+      <div class="privilege">
+        PLEASE READ,
+        <ol>
+          <li>
+            Please be sure you understand all the terms & condition printed
+            below.
+          </li>
+          <li>
+            Incomplete forms will lead to delay in processing your request.
+          </li>
+          <li>
+            All details requested for in this registration form is mandatory
+          </li>
+        </ol>
+      </div>
+      <div class="line-dotted"></div>
+      <% if(referrerDetails) { %>
+      <h3 class="title-personal-hd marginBottom16">Referrer Details</h3>
+      <div class="personal-info referrer-privilege">
+        <div class="personal-info-row">
+          <label class="label-title">Name:</label>
+          <span class="span-title"><%= referrerDetails?.name ?? '' %></span>
+        </div>
+        <div class="personal-info-row">
+          <label class="label-title">Relationship with Referrer</label>
+          <span class="span-title"><%= referrerDetails?.relation ?? '' %></span>
+        </div>
+        <div class="personal-info-row">
+          <label class="label-title">Project Name​:</label>
+          <span class="span-title"><%= referrerDetails?.propertyName ?? '' %></span>
+        </div>
+        <div class="personal-info-row">
+          <label class="label-title">Unit Number:</label>
+          <span class="span-title"><%= referrerDetails?.unitNumber ?? '' %></span>
+        </div>
+        <div class="personal-info-row">
+          <label class="label-title">Email:</label>
+          <span class="span-title"><%= referrerDetails?.email ?? '' %></span>
+        </div>
+        <div class="personal-info-row">
+          <label class="label-title">Mobile:</label>
+          <span class="span-title">
+            <%=referrerDetails?.countryCode ?? ''%>
+			<%=referrerDetails?.mobileNumber ?? ''%>
+        </span>
+        </div>
+        <% if(referrerDetails?.altMobileNumber) { %>
+            <div class="personal-info-row">
+            <label class="label-title">Alternate Mobile:</label>
+            <span class="span-title">
+                <%=referrerDetails?.altCountryCode ?? ''%>
+                <%=referrerDetails?.altMobileNumber ?? ''%>
+            </span>
+            </div>
+        <% } %>
+        <div class="personal-info-row">
+          <label class="label-title">Current Address:</label>
+          <span class="span-title"><%= referrerDetails?.address ?? '' %></span>
+        </div>
+        <div class="personal-info-row">
+          <label class="label-title">House Number/Floor/Tower:</label>
+          <span class="span-title"><%= referrerDetails?.houseNumber ?? '' %></span>
+        </div>
+      </div>
+      <div class="line-dotted"></div>
+      <% } %>
+    </div>
+  </div>
