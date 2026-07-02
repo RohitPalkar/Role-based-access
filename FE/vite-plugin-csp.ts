@@ -29,7 +29,7 @@ export default function cspPlugin(env: string): Plugin {
       }
 
       try {
-        const { meta, links }: CSPConfig = JSON.parse(fs.readFileSync(configPath, 'utf-8'));
+        const { meta, links = [] }: CSPConfig = JSON.parse(fs.readFileSync(configPath, 'utf-8'));
         const metaTag = `<meta http-equiv="Content-Security-Policy" content="${meta}">`;
         const linkTags = links.join('\n    ');
 
