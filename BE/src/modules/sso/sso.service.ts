@@ -40,6 +40,7 @@ import {
 import { ComposeEmailEvent } from 'src/events/email.events';
 import { EventEmitter2 } from '@nestjs/event-emitter';
 import * as crypto from 'node:crypto';
+import * as bcrypt from 'bcrypt';
 import { logsAndErrorHandling } from 'src/utils/errorLogHandler';
 import { logSecurityEvent, SecurityEventType } from 'src/utils/security-logger';
 @Injectable()
@@ -114,6 +115,213 @@ export class SsoService {
       };
     } catch (error) {
       logger.error('Error generating booking token:', error?.message || error);
+      return {
+        statusCode: UNAUTHORIZE,
+        message: 'The login session is expired. Please login again.',
+        data: null,
+      };
+    }
+  }
+
+  /**
+   * Validate local user credentials (username/email + password)
+   * @param usernameOrEmail - Username or email
+   * @param password - Plain text password
+   * @returns User object if valid, null otherwise
+   */
+  async validateLocalUser(usernameOrEmail: string, password: string): Promise<any> {
+    try {
+      // Find user by username or email
+      const user = await this.usersRepository.findOne({
+        where: [
+          { userName: usernameOrEmail, status: StatusEnum.ACTIVE },
+          { email: usernameOrEmail, status: StatusEnum.ACTIVE },
+        ],
+        relations: ['role'],
+        select: {
+          id: true,
+          name: true,
+          email: true,
+          password: true,
+          role: { id: true, name: true },
+        },
+      });
+
+      if (!user || !user.password) {
+        return null;
+      }
+
+      // Compare password
+      const isPasswordValid = await bcrypt.compare(password, user.password);
+      if (!isPasswordValid) {
+        return null;
+      }
+
+      return user;
+    } catch (error) {
+      logger.error('Error validating local user:', error?.message || error);
+      return null;
+    }
+  }
+
+  /**
+   * Local login with username/email and password
+   * @param usernameOrEmail - Username or email
+   * @param password - Plain text password
+   * @returns Access token, refresh token, and user info
+   */
+  async localLogin(usernameOrEmail: string, password: string): Promise<any> {
+    try {
+      const user = await this.validateLocalUser(usernameOrEmail, password);
+
+      if (!user) {
+        return this.buildUnauthorizedResponse();
+      }
+
+      const userDetails = await this.usersRepository.findOne({
+        where: { id: user.id, status: StatusEnum.ACTIVE },
+        relations: ['role'],
+        select: {
+          id: true,
+          name: true,
+          role: { id: true, name: true },
+        },
+      });
+
+      const userId = userDetails?.id ?? '';
+      const userRole = userDetails?.role?.name ?? '';
+
+      const unauthorizedResponse = this.buildUnauthorizedResponse();
+      if (!userDetails || !userId || !userRole) {
+        return unauthorizedResponse;
+      }
+
+      // For Super Admin, bypass RM opportunity check
+      const staticOTP = this.configService.get<string>('STATIC_LOGIN_OTP');
+      if (userRole === RolesEnum.RM) {
+        const ok = await this.ensureRmOppAccessCached(user?.id);
+        if (!ok && !staticOTP) return unauthorizedResponse;
+      }
+
+      const payload: RmAdminJwtPayload = {
+        sub: user?.userName?.toLowerCase() ?? user?.email,
+        dbId: userId,
+        name: userDetails?.name,
+        email: user?.email,
+        role: userRole,
+      };
+
+      const accessToken = this.jwtService.sign(payload, {
+        secret: this.configService.getDecrypted('JWT_SECRET'),
+        expiresIn: JWT_TTL,
+        algorithm: 'HS256',
+      });
+
+      const refreshToken = this.jwtService.sign(payload, {
+        secret: this.configService.getDecrypted('JWT_SECRET'),
+        expiresIn: R_JWT_TTL,
+        algorithm: 'HS256',
+      });
+
+      return {
+        statusCode: SUCCESS,
+        message: 'Login successful',
+        data: {
+          accessToken,
+          refreshToken,
+          userRole,
+          user: {
+            id: userId,
+            name: userDetails?.name,
+            email: user?.email,
+            role: userRole,
+          },
+        },
+      };
+    } catch (error) {
+      logger.error('Error in local login:', error?.message || error);
+      return {
+        statusCode: UNAUTHORIZE,
+        message: 'The login session is expired. Please login again.',
+        data: null,
+      };
+    }
+  }
+
+  /**
+   * Generate JWT tokens for locally authenticated user
+   * @param user - User object from local strategy validation
+   * @returns Access token, refresh token, and user info
+   */
+  async generateLocalAuthToken(user: any): Promise<any> {
+    try {
+      if (!user) {
+        return this.buildUnauthorizedResponse();
+      }
+
+      const userDetails = await this.usersRepository.findOne({
+        where: { id: user.id, status: StatusEnum.ACTIVE },
+        relations: ['role'],
+        select: {
+          id: true,
+          name: true,
+          role: { id: true, name: true },
+        },
+      });
+
+      const userId = userDetails?.id ?? user.id;
+      const userRole = userDetails?.role?.name ?? user.role?.name ?? '';
+
+      const unauthorizedResponse = this.buildUnauthorizedResponse();
+      if (!userId || !userRole) {
+        return unauthorizedResponse;
+      }
+
+      // For Super Admin, bypass RM opportunity check
+      const staticOTP = this.configService.get<string>('STATIC_LOGIN_OTP');
+      if (userRole === RolesEnum.RM) {
+        const ok = await this.ensureRmOppAccessCached(user?.userName);
+        if (!ok && !staticOTP) return unauthorizedResponse;
+      }
+
+      const payload: RmAdminJwtPayload = {
+        sub: user?.userName?.toLowerCase() ?? user?.email,
+        dbId: userId,
+        name: userDetails?.name ?? user.name,
+        email: user?.email,
+        role: userRole,
+      };
+
+      const accessToken = this.jwtService.sign(payload, {
+        secret: this.configService.getDecrypted('JWT_SECRET'),
+        expiresIn: JWT_TTL,
+        algorithm: 'HS256',
+      });
+
+      const refreshToken = this.jwtService.sign(payload, {
+        secret: this.configService.getDecrypted('JWT_SECRET'),
+        expiresIn: R_JWT_TTL,
+        algorithm: 'HS256',
+      });
+
+      return {
+        statusCode: SUCCESS,
+        message: 'Login successful',
+        data: {
+          accessToken,
+          refreshToken,
+          userRole,
+          user: {
+            id: userId,
+            name: userDetails?.name ?? user.name,
+            email: user?.email,
+            username: user?.userName,
+            role: userRole,
+          },
+        },
+      };
+    } catch (error) {
+      logger.error('Error generating local auth token:', error?.message || error);
       return {
         statusCode: UNAUTHORIZE,
         message: 'The login session is expired. Please login again.',

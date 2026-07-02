@@ -43,6 +43,9 @@ export class Users {
   @Column({ name: 'email' })
   email: string;
 
+  @Column({ name: 'password', nullable: true, select: false })
+  password: string;
+
   @Column({ name: 'emp_code', nullable: true })
   empCode: string;
 

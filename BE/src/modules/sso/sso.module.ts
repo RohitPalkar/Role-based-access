@@ -1,8 +1,10 @@
 import { Module } from '@nestjs/common';
 import { SsoService } from './sso.service';
 import { SsoController } from './sso.controller';
+import { AuthController } from './auth.controller';
 import { PassportModule } from '@nestjs/passport';
 import { SsoStrategy } from './sso.strategy';
+import { LocalStrategy } from './local.strategy';
 import { JwtService } from '@nestjs/jwt';
 import { RmAdminJwtStrategy } from './rm-jwt.strategy';
 import { SfdcService } from '../sfdc/sfdc.service';
@@ -24,8 +26,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
     JwtService,
     SfdcService,
     SsoStrategy,
+    LocalStrategy,
     RmAdminJwtStrategy,
   ],
-  controllers: [SsoController],
+  controllers: [SsoController, AuthController],
 })
 export class SsoModule {}

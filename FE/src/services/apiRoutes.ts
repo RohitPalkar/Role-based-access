@@ -105,5 +105,7 @@ export const route = {
   RESEND_CHECKIN_OTP: '/batch-slots/resend-checkin-otp',
   ATTENDANCE_CHECK_IN: '/batch-slots/attendance-check-in',
   RBAC_PERMISSIONS_MY: '/rbac/permissions/my',
+  LOCAL_LOGIN: '/auth/local/login',
+  LOCAL_LOGOUT: '/auth/local/logout',
 };
 
