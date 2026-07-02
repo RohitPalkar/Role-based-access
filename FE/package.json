@@ -39,7 +39,7 @@
     "@fontsource/poppins": "^5.1.1",
     "@hookform/resolvers": "^3.6.0",
     "@iconify/react": "^5.0.1",
-    "@mui/icons-material": "^6.4.3",
+    "@mui/icons-material": "^5.16.14",
     "@mui/lab": "^5.0.0-alpha.170",
     "@mui/material": "^5.16.14",
     "@mui/x-data-grid": "^7.7.0",
