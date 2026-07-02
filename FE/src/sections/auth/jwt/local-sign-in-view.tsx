@@ -174,11 +174,13 @@ export function LocalSignInView({ onSwitchToOTP }: LocalSignInViewProps) {
         label="Username or Email"
         placeholder="Enter your username or email"
         InputLabelProps={{ shrink: true }}
-        startAdornment={
-          <InputAdornment position="start">
-            <Iconify icon="eva:person-fill" sx={{ width: 20, height: 20, mr: 1, color: 'text.secondary' }} />
-          </InputAdornment>
-        }
+        InputProps={{
+          startAdornment: (
+            <InputAdornment position="start">
+              <Iconify icon="eva:person-fill" sx={{ width: 20, height: 20, mr: 1, color: 'text.secondary' }} />
+            </InputAdornment>
+          ),
+        }}
       />
 
       <Field.Text
@@ -187,26 +189,28 @@ export function LocalSignInView({ onSwitchToOTP }: LocalSignInViewProps) {
         type={showPassword ? 'text' : 'password'}
         placeholder="Enter your password"
         InputLabelProps={{ shrink: true }}
-        startAdornment={
-          <InputAdornment position="start">
-            <Iconify icon="eva:lock-fill" sx={{ width: 20, height: 20, mr: 1, color: 'text.secondary' }} />
-          </InputAdornment>
-        }
-        endAdornment={
-          <InputAdornment position="end">
-            <IconButton
-              onClick={handleTogglePassword}
-              edge="end"
-              sx={{ p: 0 }}
-              aria-label="Toggle password visibility"
-            >
-              <Iconify
-                icon={showPassword ? 'eva:eye-off-fill' : 'eva:eye-fill'}
-                sx={{ width: 20, height: 20, color: 'text.secondary' }}
-              />
-            </IconButton>
-          </InputAdornment>
-        }
+        InputProps={{
+          startAdornment: (
+            <InputAdornment position="start">
+              <Iconify icon="eva:lock-fill" sx={{ width: 20, height: 20, mr: 1, color: 'text.secondary' }} />
+            </InputAdornment>
+          ),
+          endAdornment: (
+            <InputAdornment position="end">
+              <IconButton
+                onClick={handleTogglePassword}
+                edge="end"
+                sx={{ p: 0 }}
+                aria-label="Toggle password visibility"
+              >
+                <Iconify
+                  icon={showPassword ? 'eva:eye-off-fill' : 'eva:eye-fill'}
+                  sx={{ width: 20, height: 20, color: 'text.secondary' }}
+                />
+              </IconButton>
+            </InputAdornment>
+          ),
+        }}
       />
 
       <FilledButton

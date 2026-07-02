@@ -35,7 +35,7 @@ export type NavItemStateProps = {
   enabledRootRedirect?: boolean;
 };
 
-export type NavItemBaseProps = {
+export interface NavItemBaseProps {
   path: string;
   title: string;
   children?: any;
@@ -46,7 +46,7 @@ export type NavItemBaseProps = {
   slotProps?: NavItemSlotProps;
   icon?: string | React.ReactNode;
   info?: string[] | React.ReactNode;
-};
+}
 
 export type NavItemProps = ButtonBaseProps & NavItemStateProps & NavItemBaseProps;
 
